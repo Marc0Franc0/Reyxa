@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class AtajosSistema extends Atajos {
      private static String programa;
 
-
      @GetMapping("/explorer")
      public static void abrirExplorador() {
           // start explorer
@@ -24,6 +23,7 @@ public class AtajosSistema extends Atajos {
           ejecutarComando(programa);
 
      }
+
      @GetMapping("/Wconfig")
      public static void abrirConfig() {
 
@@ -31,7 +31,8 @@ public class AtajosSistema extends Atajos {
           ejecutarComando(programa);
 
      }
-@GetMapping("/paint")
+
+     @GetMapping("/paint")
      public static void abrirPaint() {
           // start mspaint
 
@@ -39,14 +40,7 @@ public class AtajosSistema extends Atajos {
           ejecutarComando(programa);
 
      }
-     @GetMapping("/recorder")
-     public static void abrirRecorder() {
-          // start psr
 
-          programa = "psr";
-          ejecutarComando(programa);
-
-     }
      @GetMapping("/calculadora")
      public static void abrirCalculadora() {
           // start calc
@@ -55,4 +49,13 @@ public class AtajosSistema extends Atajos {
           ejecutarComando(programa);
 
      }
+
+     /*@GetMapping("/recorder")
+     public static void abrirRecorder() {
+          // start psr
+
+          programa = "psr";
+          ejecutarComando(programa);
+
+     }*/
 }

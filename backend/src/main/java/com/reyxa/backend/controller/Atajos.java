@@ -18,7 +18,7 @@ public class Atajos {
         Runtime runtime = Runtime.getRuntime();
         InputStream in = null;
         try {
-            Process exec = runtime.exec("cmd.exe /c " + "start " + comando); // ejecutar el comando
+            Process exec = runtime.exec("cmd.exe /c " + "start " + comando); // Ejecutar el comando
 
             in = exec.getInputStream(); // Obtener el resultado de la ejecución
 
@@ -27,5 +27,8 @@ public class Atajos {
 
         }
     }
+
+    /* Por medio de un switch, enlazado a la Interfaz Gráfica, vamos a pedirle al usuario
+    que tipo de atajo quiere utilizar (Sistema o Web). */
 
 }

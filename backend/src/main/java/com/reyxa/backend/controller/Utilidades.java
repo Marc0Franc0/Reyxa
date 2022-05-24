@@ -14,7 +14,7 @@ public class Utilidades {
         Runtime runtime = Runtime.getRuntime();
         InputStream in = null;
         try {
-            Process exec = runtime.exec("cmd.exe /c " + comando); // ejecutar el comando
+            Process exec = runtime.exec("cmd.exe /c " + comando); // Ejecutar el comando
 
             in = exec.getInputStream(); // Obtener el resultado de la ejecución
 
@@ -34,6 +34,12 @@ public class Utilidades {
 
     }
 
+    /* Posibles implementaciones:
+        - Actualizar pc (Buscar Actualizaciones)
+        - Realizar un análisis con Windows Defender
+        - Borrar Temporales
+        - Abrir panel de control
+    */
 
 
 }
