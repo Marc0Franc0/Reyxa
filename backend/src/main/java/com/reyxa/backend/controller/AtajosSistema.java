@@ -24,13 +24,13 @@ public class AtajosSistema extends Atajos {
           ejecutarComando(programa);
 
      }
-    /* @GetMapping("/configsist")
+     @GetMapping("/Wconfig")
      public static void abrirConfig() {
 
-          programa = "config";
+          programa = "ms-settings:";
           ejecutarComando(programa);
 
-     }*/
+     }
 @GetMapping("/paint")
      public static void abrirPaint() {
           // start mspaint
