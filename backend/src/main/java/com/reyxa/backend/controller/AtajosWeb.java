@@ -10,6 +10,8 @@ un objeto de dominio en lugar de una vista
 
 public class AtajosWeb extends Atajos {
     private static String url;
+
+    @GetMapping("/clima")
     public static void verClima() {
         // start https://www.smn.gob.ar/
         url = "https://www.smn.gob.ar/";
@@ -18,7 +20,7 @@ public class AtajosWeb extends Atajos {
          ejecutarComando(url);
          
     }
-
+    @GetMapping("/noticias")
     public static void verNoticias() {
         // start https://news.google.com/topstories?hl=es-419&gl=US&ceid=US:es-419
         url = "https://news.google.com/topstories?hl=es-419&gl=US&ceid=US:es-419";
@@ -44,7 +46,7 @@ public class AtajosWeb extends Atajos {
          ejecutarComando(url);
          
     }*/
-
+    @GetMapping("/youtube")
     public static void abrirYT() {
 
         // start https://www.youtube.com/
@@ -54,7 +56,7 @@ public class AtajosWeb extends Atajos {
          ejecutarComando(url);
          
     }
-
+    @GetMapping("/twitch")
     public static void abrirTwitch() {
 
         // start https://www.twitch.tv/
@@ -91,6 +93,8 @@ public class AtajosWeb extends Atajos {
         ejecutarComando(url);
          
     }
+
+
     @GetMapping("/netflix")
     public static void abrirNetflix() {
 
@@ -100,6 +104,8 @@ public class AtajosWeb extends Atajos {
          ejecutarComando(url);
          
     }
+
+
     @GetMapping("/spotify")
     public static void abrirSpotifyweb() {
 
@@ -109,4 +115,8 @@ public class AtajosWeb extends Atajos {
      ejecutarComando(url);
          
     }
+    
+
 }
+
+

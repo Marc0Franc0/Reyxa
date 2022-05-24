@@ -47,5 +47,12 @@ public class AtajosSistema extends Atajos {
           ejecutarComando(programa);
 
      }
+     @GetMapping("/calculadora")
+     public static void abrirCalculadora() {
+          // start calc
 
+          programa = "calc";
+          ejecutarComando(programa);
+
+     }
 }
