@@ -4,9 +4,10 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ComponentePrueba } from './components/componente-prueba/componente-prueba';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent,ComponentePrueba],
   imports: [
     BrowserModule,
     AppRoutingModule,

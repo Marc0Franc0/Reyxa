@@ -29,21 +29,21 @@ public class AtajosWeb extends Atajos {
 
     }
 
-    public static void abrirBrowser() {
+    /*public static void abrirBrowser() {
         // start https://www.google.com/
         url = "https://www.google.com/";
 
          ejecutarComando(url);
          
-    }
+    }*/
 
-    public static void abrirTraductor() {
+    /*public static void abrirTraductor() {
         // start https://translate.google.com.ar/?hl=es
         url = "https://translate.google.com.ar/?hl=es";
 
          ejecutarComando(url);
          
-    }
+    }*/
 
     public static void abrirYT() {
 
