@@ -8,7 +8,7 @@ un objeto de dominio en lugar de una vista. */
 @RestController
 
 public class AtajosWeb extends Atajos {
-    private static String url;
+    //private static String url;
 
     @GetMapping("/clima")
     public static void verClima() {

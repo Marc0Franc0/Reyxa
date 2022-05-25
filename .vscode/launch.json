@@ -10,6 +10,17 @@
             "projectName": "backend",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-Main<backend>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.reyxa.backend.Main",
+            "projectName": "backend",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }

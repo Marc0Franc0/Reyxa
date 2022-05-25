@@ -24,7 +24,7 @@ public class Utilidades {
         }
     }
 
-    @GetMapping("Vpapelera")
+    @GetMapping("papelera")
     public static void vaciarPapelera() {
 
         // rd /s /q c:\$Recycle.bin
@@ -33,6 +33,7 @@ public class Utilidades {
         ejecutarComando(comando);
 
     }
+
 
     /* Posibles implementaciones:
         - Actualizar pc (Buscar Actualizaciones)

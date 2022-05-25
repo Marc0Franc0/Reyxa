@@ -7,13 +7,15 @@ import java.io.InputStream;
 //import org.springframework.web.bind.annotation.RestController;
 
 public class Atajos {
-    private int tipoAtajo;
 
-    public static void seleccion() {
+    public static String programa;
+    public static String url;
+    /*
+     * public static void seleccion() {
+     * 
+     * }
+     */
 
-    }
-
-   
     public static void ejecutarComando(String comando) {
         Runtime runtime = Runtime.getRuntime();
         InputStream in = null;
@@ -28,7 +30,10 @@ public class Atajos {
         }
     }
 
-    /* Por medio de un switch, enlazado a la Interfaz Gráfica, vamos a pedirle al usuario
-    que tipo de atajo quiere utilizar (Sistema o Web). */
+    /*
+     * Por medio de un switch, enlazado a la Interfaz Gráfica, vamos a pedirle al
+     * usuario
+     * que tipo de atajo quiere utilizar (Sistema o Web).
+     */
 
 }

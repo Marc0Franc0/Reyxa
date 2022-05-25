@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class AtajosSistema extends Atajos {
-     private static String programa;
+     //private static String programa;
 
      @GetMapping("/explorer")
      public static void abrirExplorador() {
