@@ -24,7 +24,7 @@ public class Utilidades {
         }
     }
 
-    @GetMapping("Papelera")
+    @GetMapping("Vpapelera")
     public static void vaciarPapelera() {
 
         // rd /s /q c:\$Recycle.bin
@@ -39,6 +39,10 @@ public class Utilidades {
         - Realizar un análisis con Windows Defender
         - Borrar Temporales
         - Abrir panel de control
+        -Liberar ram
+        -programar apagado
+        -bajar o subir brillo
+        -
     */
 
 
