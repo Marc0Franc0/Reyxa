@@ -15,7 +15,7 @@ public class AtajosWeb extends Atajos {
         // start https://www.smn.gob.ar/
         url = "https://www.smn.gob.ar/";
 
-        ejecutarComando(url);
+        ejecutarCmd(url);
     }
 
     @GetMapping("/noticias")
@@ -23,7 +23,7 @@ public class AtajosWeb extends Atajos {
         // start https://news.google.com/topstories?hl=es-419&gl=US&ceid=US:es-419
         url = "https://news.google.com/topstories?hl=es-419&gl=US&ceid=US:es-419";
 
-        ejecutarComando(url);
+        ejecutarCmd(url);
 
     }
 
@@ -33,7 +33,7 @@ public class AtajosWeb extends Atajos {
         // start https://www.youtube.com/
         url = "https://www.youtube.com/";
 
-        ejecutarComando(url);
+        ejecutarCmd(url);
 
     }
 
@@ -43,7 +43,7 @@ public class AtajosWeb extends Atajos {
         // start https://www.twitch.tv/
         url = "https://www.twitch.tv/";
 
-        ejecutarComando(url);
+        ejecutarCmd(url);
 
     }
 
@@ -53,7 +53,7 @@ public class AtajosWeb extends Atajos {
         // start https://www.instagram.com/?theme=dark
         url = "https://www.instagram.com/?theme=dark     ";
 
-        ejecutarComando(url);
+        ejecutarCmd(url);
 
     }
 
@@ -63,7 +63,7 @@ public class AtajosWeb extends Atajos {
         // start https://web.whatsapp.com/
         url = "https://web.whatsapp.com/";
 
-        ejecutarComando(url);
+        ejecutarCmd(url);
 
     }
 
@@ -73,7 +73,7 @@ public class AtajosWeb extends Atajos {
         // start https://www.google.com/
         url = "https://www.google.com/";
 
-        ejecutarComando(url);
+        ejecutarCmd(url);
 
     }
 
@@ -83,7 +83,7 @@ public class AtajosWeb extends Atajos {
         // start https://www.netflix.com/ar/Login
         url = "https://www.netflix.com/ar/Login";
 
-        ejecutarComando(url);
+        ejecutarCmd(url);
 
     }
 
@@ -93,7 +93,7 @@ public class AtajosWeb extends Atajos {
         // start https://open.spotify.com/
         url = "https://open.spotify.com/";
 
-        ejecutarComando(url);
+        ejecutarCmd(url);
 
     }
 

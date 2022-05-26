@@ -5,13 +5,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class AtajosSistema extends Atajos {
+     
      //private static String programa;
 
      @GetMapping("/explorer")
      public static void abrirExplorador() {
           // start explorer
           programa = "explorer";
-          ejecutarComando(programa);
+          ejecutarCmd(programa);
 
      }
 
@@ -20,7 +21,7 @@ public class AtajosSistema extends Atajos {
           // start notepad
 
           programa = "notepad";
-          ejecutarComando(programa);
+          ejecutarCmd(programa);
 
      }
 
@@ -28,7 +29,7 @@ public class AtajosSistema extends Atajos {
      public static void abrirConfig() {
 
           programa = "ms-settings:";
-          ejecutarComando(programa);
+          ejecutarCmd(programa);
 
      }
 
@@ -37,7 +38,7 @@ public class AtajosSistema extends Atajos {
           // start mspaint
 
           programa = "mspaint";
-          ejecutarComando(programa);
+          ejecutarCmd(programa);
 
      }
 
@@ -46,7 +47,7 @@ public class AtajosSistema extends Atajos {
           // start calc
 
           programa = "calc";
-          ejecutarComando(programa);
+          ejecutarCmd(programa);
 
      }
 

@@ -16,14 +16,16 @@ public class Atajos {
      * }
      */
 
-    public static void ejecutarComando(String comando) {
+
+     //Este metodo es el que se utiliza para poder ejecutar el cmd y asi poder ejecutar un comando
+    public static void ejecutarCmd(String comando) {
         Runtime runtime = Runtime.getRuntime();
         InputStream in = null;
         try {
             Process exec = runtime.exec("cmd.exe /c " + "start " + comando); // Ejecutar el comando
 
             in = exec.getInputStream(); // Obtener el resultado de la ejecución
-
+exec.getOutputStream().close();//Se cierra la consola de segundo plano
         } catch (IOException e) {
             e.printStackTrace();
 
