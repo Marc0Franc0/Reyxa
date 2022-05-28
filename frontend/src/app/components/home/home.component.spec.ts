@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CirculoAnimadoComponent } from './circulo-animado.component';
+import { HomeComponent } from './home.component';
 
-describe('CirculoAnimadoComponent', () => {
-  let component: CirculoAnimadoComponent;
-  let fixture: ComponentFixture<CirculoAnimadoComponent>;
+describe('HomeComponent', () => {
+  let component: HomeComponent;
+  let fixture: ComponentFixture<HomeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CirculoAnimadoComponent ]
+      declarations: [ HomeComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CirculoAnimadoComponent);
+    fixture = TestBed.createComponent(HomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,20 +1,22 @@
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ComponentePrueba } from './components/componente-prueba/componente-prueba';
-import {CirculoAnimadoComponent} from './components/circulo-animado/circulo-animado.component'
+import { BackgroundComponent } from './components/background/background.component';
+import { HomeComponent } from './components/home/home.component';
+
 @NgModule({
-  declarations: [AppComponent,ComponentePrueba,CirculoAnimadoComponent],
+  declarations: [
+    AppComponent,
+    BackgroundComponent,
+    HomeComponent
+  ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    // import HttpClientModule after BrowserModule.
-    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
