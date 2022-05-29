@@ -10,7 +10,7 @@ public class AtajosSistema extends Atajos {
 
      @GetMapping("/explorer")
      public static void abrirExplorador() {
-          // start explorer
+          // abrir explorador de Windows
           programa = "explorer";
           ejecutarCmd(programa);
 
@@ -18,8 +18,7 @@ public class AtajosSistema extends Atajos {
 
      @GetMapping("/notepad")
      public static void abrirBnotas() {
-          // start notepad
-
+          // abrir block de notas
           programa = "notepad";
           ejecutarCmd(programa);
 
@@ -27,16 +26,44 @@ public class AtajosSistema extends Atajos {
 
      @GetMapping("/Wconfig")
      public static void abrirConfig() {
-
+          // abrir configuración de Windows
           programa = "ms-settings:";
           ejecutarCmd(programa);
 
      }
 
+     @GetMapping("/Mstore")
+     public static void abrirTienda() {
+          // abrir Microsoft Store
+          programa = "ms-windows-store:";
+          ejecutarCmd(programa);
+
+     }
+
+     @GetMapping("actualizaciones")
+     public static void buscarActualizaciones() {
+         // abrir Windows Update
+         programa = "ms-settings:windowsupdate";
+         ejecutarCmd(programa);
+     }
+
+     @GetMapping("Wdefender")
+     public static void abrirWdefender() {
+         // abrir Windows Defender
+         programa = "ms-settings:windowsdefender";
+         ejecutarCmd(programa);
+     }
+
+     @GetMapping("desfragmentar")
+     public static void abrirDesfrag() {
+         // abrir Desfragmentar y Optimizar Unidades
+         programa = "dfrgui.exe";
+         ejecutarCmd(programa);
+     }
+
      @GetMapping("/paint")
      public static void abrirPaint() {
-          // start mspaint
-
+          // abrir paint
           programa = "mspaint";
           ejecutarCmd(programa);
 
@@ -44,19 +71,17 @@ public class AtajosSistema extends Atajos {
 
      @GetMapping("/calculadora")
      public static void abrirCalculadora() {
-          // start calc
-
+          // abrir calculadora
           programa = "calc";
           ejecutarCmd(programa);
 
      }
 
-     /*@GetMapping("/recorder")
-     public static void abrirRecorder() {
-          // start psr
+     @GetMapping("/panelControl")
+     public static void abrirPanelControl() {
+          // abrir panel de control
+          programa = "control";
+          ejecutarCmd(programa);
 
-          programa = "psr";
-          ejecutarComando(programa);
-
-     }*/
+     }
 }

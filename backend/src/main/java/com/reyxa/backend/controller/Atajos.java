@@ -10,14 +10,12 @@ public class Atajos {
 
     public static String programa;
     public static String url;
-    /*
-     * public static void seleccion() {
-     * 
-     * }
-     */
+
+    /* public static void seleccion() {
+    }*/
 
 
-     //Este metodo es el que se utiliza para poder ejecutar el cmd y asi poder ejecutar un comando
+    //Método para abir cmd y ejecutar los comandos
     public static void ejecutarCmd(String comando) {
         Runtime runtime = Runtime.getRuntime();
         InputStream in = null;
@@ -25,17 +23,15 @@ public class Atajos {
             Process exec = runtime.exec("cmd.exe /c " + "start " + comando); // Ejecutar el comando
 
             in = exec.getInputStream(); // Obtener el resultado de la ejecución
-exec.getOutputStream().close();//Se cierra la consola de segundo plano
+            exec.getOutputStream().close();// Se cierra la consola de segundo plano
         } catch (IOException e) {
             e.printStackTrace();
-
         }
     }
 
-    /*
+
+    /* IMPORTANTE:
      * Por medio de un switch, enlazado a la Interfaz Gráfica, vamos a pedirle al
-     * usuario
-     * que tipo de atajo quiere utilizar (Sistema o Web).
-     */
+     * usuario qué tipo de atajo quiere utilizar (De Sistema o Web). */
 
 }
