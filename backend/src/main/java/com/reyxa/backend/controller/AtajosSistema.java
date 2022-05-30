@@ -47,12 +47,12 @@ public class AtajosSistema extends Atajos {
          ejecutarCmd(programa);
      }
 
-     @GetMapping("Wdefender")
+     /*@GetMapping("Wdefender")
      public static void abrirWdefender() {
          // abrir Windows Defender
          programa = "ms-settings:windowsdefender";
          ejecutarCmd(programa);
-     }
+     }*/
 
      @GetMapping("desfragmentar")
      public static void abrirDesfrag() {

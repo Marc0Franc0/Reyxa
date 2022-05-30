@@ -77,6 +77,7 @@ public class Utilidades {
         - Programar apagado-> Implementado:funciona, solo queda ver la conversion del tiempo.
         - Vaciar Papelera->Implementado:Funciona, solo para el disco local del sistema.
 
+        
         - Borrar Temporales
         - Liberar ram
         - Bajar o subir brillo

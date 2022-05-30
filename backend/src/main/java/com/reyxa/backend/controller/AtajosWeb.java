@@ -87,7 +87,7 @@ public class AtajosWeb extends Atajos {
      
     - Añadir un link de una playlist con música lofi
 
-     --> ABRIR GOOGLE
+     --> ABRIR GOOGLE ->No hace falta pq es lo mismo que abrir una nueva ventana en el navegador
       public static void abrirBrowser() {
         // abrir Google
         url = "https://www.google.com/";
@@ -95,7 +95,7 @@ public class AtajosWeb extends Atajos {
         ejecutarComando(url); 
     }
      
-    --> ABRIR TRADUCTOR
+    --> ABRIR TRADUCTOR -> Ya tiene extension el navegador 
     public static void abrirTraductor() {
         // abrir Google Traductor
         url = "https://translate.google.com.ar/?hl=es";

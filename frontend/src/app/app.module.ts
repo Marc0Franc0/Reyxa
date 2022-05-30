@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BackgroundComponent } from './components/background/background.component';
 import { HomeComponent } from './components/home/home.component';
+import { BackgroundDosComponent } from './components/background-dos/background-dos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BackgroundComponent,
-    HomeComponent
+    HomeComponent,
+    BackgroundDosComponent
   ],
   imports: [
     BrowserModule,
