@@ -1,11 +1,30 @@
 .img {
   background-image: url(../../../assets/images/utilidades.png);
   background-repeat: no-repeat;
-  background-size:cover;
+  background-size: cover;
   height: 600px;
   width: 600px;
   background-attachment: absolute;
-  background-position: center center ;
+  background-position: center center;
+  justify-content: center;
 
+}
+.papelera {
+  background-color: transparent;
+  border-color: transparent;
 
+float: right;
+
+}
+.w-update {
+  background-color: transparent;
+  border-color: transparent;
+}
+.apagado {
+  background-color: transparent;
+  border-color: transparent;
+}
+.antivirus {
+  background-color: transparent;
+  border-color: transparent;
 }
