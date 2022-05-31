@@ -1,9 +1,60 @@
 .img {
   background-image: url(../../../assets/images/home.png);
   background-repeat: no-repeat;
-  background-size: contain;
-  height: 700px;
-  width: 700px;
+  background-size:cover;
+  height: 600px;
+  width: 600px;
+  background-attachment: absolute;
+  background-position: center center;
+
 
 }
 
+.atajos{
+
+background-color: transparent;
+width: 80px;
+height: 30px;
+font-size: 115%;
+//fuente equivalente a 20
+font-family: Arial;
+font-weight: bold;
+
+
+}
+.utilidades{
+
+  background-color: transparent;
+  width: 120px;
+  height: 30px;
+  font-size: 115%;
+  //fuente equivalente a 20
+  font-family: Arial;
+  font-weight: bold;
+
+
+  }
+  .acerca-de{
+
+    background-color: transparent;
+    width: 120px;
+    height: 30px;
+    font-size: 120%;
+    //fuente equivalente a 20
+    font-family: Arial;
+    font-weight: bold;
+
+
+    }
+    .salir{
+
+      background-color: transparent;
+      width: 80px;
+      height: 30px;
+      font-size: 115%;
+      //fuente equivalente a 20
+      font-family: Arial;
+      font-weight: bold;
+
+
+      }
