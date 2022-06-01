@@ -2,29 +2,28 @@
   background-image: url(../../../assets/images/utilidades.png);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 600px;
-  width: 600px;
+  height: 800px;
+  width: 800px;
   background-attachment: absolute;
   background-position: center center;
-  justify-content: center;
+  display: flex;
+
 
 }
-.papelera {
+
+  .abs-center {
+
+    align-items: center center;
+    justify-content: center center;
+
+  }
+
+
+.botones {
   background-color: transparent;
   border-color: transparent;
 
-float: right;
+
 
 }
-.w-update {
-  background-color: transparent;
-  border-color: transparent;
-}
-.apagado {
-  background-color: transparent;
-  border-color: transparent;
-}
-.antivirus {
-  background-color: transparent;
-  border-color: transparent;
-}
+
