@@ -14,7 +14,8 @@ import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 const routes: Routes = [
   {path: '',component: HomeComponent},{
   path:'atajos',component:AtajosComponent},
-{path:'utilidades',component:UtilidadesComponent}
+{path:'utilidades',component:UtilidadesComponent},
+
 
 ];
 

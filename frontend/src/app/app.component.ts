@@ -1,5 +1,5 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,13 +7,18 @@ import { observable } from 'rxjs';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'frontend';
 
-  //esta url abre el explorador:
-  private explorerURL ="http://localhost:8080/explorer";
+hola='';
 
-  /*constructor(private httpClient: HttpClient){
-    abrirExplorador():Observable{return this.httpClient.get}
-  }*/
+  constructor( private http: HttpClient){
+
+}
+
+ngOnInit(){
+
+  this.http.get("http://localhost:8080/hola"),{responseType: 'string'}
+}
+
+
 
 }

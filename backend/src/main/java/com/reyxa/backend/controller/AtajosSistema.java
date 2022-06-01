@@ -15,6 +15,12 @@ public class AtajosSistema extends Atajos {
           ejecutarCmd(programa);
 
      }
+     @GetMapping("/hola")
+     public static String listar() {
+          // abrir explorador de Windows
+       
+return "hola";
+     }
 
      @GetMapping("/notepad")
      public static void abrirBnotas() {
