@@ -12,7 +12,7 @@ import { UtilidadesComponent } from './components/utilidades/utilidades.componen
 import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 
 const routes: Routes = [
-  {path: 'home',component: HomeComponent},{
+  {path: '',component: HomeComponent},{
   path:'atajos',component:AtajosComponent},
 {path:'utilidades',component:UtilidadesComponent}
 
