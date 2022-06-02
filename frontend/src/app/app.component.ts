@@ -16,12 +16,9 @@ export class AppComponent {
 
   ngOnInit(){
 
-    this.configS.vaciarPapelera;
+    //this.configS.vaciarPapelera();
   }
-vaciarPapelera(){
 
-
-  }
 
 
 

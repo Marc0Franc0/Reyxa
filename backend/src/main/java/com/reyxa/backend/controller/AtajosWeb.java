@@ -61,7 +61,7 @@ public class AtajosWeb extends Atajos {
     @GetMapping("/gmail")
     public static void abrirGmail() {
         // abrir Gmail
-        url = "https://www.google.com/";
+        url = "https://mail.google.com/mail/u/0/#inbox";
 
         ejecutarCmd(url);
     }
