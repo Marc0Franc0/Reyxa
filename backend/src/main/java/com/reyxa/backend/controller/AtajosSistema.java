@@ -46,12 +46,7 @@ return "hola";
 
      }
 
-     @GetMapping("actualizaciones")
-     public static void buscarActualizaciones() {
-         // abrir Windows Update
-         programa = "ms-settings:windowsupdate";
-         ejecutarCmd(programa);
-     }
+   
 
      /*@GetMapping("Wdefender")
      public static void abrirWdefender() {

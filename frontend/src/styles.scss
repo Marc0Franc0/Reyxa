@@ -1,8 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 body{
   background: #f8af11de;
+
   //background: #115af8de;
-
-
 }
 
+img-uno{
+background-image: url(assets/images/home.png);
+background-repeat: no-repeat;
+background-size: contain;
+background-position:100% ;
+}
+.img-dos{
+  background-image:url() ;
+}
+.abs-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  display: flex;
+}

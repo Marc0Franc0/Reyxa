@@ -1,23 +1,27 @@
-import { HttpClient } from '@angular/common/http';
+import { ConfigService } from 'src/app/config/config.service';
 import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  title = 'Header 1, título de la página';
+  unParrafo = 'Este es un párrafo de muestra.';
+  respuesta = '';
+  constructor(private configS:ConfigService)
+  {}
 
-hola='';
+  ngOnInit(){
 
-  constructor( private http: HttpClient){
+    this.configS.vaciarPapelera;
+  }
+vaciarPapelera(){
 
-}
 
-ngOnInit(){
-
-  this.http.get("http://localhost:8080/hola"),{responseType: 'string'}
-}
+  }
 
 
 

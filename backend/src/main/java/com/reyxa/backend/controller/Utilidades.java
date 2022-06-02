@@ -44,20 +44,20 @@ public class Utilidades {
     }
 
 
-    @GetMapping("papelera")
+    @GetMapping("/papelera")
     public static void vaciarPapelera() {
         // rd /s /q c:\$Recycle.bin para el disco local
         comando = "rd /s /q c:\\$Recycle.bin";
         ejecutarCmd(comando);
     }
 
-    @GetMapping("antivirus")
+    @GetMapping("/antivirus")
     public static void realizarAnalisis() {
         comando = "start-MpScan";
         ejecutarPowerShell(comando);
     }
 
-    @GetMapping("apagado")
+    @GetMapping("/apagado")
     public static void programarApagado() {
         // shutdown -s -t (tiempo en segundos sin los parentesis)
 
@@ -69,6 +69,16 @@ public class Utilidades {
 
     }
 
+    @GetMapping("/wupdate")
+    public static void p() {
+        // shutdown -s -t (tiempo en segundos sin los parentesis)
+
+        // Recibe el tiempo deseado para el apagado
+
+        comando = "start ms-settings:windowsupdate";
+        ejecutarCmd(comando);
+
+    }
     /*
      * Posibles Implementaciones:
         - Actualizar pc (Buscar Actualizaciones) -> Funciona, es un acceso para luego que la busque el usuario
