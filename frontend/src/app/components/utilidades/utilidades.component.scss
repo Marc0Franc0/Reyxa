@@ -1,22 +1,23 @@
 .img {
   background-image: url(../../../assets/images/utilidades.png);
   background-repeat: no-repeat;
-  background-size: cover;
-  height: 800px;
-  width: 800px;
+  background-size:cover;
+  height: 700px;
+  width: 700px;
   background-attachment: absolute;
   background-position: center center;
-  //display:flex;
+display: flex;
 }
 
+
 .volver {
-  margin-left: 350px;
-  margin-top: 160px;
+  margin-left: 290px;
+  margin-top: 120px;
   color: white;
   font-family: Arial;
   font-weight: bold;
   font-size: 125%;
-  border-style: none;
+
 
 }
 
@@ -24,55 +25,51 @@
 .papelera {
 
   background-color: transparent;
-  width: 120px;
-  height: 150px;
+  width: 100px;
+  height: 120px;
   font-size: 110%;
   //fuente equivalente a 20
   font-family: Arial;
   font-weight: bold;
   margin-top: 100px;
-  margin-left: 250px;
-  color: transparent;
-  border-style: none;
+  margin-left: 210px;
+
 }
 
 .defender {
-  width: 120px;
-  height: 130px;
+  width: 85px;
+  height: 110px;
   font-size: 110%;
-  //fuente equivalente a 20
-  font-family: Arial;
-  font-weight: bold;
-  margin-left: 60px;
-  margin-top: 100px;
-  color: transparent;
-  border-style: none;
-}
-
-.update {
-
-  width: 130px;
-  height: 120px;
-  font-size: 110%;
-  //fuente equivalente a 20
-  font-family: Arial;
-  font-weight: bold;
-  margin-top: -80px;
-  margin-left: 230px;
-  color: transparent;
-  border-style: none;
-}
-
-.apagado {
-  width: 120px;
-  height: 120px;
-  font-size: 110%;
-
   //fuente equivalente a 20
   font-family: Arial;
   font-weight: bold;
   margin-left: 70px;
-  margin-top: -75px;
-  color: transparent;
-  border-style: none;
+  margin-top: 100px;
+
+}
+
+.update {
+
+  width: 90px;
+  height: 80px;
+  font-size: 110%;
+  //fuente equivalente a 20
+  font-family: Arial;
+  font-weight: bold;
+  margin-top: 80px;
+  margin-left: 200px;
+
+}
+
+.apagado {
+  width: 80px;
+  height: 85px;
+  font-size: 110%;
+
+  //fuente equivalente a 20
+  font-family: Arial;
+  font-weight: bold;
+  margin-left: 72px;
+  margin-top:  70px;
+
 }

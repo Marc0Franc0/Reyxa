@@ -2,17 +2,17 @@
   background-image: url(../../../assets/images/atajos.png);
   background-repeat: no-repeat;
   background-size:cover;
-  height: 800px;
-  width: 800px;
+  height: 700px;
+  width: 700px;
   background-attachment: absolute;
   background-position: center center;
-  display: flex;
+display: flex;
 
 
 }
 .volver {
-  margin-left: 340px;
-  margin-top: 160px;
+  margin-left: 290px;
+  margin-top: 120px;
   color: white;
   font-family: Arial;
   font-weight: bold;
@@ -22,25 +22,65 @@
 }
 
 
-
-.explorador {
-
-  background-color: transparent;
-  width: 65px;
+.wsp {
+  width: 55px;
   height: 50px;
   font-size: 110%;
   //fuente equivalente a 20
   font-family: Arial;
   font-weight: bold;
-  margin-top: 85px;
-  margin-left: 210px;
-color: transparent;
-border-style: none;
+  margin-left: 180px;
+  margin-top: 50px;
+}
+.spotify {
+  width: 52px;
+  height: 50px;
+  font-size: 110%;
+  //fuente equivalente a 20
+  font-family: Arial;
+  font-weight: bold;
+  margin-left: 5px;
+  margin-top: 50px;
+}
+.ig {
+  width: 50px;
+  height: 50px;
+  font-size: 110%;
+  //fuente equivalente a 20
+  font-family: Arial;
+  font-weight: bold;
+  margin-left: -40px;
+  margin-top: 50px;
+}
+.youtube {
+   width: 60px;
+  height: 50px;
+  font-size: 110%;
+  //fuente equivalente a 20
+  font-family: Arial;
+  font-weight: bold;
+  margin-left: -90px;
+  margin-top: 50px;
+
+}
+
+.explorador {
+
+  background-color: transparent;
+  width: 55px;
+  height: 55px;
+  font-size: 110%;
+  //fuente equivalente a 20
+  font-family: Arial;
+  font-weight: bold;
+  margin-top: 80px;
+  margin-left: 180px;
+
 
 }
 
 .bloc {
-  width: 65px;
+  width: 50px;
   height: 50px;
   font-size: 110%;
   //fuente equivalente a 20
@@ -48,38 +88,95 @@ border-style: none;
   font-weight: bold;
   margin-left: 10px;
   margin-top: 85px;
-  color: transparent;
-  border-style: none;
+
 
 
 }
 
 .paint {
 
-  width: 65px;
+  width: 55px;
   height: 70px;
   font-size: 110%;
   //fuente equivalente a 20
   font-family: Arial;
   font-weight: bold;
   margin-top: 70px;
-  margin-left: -50px;
-  color: transparent;
-  border-style: none;
+  margin-left: -40px;
+
 
 }
 
 .calculadora {
-  width: 65px;
-  height: 70px;;
+  width: 55px;
+  height: 60px;;
   font-size: 110%;
 
   //fuente equivalente a 20
   font-family: Arial;
   font-weight: bold;
-  margin-left: -100px;
+  margin-left: -90px;
   margin-top: 75px;
-  color: transparent;
-  border-style: none;
+
+}
+.gmail {
+  width: 55px;
+  height: 40px;;
+  font-size: 110%;
+
+  //fuente equivalente a 20
+  font-family: Arial;
+  font-weight: bold;
+  margin-left: 180px;
+  margin-top: 60px;
+
+}
+.noticias {
+  width: 50px;
+  height: 55px;;
+  font-size: 110%;
+
+  //fuente equivalente a 20
+  font-family: Arial;
+  font-weight: bold;
+  margin-left: 10px;
+  margin-top: 60px;
+
+}
+.clima {
+  width: 65px;
+  height: 60px;;
+  font-size: 110%;
+
+  //fuente equivalente a 20
+  font-family: Arial;
+  font-weight: bold;
+  margin-left: -10px;
+  margin-top: 60px;
+
+}
+
+.netflix {
+  width: 45px;
+  height: 55px;;
+  font-size: 110%;
+
+  //fuente equivalente a 20
+  font-family: Arial;
+  font-weight: bold;
+  margin-left: -25px;
+  margin-top: 55px;
+
+}
+.config {
+  width: 60px;
+  height: 60px;;
+  font-size: 110%;
+
+  //fuente equivalente a 20
+  font-family: Arial;
+  font-weight: bold;
+  margin-left: -250px;
+  margin-top: 150px;
 
 }
