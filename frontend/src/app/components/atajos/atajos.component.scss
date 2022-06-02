@@ -10,11 +10,76 @@
 
 
 }
-.volver{
-
-  margin-left: 350px;
-  margin-top: 150px;
+.volver {
+  margin-left: 340px;
+  margin-top: 160px;
   color: white;
   font-family: Arial;
   font-weight: bold;
-  }
+  font-size: 125%;
+
+
+}
+
+
+
+.explorador {
+
+  background-color: transparent;
+  width: 65px;
+  height: 50px;
+  font-size: 110%;
+  //fuente equivalente a 20
+  font-family: Arial;
+  font-weight: bold;
+  margin-top: 85px;
+  margin-left: 210px;
+color: transparent;
+border-style: none;
+
+}
+
+.bloc {
+  width: 65px;
+  height: 50px;
+  font-size: 110%;
+  //fuente equivalente a 20
+  font-family: Arial;
+  font-weight: bold;
+  margin-left: 10px;
+  margin-top: 85px;
+  color: transparent;
+  border-style: none;
+
+
+}
+
+.paint {
+
+  width: 65px;
+  height: 70px;
+  font-size: 110%;
+  //fuente equivalente a 20
+  font-family: Arial;
+  font-weight: bold;
+  margin-top: 70px;
+  margin-left: -50px;
+  color: transparent;
+  border-style: none;
+
+}
+
+.calculadora {
+  width: 65px;
+  height: 70px;;
+  font-size: 110%;
+
+  //fuente equivalente a 20
+  font-family: Arial;
+  font-weight: bold;
+  margin-left: -100px;
+  margin-top: 75px;
+  color: transparent;
+  border-style: none;
+
+}
