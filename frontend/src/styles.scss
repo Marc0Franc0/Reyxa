@@ -1,19 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 body{
-  background: #f8af11de;
+
+//background-image: url(assets/images/Backgrounds/background-9.png);
+background-image: url(assets/images/Backgrounds/background-6.png);
+background-size: 150%;
+background-repeat:no-repeat;
 
   //background: #115af8de;
+  //https://coolbackgrounds.io/
 }
 
-img-uno{
-background-image: url(assets/images/home.png);
-background-repeat: no-repeat;
-background-size: contain;
-background-position:100% ;
-}
-.img-dos{
-  background-image:url() ;
-}
+
 .abs-center {
   display: flex;
   align-items: center;
