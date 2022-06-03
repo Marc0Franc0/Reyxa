@@ -38,7 +38,7 @@ return "hola";
 
      }
 
-     @GetMapping("/Mstore")
+     @GetMapping("/mstore")
      public static void abrirTienda() {
           // abrir Microsoft Store
           programa = "ms-windows-store:";
@@ -46,7 +46,14 @@ return "hola";
 
      }
 
-   
+     @GetMapping("/word")
+     public static void abrirWord() {
+          // abrir Microsoft Store
+          programa = "winword";
+          ejecutarCmd(programa);
+
+     }
+  
 
      /*@GetMapping("Wdefender")
      public static void abrirWdefender() {

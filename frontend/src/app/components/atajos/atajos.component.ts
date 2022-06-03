@@ -19,7 +19,9 @@ export class AtajosComponent implements OnInit {
   abrirExplorador(){
 this.configs.abrirExplorador();
   }
-
+  abrirWord(){
+    this.configs.abrirWord();
+      }
   abrirNotas(){
     this.configs.abrirNotas();
   }

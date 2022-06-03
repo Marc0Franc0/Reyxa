@@ -76,6 +76,17 @@ abrirWsp(){
   };
 }
 
+abrirWord(){
+  this.http
+  .get('http://localhost:8080/word', { responseType: 'text' })
+  .subscribe((resp: any) => {
+    this.respuesta = resp;
+  }),
+  (error: any) => {
+    console.log(error);
+  };
+}
+
 abrirSpotify(){
   this.http
   .get('http://localhost:8080/spotify', { responseType: 'text' })

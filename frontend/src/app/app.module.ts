@@ -11,18 +11,12 @@ import { Router, RouterModule, Routes } from '@angular/router';
 import { UtilidadesComponent } from './components/utilidades/utilidades.component';
 import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 
-const routes: Routes = [
-  {path: '',component: HomeComponent},{
-  path:'atajos',component:AtajosComponent},
-{path:'utilidades',component:UtilidadesComponent},
 
-
-];
 
 @NgModule({
   declarations: [
     AppComponent,
-  
+
     HomeComponent,
 
     AtajosComponent,
@@ -32,7 +26,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,RouterModule.forRoot(routes)
+    HttpClientModule,RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
