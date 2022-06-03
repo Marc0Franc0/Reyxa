@@ -13,6 +13,9 @@ export class AtajosComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  /*Cada uno de estos metodos son llamados en el template del componente,
+   junto con el boton correspondiente y el evento (en este caso el evento es el click del mouse)*/
   abrirExplorador(){
 this.configs.abrirExplorador();
   }
