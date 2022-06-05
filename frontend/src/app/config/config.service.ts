@@ -167,4 +167,9 @@ abrirConfig(){
     console.log(error);
   };
 }
+
+cerrarPrograma(){
+
+  
+}
 }

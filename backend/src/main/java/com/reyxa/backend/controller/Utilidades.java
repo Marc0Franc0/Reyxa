@@ -70,7 +70,7 @@ public class Utilidades {
     }
 
     @GetMapping("/wupdate")
-    public static void p() {
+    public static void abrirWupdate() {
         // shutdown -s -t (tiempo en segundos sin los parentesis)
 
         // Recibe el tiempo deseado para el apagado
@@ -79,6 +79,8 @@ public class Utilidades {
         ejecutarCmd(comando);
 
     }
+    
+   
     /*
      * Posibles Implementaciones:
         - Actualizar pc (Buscar Actualizaciones) -> Funciona, es un acceso para luego que la busque el usuario
