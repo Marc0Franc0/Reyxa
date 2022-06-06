@@ -10,11 +10,11 @@
       <div class="row">
         <div class="col">
 
-           <button type ="button " class="btn papelera " > 1 </button>
+           <button type ="button " class="btn papelera " (mouseenter)="mostrarDescripcionPapepelera()" > 1 </button>
         </div>
         <div class="col" >
 
-          <a type ="nav-link" class="btn defender "  >2</a>
+          <button type ="button " class="btn defender " (mouseenter)="mostrarDescripcionDefender()" > 2 </button>
         </div>
 
       </div>
@@ -22,12 +22,12 @@
       <div class="row" >
         <div class="col">
 
-            <a type ="nav-link" class="btn update "  >3</a>
+            <button type ="button" class="btn update " (mouseenter)="mostrarDescripcionWpdate()" >3</button>
 
         </div>
         <div class="col" >
 
-          <a type ="nav-link" class=" btn apagado "  >4</a>
+          <button type ="button" class=" btn apagado " (mouseenter)="mostrarDescripcionApagado()" >4</button>
         </div>
 
       </div>

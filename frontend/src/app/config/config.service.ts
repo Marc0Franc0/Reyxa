@@ -9,6 +9,7 @@ import { Injectable } from '@angular/core';
 export class ConfigService {
 
 respuesta = '';
+
   constructor(private http:HttpClient){
 
   }
@@ -16,7 +17,8 @@ respuesta = '';
 
 vaciarPapelera(){
   this.http
-  .get('http://localhost:8080/papelera', { responseType: 'text' })
+  .get('http://localhost:8080/papelera', {
+    responseType: 'text' })
   .subscribe((resp: any) => {
     this.respuesta = resp;
   }),
@@ -170,6 +172,6 @@ abrirConfig(){
 
 cerrarPrograma(){
 
-  
+
 }
 }

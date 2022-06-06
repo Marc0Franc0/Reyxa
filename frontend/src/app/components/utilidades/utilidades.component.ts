@@ -19,5 +19,28 @@ export class UtilidadesComponent implements OnInit {
 
   }
 
+mostrarDescripcionPapepelera(){
 
+  var descripcion = new String('Se abrirá la papelera de Windows.');
+  console.log(descripcion);
+
+}
+
+mostrarDescripcionDefender(){
+
+  var descripcion = new String('Se relizara un analisis con Windows Defender.');
+  console.log(descripcion);
+
+}
+
+mostrarDescripcionWpdate(){
+
+  var descripcion = new String('Se abrira Windows update para poder buscar actualizaciones.');
+  console.log(descripcion);
+
+}
+mostrarDescripcionApagado(){
+
+
+}
 }
