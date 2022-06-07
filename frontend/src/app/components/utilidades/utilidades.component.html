@@ -10,12 +10,20 @@
       <div class="row">
         <div class="col">
 
-           <button type ="button " class="btn papelera " (mouseenter)="mostrarDescripcionPapepelera()" (click)="vaciarPapelera()" > 1 </button>
+           <button type ="button " class="btn papelera "  (click)="vaciarPapelera()"
+           data-bs-toggle="tooltip"
+           data-bs-placement="bottom"
+            title="Abrir papelera" > 1
+          </button>
         </div>
         <div class="col" >
 
 
-          <button type ="button " title="hola" class="btn defender "  (click)="realizarAnalisis()" > 2 </button>
+          <button type ="button " class="btn defender "  (click)="realizarAnalisis()"
+          data-bs-toggle="tooltip" data-bs-placement="bottom"
+          data-bs-custom-class="custom-tooltip"
+          title="Realizar análisis con Windows Defender" > 2
+        </button>
 
         </div>
 
@@ -24,12 +32,18 @@
       <div class="row" >
         <div class="col">
 
-            <button type ="button" class="btn update " (mouseenter)="mostrarDescripcionWpdate()" >3</button>
+            <button type ="button" class="btn update " (mouseenter)="mostrarDescripcionWpdate()"
+            data-bs-toggle="tooltip" data-bs-placement="bottom"
+            data-bs-custom-class="custom-tooltip"
+            title="Abrir Windows update">3</button>
 
         </div>
         <div class="col" >
 
-          <button type ="button" class=" btn apagado " (mouseenter)="mostrarDescripcionApagado()" >4</button>
+          <button type ="button" class=" btn apagado " (mouseenter)="mostrarDescripcionApagado()"
+          data-bs-toggle="tooltip" data-bs-placement="bottom"
+          data-bs-custom-class="custom-tooltip"
+          title="Programar apagado de pc">4</button>
         </div>
 
       </div>

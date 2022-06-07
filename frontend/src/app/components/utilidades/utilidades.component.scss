@@ -7,6 +7,7 @@
   background-attachment: absolute;
   background-position: center center;
 display: flex;
+
 }
 
 
@@ -47,7 +48,9 @@ display: flex;
   margin-top: 100px;
 
 }
-
+.custom-tooltip {
+  --bs-tooltip-bg: var(--bs-primary);
+}
 .update {
 
   width: 90px;
@@ -70,6 +73,6 @@ display: flex;
   font-family: Arial;
   font-weight: bold;
   margin-left: 72px;
-  margin-top:  70px;
+  margin-top:  80px;
 
 }
