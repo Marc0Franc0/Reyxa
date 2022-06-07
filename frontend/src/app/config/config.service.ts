@@ -15,17 +15,6 @@ respuesta = '';
   }
 
 
-vaciarPapelera(){
-  this.http
-  .get('http://localhost:8080/papelera', {
-    responseType: 'text' })
-  .subscribe((resp: any) => {
-    this.respuesta = resp;
-  }),
-  (error: any) => {
-    console.log(error);
-  };
-}
 
 abrirExplorador(){
   this.http
@@ -170,8 +159,38 @@ abrirConfig(){
   };
 }
 
+
 cerrarPrograma(){
 
 
 }
+
+vaciarPapelera(){
+  this.http
+  .get('http://localhost:8080/papelera', { responseType: 'text' })
+  .subscribe((resp: any) => {
+    this.respuesta = resp;
+  }),
+  (error: any) => {
+    console.log(error);
+  };
+}
+
+
+realizarAnalisis(){
+  this.http
+  .get('http://localhost:8080/antivirus', { responseType: 'text' })
+  .subscribe((resp: any) => {
+    this.respuesta = resp;
+  }),
+  (error: any) => {
+    console.log(error);
+  };
+}
+
+programarApagado(){
+
+
+}
+
 }

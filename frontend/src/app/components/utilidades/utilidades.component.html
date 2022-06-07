@@ -10,11 +10,13 @@
       <div class="row">
         <div class="col">
 
-           <button type ="button " class="btn papelera " (mouseenter)="mostrarDescripcionPapepelera()" > 1 </button>
+           <button type ="button " class="btn papelera " (mouseenter)="mostrarDescripcionPapepelera()" (click)="vaciarPapelera()" > 1 </button>
         </div>
         <div class="col" >
 
-          <button type ="button " class="btn defender " (mouseenter)="mostrarDescripcionDefender()" > 2 </button>
+
+          <button type ="button " title="hola" class="btn defender "  (click)="realizarAnalisis()" > 2 </button>
+
         </div>
 
       </div>

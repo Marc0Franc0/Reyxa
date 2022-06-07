@@ -11,8 +11,6 @@ export class UtilidadesComponent implements OnInit {
 
 
   constructor(private configService:ConfigService) {
-
-
   }
 
   ngOnInit(): void {
@@ -38,9 +36,19 @@ mostrarDescripcionWpdate(){
   var descripcion = new String('Se abrira Windows update para poder buscar actualizaciones.');
   console.log(descripcion);
 
+
 }
 mostrarDescripcionApagado(){
 
 
 }
+
+vaciarPapelera(){
+  this.configService.vaciarPapelera();
+}
+
+realizarAnalisis(){
+  this.configService.realizarAnalisis();
+}
+
 }
