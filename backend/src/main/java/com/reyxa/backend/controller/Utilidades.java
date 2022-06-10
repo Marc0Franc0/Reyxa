@@ -46,9 +46,88 @@ public class Utilidades {
 
     @GetMapping("/papelera")
     public static void vaciarPapelera() {
-        // rd /s /q c:\$Recycle.bin para el disco local
-        comando = "rd /s /q c:\\$Recycle.bin";
+        /*  rd /s /q c:\$Recycle.bin para el disco local
+         * Cada comando borra los archivos que esten en la papelera de 
+         * cada disco siempre que ese disco exista
+        */
+        comando = "rd /s /q a:\\$Recycle.bin ";
         ejecutarCmd(comando);
+
+        comando="rd /s /q b:\\$Recycle.bin";
+        ejecutarCmd(comando);
+        
+          comando="rd /s /q c:\\$Recycle.bin";
+        ejecutarCmd(comando);
+
+        comando="rd /s /q d:\\$Recycle.bin";
+        ejecutarCmd(comando);
+
+        comando="rd /s /q e:\\$Recycle.bin";
+        ejecutarCmd(comando);
+
+        comando="rd /s /q f:\\$Recycle.bin";
+        ejecutarCmd(comando);
+
+        comando="rd /s /q g:\\$Recycle.bin";
+        ejecutarCmd(comando);
+
+        comando="rd /s /q h:\\$Recycle.bin";
+        ejecutarCmd(comando);
+
+        comando="rd /s /q i:\\$Recycle.bin";
+        ejecutarCmd(comando);
+
+        comando="rd /s /q j:\\$Recycle.bin";
+        ejecutarCmd(comando);
+
+        comando="rd /s /q k:\\$Recycle.bin";
+        ejecutarCmd(comando);
+
+        comando="rd /s /q l:\\$Recycle.bin";
+        ejecutarCmd(comando);
+
+        comando="rd /s /q m:\\$Recycle.bin";
+        ejecutarCmd(comando);
+
+        comando="rd /s /q n:\\$Recycle.bin";
+        ejecutarCmd(comando);
+
+        comando="rd /s /q o:\\$Recycle.bin";
+        ejecutarCmd(comando);
+
+        comando="rd /s /q p:\\$Recycle.bin";
+        ejecutarCmd(comando);
+
+        comando="rd /s /q q:\\$Recycle.bin";
+        ejecutarCmd(comando);
+
+        comando="rd /s /q r:\\$Recycle.bin";
+        ejecutarCmd(comando);
+        
+        comando="rd /s /q s:\\$Recycle.bin";
+        ejecutarCmd(comando);
+
+        comando="rd /s /q t:\\$Recycle.bin";
+        ejecutarCmd(comando);
+
+        comando="rd /s /q u:\\$Recycle.bin";
+        ejecutarCmd(comando);
+
+        comando="rd /s /q v:\\$Recycle.bin";
+        ejecutarCmd(comando);
+
+        comando="rd /s /q w:\\$Recycle.bin";
+        ejecutarCmd(comando);
+
+        comando="rd /s /q x:\\$Recycle.bin";
+        ejecutarCmd(comando);
+
+        comando="rd /s /q y:\\$Recycle.bin";
+        ejecutarCmd(comando);
+
+        comando="rd /s /q z:\\$Recycle.bin";
+        ejecutarCmd(comando);
+
     }
 
     @GetMapping("/antivirus")
@@ -62,7 +141,7 @@ public class Utilidades {
         // shutdown -s -t (tiempo en segundos sin los parentesis)
 
         // Recibe el tiempo deseado para el apagado
-        int tiempo = 0;
+        int tiempo = 3600;
 
         comando = "shutdown -s -t " + tiempo;
         ejecutarCmd(comando);
@@ -72,8 +151,6 @@ public class Utilidades {
     @GetMapping("/wupdate")
     public static void abrirWupdate() {
         // shutdown -s -t (tiempo en segundos sin los parentesis)
-
-        // Recibe el tiempo deseado para el apagado
 
         comando = "start ms-settings:windowsupdate";
         ejecutarCmd(comando);

@@ -32,15 +32,15 @@
       <div class="row" >
         <div class="col">
 
-            <button type ="button" class="btn update " (mouseenter)="mostrarDescripcionWpdate()"
+            <button type ="button" class="btn update "
             data-bs-toggle="tooltip" data-bs-placement="bottom"
             data-bs-custom-class="custom-tooltip"
-            title="Abrir Windows update">3</button>
+            title="Abrir Windows update" (click)="abrirWupdate()">3</button>
 
         </div>
         <div class="col" >
 
-          <button type ="button" class=" btn apagado " (mouseenter)="mostrarDescripcionApagado()"
+          <button type ="button" class=" btn apagado "
           data-bs-toggle="tooltip" data-bs-placement="bottom"
           data-bs-custom-class="custom-tooltip"
           title="Programar apagado de pc">4</button>

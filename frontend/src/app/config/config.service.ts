@@ -166,6 +166,7 @@ cerrarPrograma(){
 }
 
 vaciarPapelera(){
+
   this.http
   .get('http://localhost:8080/papelera', { responseType: 'text' })
   .subscribe((resp: any) => {
@@ -190,6 +191,17 @@ realizarAnalisis(){
 
 programarApagado(){
 
+
+}
+abrirWupdate(){
+  this.http
+  .get('http://localhost:8080/wupdate', { responseType: 'text' })
+  .subscribe((resp: any) => {
+    this.respuesta = resp;
+  }),
+  (error: any) => {
+    console.log(error);
+  };
 
 }
 
