@@ -4,9 +4,12 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping
 public class Utilidades {
     private static String comando;
 
@@ -136,21 +139,28 @@ public class Utilidades {
         ejecutarPowerShell(comando);
     }
 
-    @GetMapping("/apagado")
-    public static void programarApagado() {
+    @GetMapping("/programarapagado")
+    public static void programarApagado(@RequestParam(value = "tiempo") int tiempo) {
         // shutdown -s -t (tiempo en segundos sin los parentesis)
 
         // Recibe el tiempo deseado para el apagado
-        int tiempo = 3600;
-
         comando = "shutdown -s -t " + tiempo;
+        ejecutarCmd(comando);
+
+    }   
+    @GetMapping("/cancelarapagado")
+    public static void cancelarApagado() {
+        // shutdown -s -t (tiempo en segundos sin los parentesis)
+
+        // Recibe el tiempo deseado para el apagado
+        comando = "shutdown /a " ;
         ejecutarCmd(comando);
 
     }
 
     @GetMapping("/wupdate")
     public static void abrirWupdate() {
-        // shutdown -s -t (tiempo en segundos sin los parentesis)
+      
 
         comando = "start ms-settings:windowsupdate";
         ejecutarCmd(comando);

@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { ConfigService } from 'src/app/config/config.service';
 @Component({
@@ -7,10 +8,13 @@ import { ConfigService } from 'src/app/config/config.service';
 
 })
 export class AtajosComponent implements OnInit {
+  respuesta ="";
 
   constructor(private configs:ConfigService) { }
 
   ngOnInit(): void {
+
+
   }
 
 
@@ -18,6 +22,16 @@ export class AtajosComponent implements OnInit {
    junto con el boton correspondiente y el evento (en este caso el evento es el click del mouse)*/
   abrirExplorador(){
 this.configs.abrirExplorador();
+
+
+/*Se utilizo este metodo de prueba para retornar un string por consola
+,ya que al abrir un atajo o realizar una determinada tarea de Windows no estamos haciendolo y solo es a modo de prueba
+*/
+this.configs.seabrioexplorer().subscribe((resp:any)=>
+{console.log(resp);
+  this.respuesta=resp;
+
+});
   }
   abrirWord(){
     this.configs.abrirWord();

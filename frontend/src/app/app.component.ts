@@ -1,6 +1,9 @@
+
+import { RouterOutlet } from '@angular/router';
 import { ConfigService } from 'src/app/config/config.service';
 import { Component } from '@angular/core';
 import Swal from 'sweetalert2'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +22,7 @@ export class AppComponent {
     //this.configS.vaciarPapelera();
   }
 
+ 
 
 
 

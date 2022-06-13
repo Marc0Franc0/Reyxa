@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 })
 export class ConfigService {
 
-respuesta = '';
+respuesta = "";
 
   constructor(private http:HttpClient){
 
@@ -18,50 +18,40 @@ respuesta = '';
 
 abrirExplorador(){
   this.http
-  .get('http://localhost:8080/explorer', { responseType: 'text' })
-  .subscribe((resp: any) => {
-    this.respuesta = resp;
-  }),
+  .get('http://localhost:8080/explorer')
+  .subscribe(),
   (error: any) => {
     console.log(error);
   };
 }
 abrirNotas(){
   this.http
-  .get('http://localhost:8080/notepad', { responseType: 'text' })
-  .subscribe((resp: any) => {
-    this.respuesta = resp;
-  }),
+  .get('http://localhost:8080/notepad')
+  .subscribe(),
   (error: any) => {
     console.log(error);
   };
 }
 abrirPaint(){
   this.http
-  .get('http://localhost:8080/paint', { responseType: 'text' })
-  .subscribe((resp: any) => {
-    this.respuesta = resp;
-  }),
+  .get('http://localhost:8080/paint')
+  .subscribe(),
   (error: any) => {
     console.log(error);
   };
 }
 abrirCalculadora(){
   this.http
-  .get('http://localhost:8080/calculadora', { responseType: 'text' })
-  .subscribe((resp: any) => {
-    this.respuesta = resp;
-  }),
+  .get('http://localhost:8080/calculadora')
+  .subscribe(),
   (error: any) => {
     console.log(error);
   };
 }
 abrirWsp(){
   this.http
-  .get('http://localhost:8080/wsp', { responseType: 'text' })
-  .subscribe((resp: any) => {
-    this.respuesta = resp;
-  }),
+  .get('http://localhost:8080/wsp')
+  .subscribe(),
   (error: any) => {
     console.log(error);
   };
@@ -69,10 +59,8 @@ abrirWsp(){
 
 abrirWord(){
   this.http
-  .get('http://localhost:8080/word', { responseType: 'text' })
-  .subscribe((resp: any) => {
-    this.respuesta = resp;
-  }),
+  .get('http://localhost:8080/word')
+  .subscribe(),
   (error: any) => {
     console.log(error);
   };
@@ -80,80 +68,64 @@ abrirWord(){
 
 abrirSpotify(){
   this.http
-  .get('http://localhost:8080/spotify', { responseType: 'text' })
-  .subscribe((resp: any) => {
-    this.respuesta = resp;
-  }),
+  .get('http://localhost:8080/spotify')
+  .subscribe(),
   (error: any) => {
     console.log(error);
   };
 }
 abrirIg(){
   this.http
-  .get('http://localhost:8080/ig', { responseType: 'text' })
-  .subscribe((resp: any) => {
-    this.respuesta = resp;
-  }),
+  .get('http://localhost:8080/ig')
+  .subscribe(),
   (error: any) => {
     console.log(error);
   };
 }
 abrirYoutube(){
   this.http
-  .get('http://localhost:8080/youtube', { responseType: 'text' })
-  .subscribe((resp: any) => {
-    this.respuesta = resp;
-  }),
+  .get('http://localhost:8080/youtube')
+  .subscribe(),
   (error: any) => {
     console.log(error);
   };
 }
 abrirGmail(){
   this.http
-  .get('http://localhost:8080/gmail', { responseType: 'text' })
-  .subscribe((resp: any) => {
-    this.respuesta = resp;
-  }),
+  .get('http://localhost:8080/gmail')
+  .subscribe(),
   (error: any) => {
     console.log(error);
   };
 }
 abrirNoticias(){
   this.http
-  .get('http://localhost:8080/noticias', { responseType: 'text' })
-  .subscribe((resp: any) => {
-    this.respuesta = resp;
-  }),
+  .get('http://localhost:8080/noticias')
+  .subscribe(),
   (error: any) => {
     console.log(error);
   };
 }
 abrirClima(){
   this.http
-  .get('http://localhost:8080/clima', { responseType: 'text' })
-  .subscribe((resp: any) => {
-    this.respuesta = resp;
-  }),
+  .get('http://localhost:8080/clima')
+  .subscribe(),
   (error: any) => {
     console.log(error);
   };
 }
 abrirNetflix(){
   this.http
-  .get('http://localhost:8080/netflix', { responseType: 'text' })
-  .subscribe((resp: any) => {
-    this.respuesta = resp;
-  }),
+  .get('http://localhost:8080/netflix')
+  .subscribe(),
   (error: any) => {
     console.log(error);
   };
 }
 abrirConfig(){
   this.http
-  .get('http://localhost:8080/Wconfig', { responseType: 'text' })
-  .subscribe((resp: any) => {
-    this.respuesta = resp;
-  }),
+  .get('http://localhost:8080/Wconfig')
+  .subscribe(),
   (error: any) => {
     console.log(error);
   };
@@ -165,13 +137,16 @@ cerrarPrograma(){
 
 }
 
+seabrioexplorer(){
+  return this.http.get('http://localhost:8080/explorerConsole',{responseType:'text'});
+
+}
+
 vaciarPapelera(){
 
   this.http
-  .get('http://localhost:8080/papelera', { responseType: 'text' })
-  .subscribe((resp: any) => {
-    this.respuesta = resp;
-  }),
+  .get('http://localhost:8080/papelera' )
+  .subscribe(),
   (error: any) => {
     console.log(error);
   };
@@ -180,25 +155,46 @@ vaciarPapelera(){
 
 realizarAnalisis(){
   this.http
-  .get('http://localhost:8080/antivirus', { responseType: 'text' })
-  .subscribe((resp: any) => {
-    this.respuesta = resp;
-  }),
+  .get('http://localhost:8080/antivirus')
+  .subscribe(),
   (error: any) => {
     console.log(error);
   };
 }
 
-programarApagado(){
+/*programarApagado(){
 
+  this.http
+  .get('http://localhost:8080/apagado')
+  .subscribe(),
+  (error: any) => {
+    console.log(error);
+  };
+
+
+};*/
+
+programarApagado(tiempo:number){
+//this.http.post('http://localhost:8080/apagado',{ResponseType:Number}).subscribe();
+this.http.get('http://localhost:8080/programarapagado' ,{
+
+  params: {
+tiempo
+  }
+}).subscribe();
 
 }
+cancelarApagado(){
+  this.http.get('http://localhost:8080/cancelarapagado' ,{
+
+  }).subscribe();
+
+}
+
 abrirWupdate(){
   this.http
-  .get('http://localhost:8080/wupdate', { responseType: 'text' })
-  .subscribe((resp: any) => {
-    this.respuesta = resp;
-  }),
+  .get('http://localhost:8080/wupdate')
+  .subscribe(),
   (error: any) => {
     console.log(error);
   };

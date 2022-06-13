@@ -40,13 +40,31 @@
         </div>
         <div class="col" >
 
-          <button type ="button" class=" btn apagado "
-          data-bs-toggle="tooltip" data-bs-placement="bottom"
-          data-bs-custom-class="custom-tooltip"
-          title="Programar apagado de pc">4</button>
+
+
+
+          <div class="btn-group dropend " >
+            <button type="button" class="btn   apagado" data-bs-toggle="dropdown" aria-expanded="false">
+
+            </button>
+            <ul class="dropdown-menu "style="background-color:#1E4DEC ;">PROGRAMAR APAGADO
+              <div style="background-color:#1E4DEC; ">
+ <li><a class="dropdown-item" (click)=" programarApagado(3600)">1 hs</a></li>
+           <li><a class="dropdown-item" (click)="programarApagado(7200)">2 hs</a></li>
+           <li><a class="dropdown-item" (click)="programarApagado(10800)">3 hs</a></li>
+           <li><a class="dropdown-item" (click)="programarApagado(14400)">4 hs</a></li>
+           <li><a class="dropdown-item" (click)="cancelarApagado()">Cancelar apagado anterior</a></li>
+
+
+              </div>
+   </ul>
+          </div>
+
         </div>
 
-      </div>
+
+
+
 
     </div>
 

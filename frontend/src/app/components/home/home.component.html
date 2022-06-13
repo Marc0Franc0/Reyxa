@@ -1,13 +1,13 @@
-<div>
+<div >
 
   <div class="container-fluid img border text-center ">
 <div></div>
     <div class="row">
       <div class="col">
 
+        <a type ="nav-link" class="btn atajos " href="/atajos" >Atajos</a>
 
 
-          <a type ="nav-link " class="btn atajos  " href="/atajos" >Atajos</a>
       </div>
 
       <div class="col" >
@@ -25,7 +25,7 @@
       </div>
       <div class="col" >
 
-        <button type="button " class="btn salir  " (click)="cerrarPrograma()" >Salir</button>
+        <button type="button " class="btn salir  " [@transicion] = "state" (click)="cerrarPrograma()" >Salir</button>
       </div>
 
     </div>

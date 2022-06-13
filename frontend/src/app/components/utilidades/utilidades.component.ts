@@ -41,7 +41,7 @@ export class UtilidadesComponent implements OnInit {
       showCancelButton: true,
       position: 'top',
       confirmButtonText: 'Realizar análisis',
-      denyButtonText: `No realizar`,
+      denyButtonText: `No realizar análisis`,
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
@@ -54,13 +54,15 @@ export class UtilidadesComponent implements OnInit {
           didOpen: (toast) => {
             toast.addEventListener('mouseenter', Swal.stopTimer);
             toast.addEventListener('mouseleave', Swal.resumeTimer);
+
           },
+
         });
+
 
         this.configService.realizarAnalisis();
 
         Toast.fire({
-          icon: 'success',
           title: 'Realizando análisis con Windows defender',
         });
       } else if (result.isDenied) {
@@ -68,11 +70,39 @@ export class UtilidadesComponent implements OnInit {
       }
     });
 
+
   }
   abrirWupdate(){
 
     this.configService.abrirWupdate();
+  }
 
+  llevarTiempo(tiempo:3600){
+
+  }
+
+  programarApagado(tiempo:number){
+
+
+
+    this.configService.programarApagado(tiempo);
+    tiempohs : Number
+    tiempohs : tiempo/3600;
+
+
+
+    Swal.fire({
+      position: 'top',
+      icon: 'success',
+      title: 'Se programo el pagado de '+ tiempo +'hs',
+      showConfirmButton: false,
+      timer: 1500
+    })
+
+  }
+
+  cancelarApagado(){
+this.configService.cancelarApagado();
   }
 
 }

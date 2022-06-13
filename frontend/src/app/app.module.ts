@@ -11,6 +11,7 @@ import { Router, RouterModule, Routes } from '@angular/router';
 import { UtilidadesComponent } from './components/utilidades/utilidades.component';
 import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -25,8 +26,11 @@ import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
   ],
   imports: [
     BrowserModule,
+     BrowserAnimationsModule,
     AppRoutingModule,
-    HttpClientModule,RouterModule
+    HttpClientModule,
+    RouterModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
