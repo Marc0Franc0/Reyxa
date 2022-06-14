@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { ConfigService } from 'src/app/config/config.service';
+import { HttpService } from 'src/app/services/http-service/http.service';
 @Component({
   selector: 'atajos',
   templateUrl: './atajos.component.html',
@@ -10,7 +10,7 @@ import { ConfigService } from 'src/app/config/config.service';
 export class AtajosComponent implements OnInit {
   respuesta ="";
 
-  constructor(private configs:ConfigService) { }
+  constructor(private httpservice:HttpService) { }
 
   ngOnInit(): void {
 
@@ -21,63 +21,63 @@ export class AtajosComponent implements OnInit {
   /*Cada uno de estos metodos son llamados en el template del componente,
    junto con el boton correspondiente y el evento (en este caso el evento es el click del mouse)*/
   abrirExplorador(){
-this.configs.abrirExplorador();
+this.httpservice.abrirExplorador();
 
 
 /*Se utilizo este metodo de prueba para retornar un string por consola
 ,ya que al abrir un atajo o realizar una determinada tarea de Windows no estamos haciendolo y solo es a modo de prueba
 */
-this.configs.seabrioexplorer().subscribe((resp:any)=>
+this.httpservice.seabrioexplorer().subscribe((resp:any)=>
 {console.log(resp);
   this.respuesta=resp;
 
 });
   }
   abrirWord(){
-    this.configs.abrirWord();
+    this.httpservice.abrirWord();
       }
   abrirNotas(){
-    this.configs.abrirNotas();
+    this.httpservice.abrirNotas();
   }
   abrirPaint(){
-    this.configs.abrirPaint();
+    this.httpservice.abrirPaint();
   }
   abrirCalculadora(){
 
-    this.configs.abrirCalculadora();
+    this.httpservice.abrirCalculadora();
   }
   abrirWsp(){
-this.configs.abrirWsp();
+this.httpservice.abrirWsp();
   }
   abrirSpotify(){
-this.configs.abrirSpotify();
+this.httpservice.abrirSpotify();
   }
   abrirIg(){
-this.configs.abrirIg();
+this.httpservice.abrirIg();
   }
 
 
   abrirYoutube(){
-this.configs.abrirYoutube();
+this.httpservice.abrirYoutube();
   }
 
 
 
   abrirGmail(){
 
-    this.configs.abrirGmail();
+    this.httpservice.abrirGmail();
   }
   abrirNoticias(){
-this.configs.abrirNoticias();
+this.httpservice.abrirNoticias();
   }
   abrirClima(){
-this.configs.abrirClima();
+this.httpservice.abrirClima();
   }
   abrirNetflix(){
-this.configs.abrirNetflix();
+this.httpservice.abrirNetflix();
   }
   abrirConfig(){
-this.configs.abrirConfig();
+this.httpservice.abrirConfig();
   }
 
 }

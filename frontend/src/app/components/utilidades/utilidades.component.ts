@@ -1,4 +1,4 @@
-import { ConfigService } from './../../config/config.service';
+import { HttpService } from '../../services/http-service/http.service';
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 
@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
 export class UtilidadesComponent implements OnInit {
   respuesta = "";
 
-  constructor(private configService: ConfigService) {}
+  constructor(private httpService: HttpService) {}
 
   ngOnInit(): void {}
 
@@ -35,7 +35,7 @@ export class UtilidadesComponent implements OnInit {
           timer: 2200
 
         }),
-          this.configService.vaciarPapelera();
+          this.httpService.vaciarPapelera();
       } else if (result.isDenied) {
         Swal.fire({
 
@@ -112,7 +112,7 @@ export class UtilidadesComponent implements OnInit {
 
   abrirWupdate(){
 
-    this.configService.abrirWupdate();
+    this.httpService.abrirWupdate();
   }
 
 
@@ -121,7 +121,7 @@ export class UtilidadesComponent implements OnInit {
 
 
 
-    this.configService.programarApagado(tiempo);
+    this.httpService.programarApagado(tiempo);
 
 
     let tiempohs= new Number(tiempo/3600);
@@ -141,7 +141,7 @@ export class UtilidadesComponent implements OnInit {
 
   cancelarApagado(){
 
-this.configService.cancelarApagado();
+this.httpService.cancelarApagado();
 Swal.fire({
 
 

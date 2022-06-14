@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { ConfigService } from 'src/app/config/config.service';
+import { HttpService } from 'src/app/services/http-service/http.service';
 import { trigger,state,style,animate,transition,query,animateChild,group,animation } from '@angular/animations';
 import { RouterOutlet } from '@angular/router';
 @Component({
@@ -81,7 +81,7 @@ transform:'scale(1.2)'
 export class HomeComponent implements OnInit {
 
   public state:string = "inactive";
-  constructor(private configs:ConfigService) { }
+  constructor(private httpService:HttpService) { }
 
   ngOnInit(): void {
   }

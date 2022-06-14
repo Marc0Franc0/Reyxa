@@ -1,6 +1,6 @@
 
 import { RouterOutlet } from '@angular/router';
-import { ConfigService } from 'src/app/config/config.service';
+import { HttpService } from 'src/app/services/http-service/http.service';
 import { Component } from '@angular/core';
 import Swal from 'sweetalert2'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,7 +14,7 @@ export class AppComponent {
   title = 'Header 1, título de la página';
   unParrafo = 'Este es un párrafo de muestra.';
   respuesta = "";
-  constructor(private configS:ConfigService)
+  constructor(private httpservice:HttpService)
   {}
 
   ngOnInit(){
@@ -22,7 +22,7 @@ export class AppComponent {
     //this.configS.vaciarPapelera();
   }
 
- 
+
 
 
 

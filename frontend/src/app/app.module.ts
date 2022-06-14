@@ -12,7 +12,7 @@ import { UtilidadesComponent } from './components/utilidades/utilidades.componen
 import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { FormsModule } from '@angular/forms';
 
 //Lo que hay instalar para que funcione correctamente todo el proyecto
 //Tener previamente instalado en el pc node.js y jdk
@@ -34,7 +34,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
      BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    FormsModule
 
   ],
   providers: [],
