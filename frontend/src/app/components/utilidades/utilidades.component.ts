@@ -19,16 +19,34 @@ export class UtilidadesComponent implements OnInit {
       title: '¿Desea vaciar la papelera?',
       showDenyButton: true,
       showCancelButton: true,
-      position: 'top',
+      position: 'center',
       confirmButtonText: 'Vaciar papalera',
       denyButtonText: `No vaciar papelera`,
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-        Swal.fire('Se vació la papelera con éxito!', '', 'success'),
+        Swal.fire({
+
+
+          position: 'top',
+          icon: 'success',
+          title: 'Se vació la papelera con éxito',
+          showConfirmButton: false,
+          timer: 2200
+
+        }),
           this.configService.vaciarPapelera();
       } else if (result.isDenied) {
-        Swal.fire('No se vació la papelera', '', 'info');
+        Swal.fire({
+
+
+          position: 'top',
+          icon: 'info',
+          title: 'No se vació la papelera',
+          showConfirmButton: false,
+          timer: 2200
+
+        })
       }
     });
   }
@@ -39,70 +57,101 @@ export class UtilidadesComponent implements OnInit {
       title: '¿Desea realizar un análisis con Windows defender?',
       showDenyButton: true,
       showCancelButton: true,
-      position: 'top',
+      position: 'center',
       confirmButtonText: 'Realizar análisis',
       denyButtonText: `No realizar análisis`,
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-        const Toast = Swal.mixin({
-          toast: true,
+        let timerInterval
+        Swal.fire({
+          title: 'Realizando análisis con Windows Defender',
+          //html: 'I will close in <b></b> milliseconds.',
           position: 'top',
-          showConfirmButton: false,
-          timer: 7000,
+          timer: 9000,
           timerProgressBar: true,
-          didOpen: (toast) => {
-            toast.addEventListener('mouseenter', Swal.stopTimer);
-            toast.addEventListener('mouseleave', Swal.resumeTimer);
+          didOpen: () => {
+            Swal.showLoading()
+            timerInterval = setInterval(() => {
 
+            }, 100)
           },
+          willClose: () => {
 
-        });
+          }
+        }).then((result) => {
+          /* Read more about handling dismissals below */
+          if (result.dismiss === Swal.DismissReason.timer) {
+            Swal.fire({
 
 
-        this.configService.realizarAnalisis();
+              position: 'top',
+              icon: 'success',
+              title: 'Se realizo el análisis correctamente',
+              showConfirmButton: false,
+              timer: 1500
 
-        Toast.fire({
-          title: 'Realizando análisis con Windows defender',
-        });
-      } else if (result.isDenied) {
-        Swal.fire('No se realizo el análisis', '', 'info');
+            })
+          }
+        })} else if (result.isDenied) {
+          Swal.fire({
+
+
+            position: 'top',
+            icon: 'info',
+            title: 'No se realizo el análisis',
+            showConfirmButton: false,
+            timer: 2200
+
+          })
       }
     });
 
 
   }
+
   abrirWupdate(){
 
     this.configService.abrirWupdate();
   }
 
-  llevarTiempo(tiempo:3600){
 
-  }
 
   programarApagado(tiempo:number){
 
 
 
     this.configService.programarApagado(tiempo);
-    tiempohs : Number
-    tiempohs : tiempo/3600;
 
 
-
+    let tiempohs= new Number(tiempo/3600);
     Swal.fire({
+
+
       position: 'top',
       icon: 'success',
-      title: 'Se programo el pagado de '+ tiempo +'hs',
+      title: 'Se programo un apagado en '+ tiempohs +'hs',
       showConfirmButton: false,
-      timer: 1500
+      timer: 2500
+
     })
+
 
   }
 
   cancelarApagado(){
+
 this.configService.cancelarApagado();
+Swal.fire({
+
+
+  position: 'top',
+  icon: 'success',
+  title: 'Se cancelo el apagado programado anteriormente',
+  showConfirmButton: false,
+  timer: 2500
+})
+
   }
 
 }

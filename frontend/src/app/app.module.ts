@@ -14,6 +14,11 @@ import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
+//Lo que hay instalar para que funcione correctamente todo el proyecto
+//Tener previamente instalado en el pc node.js y jdk
+//cd frontend -> npm install
+ //cd frontend -> npm install bootstrap
+ //cd frontend -> npm install sweetalert2
 @NgModule({
   declarations: [
     AppComponent,

@@ -1,3 +1,4 @@
+import { AcercaDeComponent } from './components/acerca-de/acerca-de.component';
 
 //Modules
 
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: '',component: HomeComponent},{
   path:'atajos',component:AtajosComponent},
 {path:'utilidades',component:UtilidadesComponent},
+{path:'acercaDe',component:AcercaDeComponent},
 
 
 ];

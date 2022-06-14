@@ -14,12 +14,12 @@
 background-color: transparent;
 width: 100px;
 height: 40px;
-font-size: 140%;
+font-size: 160%;
 //fuente equivalente a 20
 font-family: Arial;
 font-weight: bold;
-margin-top: 230px;
-margin-left: 90px;
+margin-top: 160px;
+margin-left: 0px;
 border-style: none;
 }
 .utilidades{
@@ -27,13 +27,13 @@ border-style: none;
   background-color: transparent;
   width: 140px;
 height: 40px;
-font-size: 140%;
+font-size: 160%;
   color:white;
   //fuente equivalente a 20
   font-family: Arial;
   font-weight: bold;
-margin-right: 70px;
-  margin-top: 230px;
+margin-left: 50px;
+margin-top:175px;
   border-style: none;
   }
   .acerca-de{
@@ -42,25 +42,13 @@ margin-right: 70px;
     color:white;
     width: 150px;
     height: 40px;
-    font-size: 140%;
+    font-size: 160%;
     //fuente equivalente a 20
     font-family: Arial;
     font-weight: bold;
-margin-left: 90px;
+margin-left: -50px;
 border-style: none;
-margin-top: 20px;
+margin-top:175px;
 
     }
-    .salir{
-      color:white;
-      background-color: transparent;
-      width: 100px;
-      height: 40px;
-      font-size: 140%;
-      //fuente equivalente a 20
-      font-family: Arial;
-      font-weight: bold;
-margin-right: 100px;
-margin-top: 20px;
-border-style: none;
-      }
+
