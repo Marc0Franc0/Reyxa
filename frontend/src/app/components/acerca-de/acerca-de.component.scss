@@ -20,24 +20,28 @@
 
 
 }
-.reyxa{
-
- margin-left: 92px;
+.panel{
+  margin-left: 180px;
+width:370px;
+max-height: 440px;
  color: white;
- margin-top: 80px;
+ margin-top: 52px;
  background-color:rgb(133, 131, 235);
+ -moz-border-radius: 7px;
+ -webkit-border-radius: 7px;
+}
+.botones{
+ background-color:rgb(133, 131, 235);
+ color: white;
+ font-family: Arial;
+ font-weight: bolder;
 
 }
-.desarrolladores{
+.cajatexto{
+ background-color:rgb(133, 131, 235);
+ color: white;
+ font-family: Arial;
+max-height: 208px;
 
-  margin-left: 92px;
-  color: white;
-  background-color:rgb(133, 131, 235);
 
- }
- .contacto{
-
-  margin-left: 92px;
-  color: white;
-  background-color:rgb(133, 131, 235);
- }
+}

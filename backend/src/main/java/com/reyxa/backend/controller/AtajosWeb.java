@@ -15,7 +15,7 @@ public class AtajosWeb extends Atajos {
         // abrir página de clima
         url = "https://www.smn.gob.ar/";
 
-        ejecutarCmd(url);
+        service.ejecutarCmd("start "+url);
     }
 
     @GetMapping("/noticias")
@@ -23,7 +23,7 @@ public class AtajosWeb extends Atajos {
         // abrir página de noticias
         url = "https://news.google.com/topstories?hl=es-419&gl=US&ceid=US:es-419";
 
-        ejecutarCmd(url);
+        service.ejecutarCmd("start "+url);
     }
 
     @GetMapping("/youtube")
@@ -31,7 +31,7 @@ public class AtajosWeb extends Atajos {
         // abrir Youtube
         url = "https://www.youtube.com/";
 
-        ejecutarCmd(url);
+        service.ejecutarCmd("start "+url);
     }
 
     @GetMapping("/twitch")
@@ -39,7 +39,7 @@ public class AtajosWeb extends Atajos {
         // abrir Twitch
         url = "https://www.twitch.tv/";
 
-        ejecutarCmd(url);
+        service.ejecutarCmd("start "+url);
     }
 
     @GetMapping("/ig")
@@ -47,7 +47,7 @@ public class AtajosWeb extends Atajos {
         // abrir Instagram Web
         url = "https://www.instagram.com/?theme=dark     ";
 
-        ejecutarCmd(url);
+        service.ejecutarCmd("start "+url);
     }
 
     @GetMapping("/wsp")
@@ -55,7 +55,7 @@ public class AtajosWeb extends Atajos {
         // abrir Whatsapp Web
         url = "https://web.whatsapp.com/";
 
-        ejecutarCmd(url);
+        service.ejecutarCmd("start "+url);
     }
 
     @GetMapping("/gmail")
@@ -63,7 +63,7 @@ public class AtajosWeb extends Atajos {
         // abrir Gmail
         url = "https://mail.google.com/mail/u/0/#inbox";
 
-        ejecutarCmd(url);
+        service.ejecutarCmd("start "+url);
     }
 
     @GetMapping("/netflix")
@@ -71,7 +71,7 @@ public class AtajosWeb extends Atajos {
         // abrir Netflix
         url = "https://www.netflix.com/ar/Login";
 
-        ejecutarCmd(url);
+        service.ejecutarCmd("start "+url);
     }
 
     @GetMapping("/spotify")
@@ -79,28 +79,9 @@ public class AtajosWeb extends Atajos {
         // abrir Spotify Web
         url = "https://open.spotify.com/";
 
-        ejecutarCmd(url);
+        service.ejecutarCmd("start "+url);
     }
 
 
-     /* Implementaciones a Incorporar:
-     
-    - Añadir un link de una playlist con música lofi
-
-     --> ABRIR GOOGLE ->No hace falta pq es lo mismo que abrir una nueva ventana en el navegador
-      public static void abrirBrowser() {
-        // abrir Google
-        url = "https://www.google.com/";
     
-        ejecutarComando(url); 
-    }
-     
-    --> ABRIR TRADUCTOR -> Ya tiene extension el navegador 
-    public static void abrirTraductor() {
-        // abrir Google Traductor
-        url = "https://translate.google.com.ar/?hl=es";
-
-      ejecutarComando(url); 
-    }
-    */
 }

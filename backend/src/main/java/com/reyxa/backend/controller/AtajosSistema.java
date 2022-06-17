@@ -7,12 +7,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class AtajosSistema extends Atajos {
      
      //private static String programa;
-
      @GetMapping("/explorer")
      public static void abrirExplorador() {
           // abrir explorador de Windows
           programa = "explorer";
-          ejecutarCmd(programa);
+          service.ejecutarCmd("start "+programa);
 
      }
      @GetMapping("/explorerConsole")
@@ -26,7 +25,7 @@ return "Se abrio el explolorador de archivos";
      public static void abrirBnotas() {
           // abrir block de notas
           programa = "notepad";
-          ejecutarCmd(programa);
+          service.ejecutarCmd("start "+programa);
 
      }
 
@@ -34,7 +33,7 @@ return "Se abrio el explolorador de archivos";
      public static void abrirConfig() {
           // abrir configuración de Windows
           programa = "ms-settings:";
-          ejecutarCmd(programa);
+          service.ejecutarCmd("start "+programa);
 
      }
 
@@ -42,15 +41,14 @@ return "Se abrio el explolorador de archivos";
      public static void abrirTienda() {
           // abrir Microsoft Store
           programa = "ms-windows-store:";
-          ejecutarCmd(programa);
-
+          service.ejecutarCmd("start "+programa);
      }
 
      @GetMapping("/word")
      public static void abrirWord() {
           // abrir Microsoft Store
           programa = "winword";
-          ejecutarCmd(programa);
+          service.ejecutarCmd("start "+programa);
 
      }
   
@@ -66,14 +64,14 @@ return "Se abrio el explolorador de archivos";
      public static void abrirDesfrag() {
          // abrir Desfragmentar y Optimizar Unidades
          programa = "dfrgui.exe";
-         ejecutarCmd(programa);
+         service.ejecutarCmd("start "+programa);
      }
 
      @GetMapping("/paint")
      public static void abrirPaint() {
           // abrir paint
           programa = "mspaint";
-          ejecutarCmd(programa);
+          service.ejecutarCmd("start "+programa);
 
      }
 
@@ -81,7 +79,7 @@ return "Se abrio el explolorador de archivos";
      public static void abrirCalculadora() {
           // abrir calculadora
           programa = "calc";
-          ejecutarCmd(programa);
+          service.ejecutarCmd("start "+programa);
 
      }
 
@@ -89,7 +87,6 @@ return "Se abrio el explolorador de archivos";
      public static void abrirPanelControl() {
           // abrir panel de control
           programa = "control";
-          ejecutarCmd(programa);
-
+          service.ejecutarCmd("start "+programa);
      }
 }
