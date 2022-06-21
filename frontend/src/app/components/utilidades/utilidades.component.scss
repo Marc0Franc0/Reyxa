@@ -18,6 +18,7 @@ display: flex;
   font-family: Arial;
   font-weight: bold;
   font-size: 125%;
+  border-style: none;
 
 
 }
@@ -34,7 +35,7 @@ display: flex;
   font-weight: bold;
   margin-top: 100px;
   margin-left: 210px;
-
+  border-style: none;
 }
 
 .defender {
@@ -46,7 +47,7 @@ display: flex;
   font-weight: bold;
   margin-left: 70px;
   margin-top: 100px;
-
+  border-style: none;
 }
 .custom-tooltip {
   --bs-tooltip-bg: var(--bs-primary);
@@ -61,7 +62,7 @@ display: flex;
   font-weight: bold;
   margin-top: 80px;
   margin-left: 200px;
-
+  border-style: none;
 }
 
 .apagado {
@@ -74,5 +75,5 @@ display: flex;
   font-weight: bold;
   margin-left: 72px;
   margin-top:  80px;
-
+  border-style: none;
 }
