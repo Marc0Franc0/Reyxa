@@ -1,47 +1,71 @@
 package com.reyxa.backend.controller;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+
+//import org.springframework.web.bind.annotation.PathVariable;
 //import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.reyxa.backend.model.Comando;
+import com.reyxa.backend.model.ComandoSistema;
 import com.reyxa.backend.model.DescripcionComando;
-import com.reyxa.backend.service.DescComandoService;
-import com.reyxa.backend.service.ComandoService;
+
 
 @RestController
 public class AtajosSistema extends Asistente {
+    DescripcionComando descripcionComando = new DescripcionComando();
+    ComandoSistema Comando = new ComandoSistema();
+  
 
-    @Autowired
-    private ComandoService ComandoService;
-    // private static String programa;
-    @Autowired
-    private DescComandoService DescComandoService;
+    //List<Comando> comandos = ComandoService.listaComandos();
 
-    @GetMapping("/getcomandos")
-    public List<Comando> getcomandos() {
+   //List<DescripcionComando> DescripcionComandos =  DescComandoService.listadescripcion();
 
-        return ComandoService.listaComandos();
-
+    
+    /*@GetMapping("/explorer")
+    public void abrirExploradorid() {
+   String descripcion = DescComandoService.busDescripcionComandos(0).getDescripcion();
+    ejecutarCmd(descripcion);
+    }*/
+    
+    @GetMapping("/notepad")
+    public void abrirNotepad() {
+      
+   String descripcion = comandoSistemaService.getcomando(1).getId_descripcion().getDescripcion();
+    ejecutarCmd(descripcion);
+    }
+    @GetMapping("/explorer")
+    public void abrirExplorer() {
+   String descripcion = comandoSistemaService.getcomando(2).getId_descripcion().getDescripcion();
+    ejecutarCmd(descripcion);
     }
 
-   
-    @GetMapping("/getdesc")
-    public List<DescripcionComando> getDescripcionComandos() {
 
-        return DescComandoService.listadescripcion();
+    @GetMapping("/paint")
+    public void abrirPaint() {
+   String descripcion = comandoSistemaService.getcomando(3).getId_descripcion().getDescripcion();
+    ejecutarCmd(descripcion);
+    }
 
+    @GetMapping("/calculadora")
+    public void abrirCalculadora() {
+   String descripcion = comandoSistemaService.getcomando(4).getId_descripcion().getDescripcion();
+    ejecutarCmd(descripcion);
+    }
+
+
+    @GetMapping("/Wconfig")
+    public void abrirConfig() {
+   String descripcion = comandoSistemaService.getcomando(5).getId_descripcion().getDescripcion();
+    ejecutarCmd(descripcion);
     }
     /*@GetMapping("/explorer2")
-    public  void abrirExplorador2() {
-       ejecutarCmd(ComandoService.abrirExplorador().getDescripcion());
+    public void abrirExplorador2() {
 
+        descripcionComando.setDescripcion("start explorer.exe");
+   ejecutarCmd(descripcionComando.getDescripcion());
     }*/
 
-    @GetMapping("/explorer")
+   /*  @GetMapping("/explorer")
     public static void abrirExplorador() {
         // abrir explorador de Windows
         programa = "explorer";
@@ -56,7 +80,7 @@ public class AtajosSistema extends Asistente {
         return "Se abrio el explolorador de archivos";
     }
 
-    @GetMapping("/notepad")
+    /*@GetMapping("/notepad")
     public static void abrirBnotas() {
         // abrir block de notas
         programa = "notepad";
@@ -102,5 +126,5 @@ public class AtajosSistema extends Asistente {
         programa = "control";
         ejecutarCmd("start " + programa);
 
-    }
+    }*/
 }
