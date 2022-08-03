@@ -1,4 +1,4 @@
-package com.reyxa.backend.model;
+package com.reyxa.backend.model.comandos;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,11 +13,11 @@ import javax.persistence.ForeignKey;
 import lombok.Getter;
 import lombok.Setter;
 
-    @Entity
-    @Table(name = "comandos_web")
-    public class ComandoWeb {
-
-        @Getter
+@Entity
+@Table(name = "comandos_utilidad")
+public class ComandoUtilidad {
+    
+    @Getter
         @Setter
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,9 +35,7 @@ import lombok.Setter;
         @JoinColumn(name = "id_descripcion", nullable = false, foreignKey = @ForeignKey(name = "fkdesc"))
         private DescripcionComando id_descripcion;
 
-        public ComandoWeb() {
+        public ComandoUtilidad() {
 
         }
     }
-
-

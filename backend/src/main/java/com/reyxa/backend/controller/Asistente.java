@@ -3,42 +3,44 @@ package com.reyxa.backend.controller;
 import java.io.IOException;
 import java.io.InputStream;
 
-//import com.reyxa.backend.service.DescComandoService;
-import com.reyxa.backend.service.ComandoSistemaService;
-import com.reyxa.backend.service.ComandoUtilidadService;
-import com.reyxa.backend.service.ComandoWebService;
+import com.reyxa.backend.service.comandos.ComandoSistemaService;
+import com.reyxa.backend.service.comandos.ComandoUtilidadService;
+import com.reyxa.backend.service.comandos.ComandoWebService;
+import com.reyxa.backend.service.opiniones.OpinionService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class Asistente {
 
-    //Atributos para las clase AtajosSistema y AtajosWeb
-    public static String programa;
-    public static String url;
+    private static Runtime runtime = Runtime.getRuntime();
+    private static InputStream in = null;
 
-    //Atributos para la clase utilidades
-    public static String comando;
+    /*Atributos para las clase AtajosSistema y AtajosWeb
+    public  String programa;
+    public  String url;
+
+    Atributos para la clase utilidades
+    public static String comando;*/
 
     //Métodos utlizados en la clase AtajosSistema, AtajosWeb y Utilidades
     public static void ejecutarCmd(Object object) {
-        Runtime runtime = Runtime.getRuntime();
-        InputStream in = null;
+      
         try {
             Process exec = runtime.exec("cmd.exe /c " + object); // Ejecutar el comando
 
             in = exec.getInputStream(); // Obtener el resultado de la ejecución
-            exec.getOutputStream().close(); // Cerrar la consola de segundo plano
+          exec.getOutputStream().close(); // Cerrar la consola de segundo plano
         } catch (IOException e) {
             e.printStackTrace();
 
         }
     }
-    public static void ejecutarPowerShell(String comando) {
-        Runtime runtime = Runtime.getRuntime();
-        InputStream in = null;
+    public static void ejecutarPowerShell(Object object) {
+        //Runtime runtime = Runtime.getRuntime();
+        //InputStream in = null;
     
         try {
-            Process exec = runtime.exec("powershell.exe " + comando); // Ejecutar el comando
+            Process exec = runtime.exec("powershell.exe " + object); // Ejecutar el comando
             in = exec.getInputStream(); // Obtener el resultado de la ejecución
             exec.getOutputStream().close();// Cerrar la consola de segundo plano
         } catch (IOException e) {
@@ -55,5 +57,7 @@ public class Asistente {
   @Autowired
   public ComandoWebService comandoWebService;
 
+  @Autowired
+  public OpinionService opinionService;
 
 }

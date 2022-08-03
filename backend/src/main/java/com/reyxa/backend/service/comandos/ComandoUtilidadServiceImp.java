@@ -1,11 +1,13 @@
-package com.reyxa.backend.service;
+package com.reyxa.backend.service.comandos;
+
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import com.reyxa.backend.model.ComandoUtilidad;
-import com.reyxa.backend.repository.ComandoUtilidadRepository;
+import com.reyxa.backend.model.comandos.ComandoUtilidad;
+import com.reyxa.backend.repository.comandos.ComandoUtilidadRepository;
 
 @Service
 public class ComandoUtilidadServiceImp implements ComandoUtilidadService {
@@ -17,6 +19,12 @@ ComandoUtilidadRepository repository;
     public ComandoUtilidad getcomando(@PathVariable int id) {
       
         return repository.getReferenceById(id);
+    }
+
+    @Override
+    public List<ComandoUtilidad> listaComandos() {
+        
+        return repository.findAll();
     }
     
 }

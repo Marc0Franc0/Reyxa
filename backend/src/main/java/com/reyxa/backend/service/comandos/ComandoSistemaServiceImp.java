@@ -1,4 +1,4 @@
-package com.reyxa.backend.service;
+package com.reyxa.backend.service.comandos;
 
 import java.util.List;
 
@@ -6,11 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
-//import com.mysql.cj.x.protobuf.MysqlxCrud.Collection;
-import com.reyxa.backend.model.ComandoSistema;
-//import com.reyxa.backend.model.DescripcionComando;
-import com.reyxa.backend.repository.ComandoSistemaRepository;
-//import com.reyxa.backend.repository.DescComandoRepository;
+import com.reyxa.backend.model.comandos.ComandoSistema;
+import com.reyxa.backend.repository.comandos.ComandoSistemaRepository;
 
 
 @Service
@@ -30,6 +27,12 @@ public class ComandoSistemaServiceImp  implements ComandoSistemaService{
     public ComandoSistema getcomando(@PathVariable int id) {
       
         return repository.getReferenceById(id);
+    }
+
+    @Override
+    public String hola() {
+  
+        return " hola";
     }
 
     

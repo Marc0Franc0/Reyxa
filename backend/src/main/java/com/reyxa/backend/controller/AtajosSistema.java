@@ -1,20 +1,24 @@
 package com.reyxa.backend.controller;
 
+
+
 import org.springframework.web.bind.annotation.GetMapping;
+
 
 //import org.springframework.web.bind.annotation.PathVariable;
 //import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.reyxa.backend.model.ComandoSistema;
-import com.reyxa.backend.model.DescripcionComando;
+import com.reyxa.backend.model.comandos.ComandoSistema;
+import com.reyxa.backend.model.comandos.DescripcionComando;
+
 
 
 @RestController
 public class AtajosSistema extends Asistente {
     DescripcionComando descripcionComando = new DescripcionComando();
     ComandoSistema Comando = new ComandoSistema();
-  
+
 
     //List<Comando> comandos = ComandoService.listaComandos();
 
@@ -32,6 +36,7 @@ public class AtajosSistema extends Asistente {
       
    String descripcion = comandoSistemaService.getcomando(1).getId_descripcion().getDescripcion();
     ejecutarCmd(descripcion);
+    
     }
     @GetMapping("/explorer")
     public void abrirExplorer() {
@@ -45,6 +50,7 @@ public class AtajosSistema extends Asistente {
    String descripcion = comandoSistemaService.getcomando(3).getId_descripcion().getDescripcion();
     ejecutarCmd(descripcion);
     }
+   
 
     @GetMapping("/calculadora")
     public void abrirCalculadora() {

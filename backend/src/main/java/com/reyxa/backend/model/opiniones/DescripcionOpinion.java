@@ -1,4 +1,4 @@
-package com.reyxa.backend.model;
+package com.reyxa.backend.model.opiniones;
 
 //import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -14,33 +14,19 @@ import javax.persistence.Table;
 
 import lombok.Getter;
 import lombok.Setter;
-/*
- * Esta clase representa la tabla de los comandos que va a estar representada en la base de datos
- */
 @Entity
-@Table(name = "descripcion_comandos")
-public class DescripcionComando {
-
+@Table(name = "descripcion_opiniones")
+public class DescripcionOpinion {
+    
     @Getter
     @Setter
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_descripcion")
     private int id_descripcion;
 
     @Getter
     @Setter
-    @Column(name = "descripcion", length = 80)
+    @Column(name = "descripcion", length = 40)
     private String descripcion;
-
-    /*@Getter
-    @Setter
-    @OneToOne
-    @JoinColumn(name = "id_comando",nullable = false)
-    private Comando comando;
-*/
-    public DescripcionComando() {
-
-    }
-
 }
