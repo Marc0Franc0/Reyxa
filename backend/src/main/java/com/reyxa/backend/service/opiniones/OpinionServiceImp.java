@@ -5,7 +5,6 @@ import java.util.List;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,11 +27,6 @@ public class OpinionServiceImp implements OpinionService {
     Opinion opinion= new Opinion() ;
     DescripcionOpinion descOpinion = new DescripcionOpinion() ;
     
-    
-   
-@Override
-@Query(value = "SELECT * FROM registros WHERE NombreCliente like :nombreabuscar", nativeQuery = true)
-    public void modificarOpinion(@Param("nombrebuscar") String usuario){   }; 
 
     @Override
     public List<Opinion> listaOpiniones() {
@@ -41,7 +35,7 @@ public class OpinionServiceImp implements OpinionService {
     }
 
     @Override
-    public Opinion getopinion(@PathVariable int id) {
+    public Opinion getopinionbyid(@PathVariable int id) {
         // TODO Auto-generated method stub
         return opinionRepository.getReferenceById(id);
     }
@@ -66,9 +60,7 @@ public class OpinionServiceImp implements OpinionService {
     }
 
     @Override
-    public void borrarOpinion(  @PathVariable int id) {
-        
-        
+    public void borrarOpinionbyid(  @PathVariable int id) {
 
     borrardesc(  opinionRepository.getReferenceById(id).getId_descripcion().getId_descripcion());
     opinionRepository.deleteById(id);
@@ -80,7 +72,11 @@ public class OpinionServiceImp implements OpinionService {
     descopinionRepository.deleteById(id);
     }
 
+    @Override
+    public void modificarOpinion(@Param("nombrebuscar") String usuario){  
 
+        
+     }; 
     @Override
     public void modificarDesc(String usuario) {
         // TODO Auto-generated method stub

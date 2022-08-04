@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.reyxa.backend.Asistente;
+
 /* Marca la clase como un controlador donde cada método devuelve 
 un objeto de dominio en lugar de una vista. */
 

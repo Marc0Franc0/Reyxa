@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.reyxa.backend.Asistente;
 import com.reyxa.backend.model.opiniones.DescripcionOpinion;
 import com.reyxa.backend.model.opiniones.Opinion;
 import com.reyxa.backend.repository.opiniones.DescOpinionRepository;
 import com.reyxa.backend.repository.opiniones.OpinionRepository;
-import com.reyxa.backend.service.opiniones.OpinionService;
 
 
 
@@ -42,24 +42,20 @@ DescOpinionRepository repository2;
     }
 
     @DeleteMapping(path = "borraropinion")
-  public void borrarregistro( @RequestParam  int id) {
+  public void borrarOpinion( @RequestParam  int id) {
 
-   opinionService.borrarOpinion(id);
+   opinionService.borrarOpinionbyid(id);
   }
+
+
    @PutMapping(path = "cambiaropinion")
    public void modificarOpinion( @RequestParam String usuario) {
 
-    String nombreabuscar = "%" + usuario + "%";
-   
- opinionService.modificarOpinion(nombreabuscar);;
 
   }
   @PutMapping(path = "buscaropinion")
   public void buscaropinion( @RequestParam String usuario) {
 
-   String nombreabuscar = "%" + usuario + "%";
-  
-opinionService.modificarOpinion(nombreabuscar);;
 
  }
 

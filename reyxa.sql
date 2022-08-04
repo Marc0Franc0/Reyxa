@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-08-2022 a las 17:44:49
+-- Tiempo de generación: 04-08-2022 a las 02:24:34
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -37,7 +37,8 @@ CREATE TABLE `descripcion_opiniones` (
 --
 
 INSERT INTO `descripcion_opiniones` (`id_descripcion`, `descripcion`) VALUES
-(10, 'NASHEeeeeeeeeeeeeeeeeeeeeeeeee');
+(1, 'Nashe'),
+(2, 'God');
 
 --
 -- Índices para tablas volcadas
@@ -48,6 +49,16 @@ INSERT INTO `descripcion_opiniones` (`id_descripcion`, `descripcion`) VALUES
 --
 ALTER TABLE `descripcion_opiniones`
   ADD PRIMARY KEY (`id_descripcion`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `descripcion_opiniones`
+--
+ALTER TABLE `descripcion_opiniones`
+  MODIFY `id_descripcion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

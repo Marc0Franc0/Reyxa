@@ -1,4 +1,4 @@
-package com.reyxa.backend.controller;
+package com.reyxa.backend;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -22,6 +22,18 @@ public class Asistente {
     Atributos para la clase utilidades
     public static String comando;*/
 
+    //Instancias de servicios utilizadas dentro del package
+    @Autowired
+    public ComandoSistemaService comandoSistemaService;
+    @Autowired
+    public ComandoUtilidadService comandoUtilidadService;
+    @Autowired
+    public ComandoWebService comandoWebService;
+  
+    @Autowired
+    public OpinionService opinionService;
+  
+  
     //Métodos utlizados en la clase AtajosSistema, AtajosWeb y Utilidades
     public static void ejecutarCmd(Object object) {
       
@@ -48,16 +60,5 @@ public class Asistente {
     
         }
     }
-
-    //Instancias de servicios utilizadas dentro del package
-  @Autowired
-  public ComandoSistemaService comandoSistemaService;
-  @Autowired
-  public ComandoUtilidadService comandoUtilidadService;
-  @Autowired
-  public ComandoWebService comandoWebService;
-
-  @Autowired
-  public OpinionService opinionService;
-
 }
+

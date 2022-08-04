@@ -25,7 +25,7 @@ public class Opinion {
     @Getter
     @Setter
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_opinion")
     private int id_opinion;
     @Getter
