@@ -3,6 +3,7 @@ package com.reyxa.backend.service.comandos;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -11,8 +12,7 @@ import com.reyxa.backend.repository.comandos.ComandoUtilidadRepository;
 
 @Service
 public class ComandoUtilidadServiceImp implements ComandoUtilidadService {
-
-    @Autowired
+ /*   @Autowire
 ComandoUtilidadRepository repository;
 
     @Override
@@ -26,5 +26,5 @@ ComandoUtilidadRepository repository;
         
         return repository.findAll();
     }
-    
+    */
 }

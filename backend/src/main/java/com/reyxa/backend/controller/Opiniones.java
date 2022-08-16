@@ -1,7 +1,11 @@
 package com.reyxa.backend.controller;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,41 +27,51 @@ public class Opiniones extends Asistente {
 OpinionRepository repository;
 @Autowired
 DescOpinionRepository repository2;
+Opinion opinion = new Opinion();
     /*@GetMapping("/opiniones")
     public void listaOpiniones(){
       String Usuario = opinionService.getopinion(1).getUsuario();
       String descripcion = opinionService.getopinion(1).getId_descripcion().getDescripcion();
       System.out.println("Usuario: "+Usuario +"/n"+"Opinion: "+descripcion);
     }*/
+
    @GetMapping("/opiniones")
-    public List<DescripcionOpinion> listaOpiniones(){
+    public List<Opinion> listaOpiniones(){
       
-     return  repository2.findAll();
+     return repository.findAll();
     }
     @PostMapping(path = "/nuevaopinion")
-    public Opinion nuevaOpinion( @RequestParam String usuario, @RequestParam String descripcion) {
+    public String nuevaOpinion( @RequestParam String usuario, @RequestParam String descripcion) {
   
-      return  opinionService.nuevaOpinion(usuario, descripcion);
-      
+   opinionService.nuevaOpinion(usuario, descripcion);
+      return "guardada";
     }
-
-    @DeleteMapping(path = "borraropinion")
+    @GetMapping(path = "/buscaropinion")
+    public String buscaropinion( @RequestParam String usuario) {
+   
+       if(opinionService.existsByUsuario(usuario)){
+          opinion = this.opinionService.findByUsuario(usuario);
+          return "Opinion encontrada: "+ opinion.getId_descripcion().getDescripcion();
+    //return "Ya hay una opinion de este usuario";
+   
+       }else{
+            return "No se encontro una opinion de ese usuario";  
+       }
+   
+    }
+    /*@DeleteMapping(path = "borraropinion")
   public void borrarOpinion( @RequestParam  int id) {
 
    opinionService.borrarOpinionbyid(id);
   }
+*/
 
-
-   @PutMapping(path = "cambiaropinion")
+   /*  @PutMapping(path = "cambiaropinion")
    public void modificarOpinion( @RequestParam String usuario) {
 
 
-  }
-  @PutMapping(path = "buscaropinion")
-  public void buscaropinion( @RequestParam String usuario) {
-
-
- }
+  }*/
+  
 
 
     /*public DescripcionOpinion adddescripcion(

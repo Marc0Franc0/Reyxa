@@ -1,14 +1,16 @@
 package com.reyxa.backend.service.opiniones;
 
 import java.util.List;
-
-
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
-
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.reyxa.backend.model.opiniones.DescripcionOpinion;
 import com.reyxa.backend.model.opiniones.Opinion;
@@ -23,84 +25,104 @@ public class OpinionServiceImp implements OpinionService {
     @Autowired
     private DescOpinionRepository descopinionRepository;
 
+ 
+    Opinion opinion = new Opinion();
+    DescripcionOpinion descOpinion = new DescripcionOpinion();
 
-    Opinion opinion= new Opinion() ;
-    DescripcionOpinion descOpinion = new DescripcionOpinion() ;
-    
-
-    @Override
+     @Override
     public List<Opinion> listaOpiniones() {
         // TODO Auto-generated method stub
         return opinionRepository.findAll();
     }
 
-    @Override
+    /*@Override
     public Opinion getopinionbyid(@PathVariable int id) {
         // TODO Auto-generated method stub
         return opinionRepository.getReferenceById(id);
-    }
-    
-@Override
-    public DescripcionOpinion nuevadesc(
-        String descripcion) {
-    
-
-            descOpinion.setDescripcion(descripcion);
-      descOpinion.setId_descripcion(hashCode());
-        return descopinionRepository.save(descOpinion);
-      }
-    
+    }*/
 
     @Override
-    public Opinion nuevaOpinion ( String usuario, String descripcion){
-    opinion.setId_opinion(hashCode());
-        opinion.setUsuario(usuario);
-        opinion.setId_descripcion(nuevadesc(descripcion));
-        return opinionRepository.save(opinion);
+    public DescripcionOpinion nuevadesc(String descripcion) {
+        descOpinion.setId_descripcion(hashCode());
+        descOpinion.setDescripcion(descripcion);
+       
+       return  descopinionRepository.save(descOpinion);
     }
 
     @Override
-    public void borrarOpinionbyid(  @PathVariable int id) {
+    public String nuevaOpinion(String usuario, String descripcion) {
 
-    borrardesc(  opinionRepository.getReferenceById(id).getId_descripcion().getId_descripcion());
-    opinionRepository.deleteById(id);
-    }
-
-    @Override
-    public void borrardesc(  int id) {
+opinion.setId_opinion(hashCode());
+opinion.setUsuario(usuario);
+opinion.setId_descripcion(nuevadesc(descripcion));
+opinionRepository.save(opinion);
+return"Guardada";
       
-    descopinionRepository.deleteById(id);
     }
 
-    @Override
-    public void modificarOpinion(@Param("nombrebuscar") String usuario){  
+    /*@Override
+    public void borrarOpinionbyid(@PathVariable int id) {
 
-        
-     }; 
+        borrardesc(opinionRepository.getReferenceById(id).getId_descripcion().getId_descripcion());
+        opinionRepository.deleteById(id);
+    }
+*/
+   /*  @Override
+    public void borrardesc(int id) {
+
+        descopinionRepository.deleteById(id);
+    }
+*/
+
     @Override
-    public void modificarDesc(String usuario) {
+
+    public boolean modificarOpinion(String usuario) {
+        return false;
+   
+}
+
+    @Override
+    public Opinion findByUsuario(String usuario) {
         // TODO Auto-generated method stub
-        
+    
+        //Optional <Opinion> opinion = this.opinionRepository.findByUsername(usuario);
+     return this.opinionRepository.findByUsuario(usuario);
+
+
     }
 
-
-
-
- }
-
-
-/*@PostMapping(path ="/add") // Map ONLY POST Requests
-public String addNewUser(  @RequestParam String username, String email, String password) {
-    // @ResponseBody means the returned String is the response, not a view name
-    // @RequestParam means it is a parameter from the GET or POST request
-
-    Usuarios n = new Usuarios();
-
-
-    n.setUsername(username);
-    n.setEmail(email);
-    n.setPassword(password);
     
-    usuariosRepository.save(n);
-    return "Gurdado";
-}*/
+
+
+  @Override
+ public void modificarDesc(String usuario) {
+  // TODO Auto-generated method stub
+  
+  }
+
+@Override
+public boolean existsByUsuario(String usuario) {
+    return opinionRepository.existsByUsuario(usuario);
+}
+ 
+
+}
+
+/*
+ * @PostMapping(path ="/add") // Map ONLY POST Requests
+ * public String addNewUser( @RequestParam String username, String email, String
+ * password) {
+ * // @ResponseBody means the returned String is the response, not a view name
+ * // @RequestParam means it is a parameter from the GET or POST request
+ * 
+ * Usuarios n = new Usuarios();
+ * 
+ * 
+ * n.setUsername(username);
+ * n.setEmail(email);
+ * n.setPassword(password);
+ * 
+ * usuariosRepository.save(n);
+ * return "Gurdado";
+ * }
+ */

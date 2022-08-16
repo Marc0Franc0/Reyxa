@@ -9,5 +9,5 @@ import com.reyxa.backend.model.comandos.ComandoUtilidad;
  */
 @Repository
 public interface ComandoUtilidadRepository extends JpaRepository<ComandoUtilidad,Integer>{
-    
+    ComandoUtilidad findByNombre(String nombre);
 }

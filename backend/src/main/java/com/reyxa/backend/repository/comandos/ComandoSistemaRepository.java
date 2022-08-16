@@ -9,5 +9,7 @@ import com.reyxa.backend.model.comandos.ComandoSistema;
  */
 @Repository
 public interface ComandoSistemaRepository extends JpaRepository < ComandoSistema, Integer> {
+    ComandoSistema findByNombre(String nombre);
+
     
 }

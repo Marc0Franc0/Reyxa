@@ -10,5 +10,5 @@ import com.reyxa.backend.model.comandos.ComandoWeb;
  */
 @Repository
 public interface ComandoWebRepository extends JpaRepository < ComandoWeb, Integer> {
-    
+    ComandoWeb findByNombre(String nombre);
 }

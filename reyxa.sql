@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-08-2022 a las 17:22:00
+-- Tiempo de generación: 16-08-2022 a las 21:07:54
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -38,11 +38,11 @@ CREATE TABLE `comandos_sistema` (
 --
 
 INSERT INTO `comandos_sistema` (`id_comando`, `nombre`, `id_descripcion`) VALUES
-(1, 'Notepad', 1),
-(2, 'Explorador de archivos', 2),
-(3, 'Paint', 3),
-(4, 'Calculadora', 4),
-(5, 'Configuración de Windows', 5);
+(1, 'notepad', 1),
+(2, 'explorer', 2),
+(3, 'paint', 3),
+(4, 'calculadora', 4),
+(5, 'Wconfig', 5);
 
 -- --------------------------------------------------------
 
@@ -108,7 +108,7 @@ CREATE TABLE `comandos_web` (
 --
 
 INSERT INTO `comandos_web` (`id_comando`, `nombre`, `id_descripcion`) VALUES
-(1, 'Clima', 6),
+(1, 'clima', 6),
 (2, 'Noticias', 7),
 (3, 'Instagram', 8),
 (4, 'WhatsApp', 9),
@@ -307,13 +307,13 @@ ALTER TABLE `descripcion_comandos`
 -- AUTO_INCREMENT de la tabla `descripcion_opiniones`
 --
 ALTER TABLE `descripcion_opiniones`
-  MODIFY `id_descripcion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_descripcion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de la tabla `opiniones`
 --
 ALTER TABLE `opiniones`
-  MODIFY `id_opinion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_opinion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

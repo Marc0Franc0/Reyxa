@@ -9,5 +9,4 @@ import com.reyxa.backend.model.comandos.DescripcionComando;
  */
 @Repository
 public interface  DescComandoRepository extends JpaRepository <DescripcionComando, Integer> {
-    
 }

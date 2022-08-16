@@ -17,9 +17,6 @@ import com.reyxa.backend.model.comandos.DescripcionComando;
 
 @RestController
 public class AtajosSistema extends Asistente {
-    DescripcionComando descripcionComando = new DescripcionComando();
-    ComandoSistema Comando = new ComandoSistema();
-
 
     //List<Comando> comandos = ComandoService.listaComandos();
 
@@ -34,36 +31,36 @@ public class AtajosSistema extends Asistente {
     
     @GetMapping("/notepad")
     public void abrirNotepad() {
-      
-   String descripcion = comandoSistemaService.getcomando(1).getId_descripcion().getDescripcion();
-    ejecutarCmd(descripcion);
+      //  if(comandoSistemaService.existsBynombre("notepad")){
+
+        ejecutarCmd( obtenerComandoSistema("notepad"));
+        ;
+  
     
     }
     @GetMapping("/explorer")
     public void abrirExplorer() {
-   String descripcion = comandoSistemaService.getcomando(2).getId_descripcion().getDescripcion();
-    ejecutarCmd(descripcion);
+        
+        ejecutarCmd( obtenerComandoSistema("explorer"));
     }
 
 
     @GetMapping("/paint")
     public void abrirPaint() {
-   String descripcion = comandoSistemaService.getcomando(3).getId_descripcion().getDescripcion();
-    ejecutarCmd(descripcion);
+        ejecutarCmd( obtenerComandoSistema("paint"));
     }
    
 
     @GetMapping("/calculadora")
     public void abrirCalculadora() {
-   String descripcion = comandoSistemaService.getcomando(4).getId_descripcion().getDescripcion();
-    ejecutarCmd(descripcion);
+        
+        ejecutarCmd( obtenerComandoSistema("calculadora"));
     }
 
 
     @GetMapping("/Wconfig")
     public void abrirConfig() {
-   String descripcion = comandoSistemaService.getcomando(5).getId_descripcion().getDescripcion();
-    ejecutarCmd(descripcion);
+        ejecutarCmd( obtenerComandoSistema("Wconfig"));
     }
     /*@GetMapping("/explorer2")
     public void abrirExplorador2() {

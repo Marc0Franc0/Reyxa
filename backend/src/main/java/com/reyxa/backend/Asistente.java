@@ -3,24 +3,26 @@ package com.reyxa.backend;
 import java.io.IOException;
 import java.io.InputStream;
 
+import com.reyxa.backend.service.comandos.ComandoService;
 import com.reyxa.backend.service.comandos.ComandoSistemaService;
 import com.reyxa.backend.service.comandos.ComandoUtilidadService;
 import com.reyxa.backend.service.comandos.ComandoWebService;
 import com.reyxa.backend.service.opiniones.OpinionService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.stereotype.Component;
+@Component
 public class Asistente {
 
     private static Runtime runtime = Runtime.getRuntime();
     private static InputStream in = null;
 
-    /*Atributos para las clase AtajosSistema y AtajosWeb
-    public  String programa;
-    public  String url;
-
-    Atributos para la clase utilidades
-    public static String comando;*/
+    //Atributos para las clase AtajosSistema y AtajosWeb
+    
+    public int idComando;
+    public String descripcionComando;
+    //Atributos para la clase utilidades
+    public static String comando;
 
     //Instancias de servicios utilizadas dentro del package
     @Autowired
@@ -32,7 +34,8 @@ public class Asistente {
   
     @Autowired
     public OpinionService opinionService;
-  
+    @Autowired
+    public ComandoService comandoService;
   
     //Métodos utlizados en la clase AtajosSistema, AtajosWeb y Utilidades
     public static void ejecutarCmd(Object object) {
@@ -59,6 +62,17 @@ public class Asistente {
             e.printStackTrace();
     
         }
+    }
+    public String obtenerComandoSistema (String nombreComando){
+        idComando = comandoService.findBynombre(nombreComando);
+        return comandoService.getcomandoSist(idComando).getId_descripcion().getDescripcion();
+    }
+    public String obtenerComandoWeb (String nombreComando){
+        idComando = comandoService.findBynombre(nombreComando);
+        return comandoService.getcomandoWeb(idComando).getId_descripcion().getDescripcion();
+    }public String obtenerComandoUti (String nombreComando){
+        idComando = comandoService.findBynombre(nombreComando);
+        return comandoService.getcomandoUti(idComando).getId_descripcion().getDescripcion();
     }
 }
 

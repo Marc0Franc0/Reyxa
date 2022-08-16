@@ -17,16 +17,19 @@ public class Utilidades extends Asistente {
          * Cada comando borra los archivos que esten en la papelera de 
          * cada disco siempre que ese disco exista
         */
+
      for(int i=5; i< 30;i++){
-String descripcion = comandoUtilidadService.getcomando(i).getId_descripcion().getDescripcion();
-ejecutarCmd(descripcion);
+//String descripcion = comandoUtilidadService.getcomando(i).getId_descripcion().getDescripcion();
+obtenerComandoSistema("papelera");
+ejecutarCmd(descripcionComando);
+
      }
       
     }
     @GetMapping("/antivirus")
     public void realizarAnalisis() {
-   String descripcion = comandoUtilidadService.getcomando(3).getId_descripcion().getDescripcion();
-   ejecutarPowerShell(descripcion);
+        obtenerComandoSistema("Wconfig");
+        ejecutarCmd(descripcionComando);
     }
 /* 
     @GetMapping("/antivirus")
@@ -36,8 +39,9 @@ ejecutarCmd(descripcion);
     }*/
     @GetMapping("/programarapagado")
     public void programarApagado(@RequestParam(value = "tiempo") int tiempo) {
-   String descripcion = comandoUtilidadService.getcomando(1).getId_descripcion().getDescripcion();
-    ejecutarCmd(descripcion+tiempo);
+   
+        obtenerComandoSistema("Wconfig");
+        ejecutarCmd(descripcionComando);
     }
 /* 
     @GetMapping("/programarapagado")
@@ -51,8 +55,9 @@ ejecutarCmd(descripcion);
     }   */
     @GetMapping("/cancelarapagado")
     public void cancelarApagado() {
-   String descripcion = comandoUtilidadService.getcomando(2).getId_descripcion().getDescripcion();
-    ejecutarCmd(descripcion);
+
+        obtenerComandoSistema("Wconfig");
+        ejecutarCmd(descripcionComando);
     }/* 
     @GetMapping("/cancelarapagado")
     public static void cancelarApagado() {
@@ -65,8 +70,9 @@ ejecutarCmd(descripcion);
 
     @GetMapping("/wupdate")
     public void abrirWupdate() {
-   String descripcion = comandoUtilidadService.getcomando(4).getId_descripcion().getDescripcion();
-    ejecutarCmd(descripcion);
+  
+        obtenerComandoSistema("Wconfig");
+        ejecutarCmd(descripcionComando);
     }
 /* 
     @GetMapping("/wupdate")

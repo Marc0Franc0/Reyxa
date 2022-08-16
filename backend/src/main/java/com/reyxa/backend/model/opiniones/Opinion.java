@@ -12,7 +12,7 @@ import javax.persistence.JoinColumn;
 
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-
+import javax.persistence.UniqueConstraint;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -20,7 +20,7 @@ import lombok.Setter;
  * Esta clase representa la tabla de los nombres de los comandos que va a estar representada en la base de datos
  */
 @Entity
-@Table(name = "opiniones")
+@Table(name = "opiniones",uniqueConstraints = @UniqueConstraint(columnNames={"nombre"}))
 public class Opinion {
     @Getter
     @Setter

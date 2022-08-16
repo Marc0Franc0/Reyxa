@@ -34,8 +34,8 @@ public  static void eliminarSugerencia(@RequestParam(value = "opinion") String o
 
 @GetMapping("/clima")
 public void verClima() {
-String descripcion = comandoWebService.getcomando(1).getId_descripcion().getDescripcion();
-ejecutarCmd(descripcion);
+    String descripcionComando =  obtenerComandoWeb("clima");
+    ejecutarCmd(descripcionComando);
 }
 
     /*@GetMapping("/clima")
@@ -48,8 +48,9 @@ ejecutarCmd(descripcion);
 
     @GetMapping("/noticias")
 public void verNoticias() {
-String descripcion = comandoWebService.getcomando(2).getId_descripcion().getDescripcion();
-ejecutarCmd(descripcion);
+      //String descripcionComando = obtenerComandoWeb("noticias");
+    ejecutarCmd( obtenerComandoWeb("noticias"));
+    ;
 }
 
     /*@GetMapping("/noticias")
@@ -66,8 +67,8 @@ ejecutarCmd(descripcion);
 
     @GetMapping("/twitch")
     public void abrirTwitch() {
-    String descripcion = comandoWebService.getcomando(0).getId_descripcion().getDescripcion();
-    ejecutarCmd(descripcion);
+        obtenerComandoWeb("twitch");
+        ejecutarCmd(descripcionComando);
     }
     /* 
     @GetMapping("/twitch")
@@ -80,8 +81,8 @@ ejecutarCmd(descripcion);
 */
 @GetMapping("/ig")
 public void abrirIg() {
-String descripcion = comandoWebService.getcomando(3).getId_descripcion().getDescripcion();
-ejecutarCmd(descripcion);
+    obtenerComandoWeb("ig");
+    ejecutarCmd(descripcionComando);
 }
 /* 
     @GetMapping("/ig")
@@ -93,8 +94,8 @@ ejecutarCmd(descripcion);
     }*/
     @GetMapping("/wsp")
     public void abrirWsp() {
-    String descripcion = comandoWebService.getcomando(4).getId_descripcion().getDescripcion();
-    ejecutarCmd(descripcion);
+        obtenerComandoWeb("wsp");
+        ejecutarCmd(descripcionComando);
     }
     /* 
     @GetMapping("/wsp")
@@ -106,8 +107,8 @@ ejecutarCmd(descripcion);
     }*/
     @GetMapping("/gmail")
     public void abrirGmail() {
-    String descripcion = comandoWebService.getcomando(5).getId_descripcion().getDescripcion();
-    ejecutarCmd(descripcion);
+        obtenerComandoWeb("gmail");
+        ejecutarCmd(descripcionComando);
     }
     /* 
     @GetMapping("/gmail")
@@ -119,8 +120,8 @@ ejecutarCmd(descripcion);
     }*/
     @GetMapping("/netflix")
     public void abrirNetflix() {
-    String descripcion = comandoWebService.getcomando(6).getId_descripcion().getDescripcion();
-    ejecutarCmd(descripcion);
+        obtenerComandoWeb("netflix");
+        ejecutarCmd(descripcionComando);
     }
     /*@GetMapping("/netflix")
     public static void abrirNetflix() {
@@ -132,8 +133,8 @@ ejecutarCmd(descripcion);
 
     @GetMapping("/spotify")
     public void abrirSpotifyweb() {
-    String descripcion = comandoWebService.getcomando(7).getId_descripcion().getDescripcion();
-    ejecutarCmd(descripcion);
+        obtenerComandoWeb("spotify");
+        ejecutarCmd(descripcionComando);
     }
     
  /* 
@@ -147,8 +148,8 @@ ejecutarCmd(descripcion);
 */
 @GetMapping("/youtube")
 public void abrirYT() {
-String descripcion = comandoWebService.getcomando(8).getId_descripcion().getDescripcion();
-ejecutarCmd(descripcion);
+    obtenerComandoWeb("youtube");
+    ejecutarCmd(descripcionComando);
 }
   /*@GetMapping("/youtube")
     public static void abrirYT() {
