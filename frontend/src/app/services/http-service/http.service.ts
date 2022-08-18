@@ -1,13 +1,15 @@
+import { Observable } from 'rxjs';
 
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Opinion } from 'src/app/model/Opinion';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpService {
-
+  private path = "http://localhost:8080/";
 respuesta = "";
 
   constructor(private http:HttpClient){
@@ -132,10 +134,6 @@ abrirConfig(){
 }
 
 
-cerrarPrograma(){
-
-
-}
 
 seabrioexplorer(){
   return this.http.get('http://localhost:8080/explorerConsole',{responseType:'text'});
@@ -198,6 +196,16 @@ abrirWupdate(){
   (error: any) => {
     console.log(error);
   };
+
+}
+crearOpinion(opinion:Opinion):Observable<Object>{
+
+return this.http.post(`${this.path}`+"nuevaopinion",opinion);
+
+}
+buscarOpinion(usuario:string){
+  return this.http.get('http://localhost:8080/buscaropinion' ,{params: { usuario }}).subscribe();
+
 
 }
 

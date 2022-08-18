@@ -63,14 +63,17 @@ export class UtilidadesComponent implements OnInit {
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
+
         let timerInterval
         Swal.fire({
+
           title: 'Realizando análisis con Windows Defender',
           //html: 'I will close in <b></b> milliseconds.',
           position: 'top',
           timer: 9000,
           timerProgressBar: true,
           didOpen: () => {
+            this.httpService.realizarAnalisis();
             Swal.showLoading()
             timerInterval = setInterval(() => {
 

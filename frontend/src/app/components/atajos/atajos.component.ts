@@ -27,11 +27,7 @@ this.httpservice.abrirExplorador();
 /*Se utilizo este metodo de prueba para retornar un string por consola
 ,ya que al abrir un atajo o realizar una determinada tarea de Windows no estamos haciendolo y solo es a modo de prueba
 */
-this.httpservice.seabrioexplorer().subscribe((resp:any)=>
-{console.log(resp);
-  this.respuesta=resp;
-
-});
+this.httpservice.seabrioexplorer();
   }
   abrirWord(){
     this.httpservice.abrirWord();
