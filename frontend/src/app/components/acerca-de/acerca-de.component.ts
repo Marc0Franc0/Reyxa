@@ -1,3 +1,5 @@
+
+import { Usuario } from './../../model/Usuario';
 import { Observable } from 'rxjs';
 import { HttpService } from 'src/app/services/http-service/http.service';
 
@@ -6,7 +8,7 @@ import { HttpService } from 'src/app/services/http-service/http.service';
 import { Component, OnInit } from '@angular/core';
 import { Opinion } from 'src/app/model/Opinion';
 import { FormGroup,Validators,FormControl } from '@angular/forms';
-import { Usuario } from 'src/app/model/Usuario';
+import { ThisReceiver } from '@angular/compiler';
 
 @Component({
   selector: 'app-acerca-de',
@@ -15,11 +17,11 @@ import { Usuario } from 'src/app/model/Usuario';
 })
 export class AcercaDeComponent implements OnInit {
 opinion : Opinion = new Opinion();
-usuario : Usuario = new Usuario();
+//usuario : Usuario = new Usuario();
   constructor(private http:HttpService ) { }
 
   ngOnInit(): void {
-console.log(this.usuario);
+console.log(this.opinion);
   }
 
   enviarOpinion(){
@@ -34,9 +36,9 @@ console.log(this.usuario);
 
   buscarOpinion(){
 
- let opinion=  JSON.stringify(this.http.buscarOpinion(this.usuario.name));
-this.usuario.opinion=opinion;
-alert(this.usuario.opinion)
+  //this.opinion=
+ this.http.buscarOpinion().subscribe(opinion=>console.log(opinion));
+
 
   }
 

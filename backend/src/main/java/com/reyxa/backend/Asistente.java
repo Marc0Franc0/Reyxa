@@ -4,14 +4,10 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import com.reyxa.backend.service.comandos.ComandoService;
-import com.reyxa.backend.service.comandos.ComandoSistemaService;
-import com.reyxa.backend.service.comandos.ComandoUtilidadService;
-import com.reyxa.backend.service.comandos.ComandoWebService;
 import com.reyxa.backend.service.opiniones.OpinionService;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-@Component
+
 public class Asistente {
 
     private static Runtime runtime = Runtime.getRuntime();
@@ -25,13 +21,6 @@ public class Asistente {
     public static String comando;
 
     //Instancias de servicios utilizadas dentro del package
-    @Autowired
-    public ComandoSistemaService comandoSistemaService;
-    @Autowired
-    public ComandoUtilidadService comandoUtilidadService;
-    @Autowired
-    public ComandoWebService comandoWebService;
-  
     @Autowired
     public OpinionService opinionService;
     @Autowired
@@ -63,16 +52,12 @@ public class Asistente {
     
         }
     }
-    public String obtenerComandoSistema (String nombreComando){
+    
+    //Metodos utilizados en el package controller para obtener la descripcion de los comandos
+
+    public String obtenerComando (String nombreComando){
         idComando = comandoService.findBynombre(nombreComando);
-        return comandoService.getcomandoSist(idComando).getId_descripcion().getDescripcion();
-    }
-    public String obtenerComandoWeb (String nombreComando){
-        idComando = comandoService.findBynombre(nombreComando);
-        return comandoService.getcomandoWeb(idComando).getId_descripcion().getDescripcion();
-    }public String obtenerComandoUti (String nombreComando){
-        idComando = comandoService.findBynombre(nombreComando);
-        return comandoService.getcomandoUti(idComando).getId_descripcion().getDescripcion();
+        return comandoService.getcomando(idComando).getId_descripcion().getDescripcion();
     }
 }
 

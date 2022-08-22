@@ -1,8 +1,9 @@
 import { Observable } from 'rxjs';
 
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Opinion } from 'src/app/model/Opinion';
+import { Usuario } from 'src/app/model/Usuario';
 
 
 @Injectable({
@@ -52,7 +53,7 @@ abrirCalculadora(){
 }
 abrirWsp(){
   this.http
-  .get('http://localhost:8080/wsp')
+  .get('http://localhost:8080/whatsapp')
   .subscribe(),
   (error: any) => {
     console.log(error);
@@ -77,12 +78,7 @@ abrirSpotify(){
   };
 }
 abrirIg(){
-  this.http
-  .get('http://localhost:8080/ig')
-  .subscribe(),
-  (error: any) => {
-    console.log(error);
-  };
+  return this.http.get('http://localhost:8080/instagram');
 }
 abrirYoutube(){
   this.http
@@ -125,12 +121,7 @@ abrirNetflix(){
   };
 }
 abrirConfig(){
-  this.http
-  .get('http://localhost:8080/Wconfig')
-  .subscribe(),
-  (error: any) => {
-    console.log(error);
-  };
+  return this.http.get('http://localhost:8080/wconfig');
 }
 
 
@@ -174,7 +165,7 @@ realizarAnalisis(){
 
 programarApagado(tiempo:number){
 //this.http.post('http://localhost:8080/apagado',{ResponseType:Number}).subscribe();
-this.http.get('http://localhost:8080/programarapagado' ,{
+this.http.get('http://localhost:8080/progapagado' ,{
 
   params: {
 tiempo
@@ -183,7 +174,7 @@ tiempo
 
 }
 cancelarApagado(){
-  this.http.get('http://localhost:8080/cancelarapagado' ,{
+  this.http.get('http://localhost:8080/cancapagado' ,{
 
   }).subscribe();
 
@@ -203,10 +194,23 @@ crearOpinion(opinion:Opinion):Observable<Object>{
 return this.http.post(`${this.path}`+"nuevaopinion",opinion);
 
 }
-buscarOpinion(usuario:string){
-  return this.http.get('http://localhost:8080/buscaropinion' ,{params: { usuario }}).subscribe();
+/*buscarOpinion(usuario:string){
+ return this.http.get(`http://localhost:8080/buscaropinion`,{params: { usuario }});
 
 
-}
+}*/
+buscarOpinion(){
+  return this.http.get(`http://localhost:8080/opiniones`);
+
+
+ }
+/*
+buscarOpinion(){
+  return this.http.get<Opinion[]>(`http://localhost:8080/opiniones`);
+
+
+ }
+
+*/
 
 }

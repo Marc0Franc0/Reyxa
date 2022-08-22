@@ -49,7 +49,10 @@ this.httpservice.abrirWsp();
 this.httpservice.abrirSpotify();
   }
   abrirIg(){
-this.httpservice.abrirIg();
+this.httpservice.abrirIg().subscribe(),
+(error: any) => {
+  console.log(error);
+};
   }
 
 
@@ -72,8 +75,10 @@ this.httpservice.abrirClima();
   abrirNetflix(){
 this.httpservice.abrirNetflix();
   }
-  abrirConfig(){
-this.httpservice.abrirConfig();
+  abrirConfig(){this.httpservice.abrirConfig().subscribe(),
+(error: any) => {
+  console.log(error);
+};
   }
 
 }

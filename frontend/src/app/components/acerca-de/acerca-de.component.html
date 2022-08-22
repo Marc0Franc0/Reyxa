@@ -63,16 +63,15 @@
           target="_blank" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
           <div class="row accordion-body border">
             <div class="form col-sm-6">
-        <form (ngSubmit)="buscarOpinion()" >
+        <form  >
 <div>
-  <input id="nombreusuario" type="text" name="nombreusuario" placeholder="Nombre de usuario" ngModel required [(ngModel)]="usuario.name">
 
 </div>
 
-<button class="btn btn-primary">Buscar</button>
+
         </form>
 
-
+        <button class="btn btn-primary" (click)="buscarOpinion()">Buscar</button>
 
             </div>
 
