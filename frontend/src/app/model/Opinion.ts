@@ -1,5 +1,5 @@
 export class Opinion {
-  usuario: string ="" ;
-  descripcion: string ="";
-
+  usuario: string ="";
+descripcion:string="";
 }
+

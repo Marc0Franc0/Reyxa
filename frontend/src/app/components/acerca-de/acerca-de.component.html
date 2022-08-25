@@ -62,23 +62,40 @@
         <div id="flush-collapseThree" class="accordion-collapse collapse cajatexto border" rel="noopener"
           target="_blank" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
           <div class="row accordion-body border">
-            <div class="form col-sm-6">
-        <form  >
-<div>
-
-</div>
 
 
-        </form>
 
-        <button class="btn btn-primary" (click)="buscarOpinion()">Buscar</button>
+            <form (ngSubmit)="buscarOpinion()">
+              <div>
+                <input type="text" required [(ngModel)]="usuario" name="usuario" matInput
+                  placeholder="Nombre de usuario">
+              </div>
 
-            </div>
+
+              <button class="btn btn-primary">Buscar usuario</button>
+            </form>
+
+            <form (ngSubmit)="crearOpinion()">
+              <div>
+                <input type="text" required [(ngModel)]="opinion.usuario" name="usuario" matInput
+                  placeholder="Nombre de usuario">
+              </div>
+
+              <div>
+                <input required [(ngModel)]="opinion.descripcion" name="descripcion" matInput placeholder="Opinion">
+
+
+              </div>
+
+              <button class="btn btn-primary">Enviar opinion</button>
+            </form>
+
+
+
 
           </div>
 
         </div>
-
 
 
       </div>
@@ -86,6 +103,3 @@
 
 
   </div>
-
-
-</div>
