@@ -1,6 +1,5 @@
 package com.reyxa.backend.controller;
 
-
 //import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -291,24 +290,25 @@ public class Comandos extends Asistente {
 
         ejecutarCmd(obtenerComando("antivirus"));
     }
+
     @GetMapping("/wupdate")
     public void abrirWupdate() {
-  
 
         ejecutarCmd(obtenerComando("wupdate"));
     }
+
     @GetMapping("/papelera")
-    public  void vaciarPapelera() {
-        /* 
-         * Cada comando borra los archivos que esten en la papelera de 
+    public void vaciarPapelera() {
+        /*
+         * Cada comando borra los archivos que esten en la papelera de
          * cada disco siempre que ese disco exista
-        */
+         */
 
-     for(int i=1; i< 25;i++){
+        for (int i = 1; i < 25; i++) {
 
-ejecutarCmd(obtenerComando("papelera"+i));
+            ejecutarCmd(obtenerComando("papelera" + i));
 
-     }
-      
+        }
+
     }
 }

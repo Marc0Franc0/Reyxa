@@ -1,6 +1,5 @@
 package com.reyxa.backend.model.comandos;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
@@ -22,7 +21,7 @@ import lombok.Setter;
         @Getter
         @Setter
         @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        @GeneratedValue(strategy = GenerationType.AUTO)
         @Column(name = "id_comando")
         public int id_comando;
 
@@ -33,7 +32,7 @@ import lombok.Setter;
 
         @Getter
         @Setter
-        @OneToOne(cascade = CascadeType.ALL)
+        @OneToOne()
         @JoinColumn(name = "id_descripcion", nullable = false, foreignKey = @ForeignKey(name = "fkdesc"))
         private DescripcionComando id_descripcion;
 

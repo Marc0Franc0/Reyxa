@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-08-2022 a las 05:02:59
+-- Tiempo de generación: 30-08-2022 a las 17:47:20
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `reyxa`
 --
+CREATE DATABASE IF NOT EXISTS `reyxa` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
+USE `reyxa`;
 
 -- --------------------------------------------------------
 
@@ -157,8 +159,7 @@ CREATE TABLE `descripcion_opiniones` (
 
 INSERT INTO `descripcion_opiniones` (`id_descripcion`, `descripcion`) VALUES
 (1, 'Nashe'),
-(2, 'Excelente'),
-(3, 'God');
+(2, 'Excelente');
 
 -- --------------------------------------------------------
 
@@ -168,14 +169,14 @@ INSERT INTO `descripcion_opiniones` (`id_descripcion`, `descripcion`) VALUES
 
 CREATE TABLE `hibernate_sequence` (
   `next_val` bigint(20) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Volcado de datos para la tabla `hibernate_sequence`
 --
 
 INSERT INTO `hibernate_sequence` (`next_val`) VALUES
-(52);
+(1);
 
 -- --------------------------------------------------------
 
@@ -195,8 +196,7 @@ CREATE TABLE `opiniones` (
 
 INSERT INTO `opiniones` (`id_opinion`, `nombre`, `id_descripcion`) VALUES
 (1, 'Marco', 1),
-(2, 'Franco', 2),
-(13, 'Lisandro', 3);
+(2, 'Franco', 2);
 
 --
 -- Índices para tablas volcadas
@@ -249,13 +249,13 @@ ALTER TABLE `descripcion_comandos`
 -- AUTO_INCREMENT de la tabla `descripcion_opiniones`
 --
 ALTER TABLE `descripcion_opiniones`
-  MODIFY `id_descripcion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id_descripcion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 
 --
 -- AUTO_INCREMENT de la tabla `opiniones`
 --
 ALTER TABLE `opiniones`
-  MODIFY `id_opinion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_opinion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

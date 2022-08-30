@@ -17,7 +17,10 @@ public class ComandoServiceImp implements ComandoService {
     @Override
     public int findBynombre(String nombre) {
         int id_comando;  
-     /* // TODO Auto-generated method stub}
+   
+        id_comando = comWebrepository.findByNombre(nombre).getId_comando();
+        return id_comando; 
+          /* // TODO Auto-generated method stub}
         if(comSistrepository.findByNombre(nombre)!= null){
            id_comando = comSistrepository.findByNombre(nombre).getId_comando();
         }else if(comWebrepository.findByNombre(nombre)!= null){
@@ -25,9 +28,6 @@ public class ComandoServiceImp implements ComandoService {
         }else{
             id_comando = comUtirepository.findByNombre(nombre).getId_comando();
         }*/
-        id_comando = comWebrepository.findByNombre(nombre).getId_comando();
-        return id_comando; 
-        
     }
 
    

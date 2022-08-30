@@ -20,7 +20,6 @@ public class OpinionServiceImp implements OpinionService {
     @Autowired
     private DescOpinionRepository descopinionRepository;
 
- 
     Opinion opinion = new Opinion();
     DescripcionOpinion descOpinion = new DescripcionOpinion();
 
@@ -37,22 +36,30 @@ public class OpinionServiceImp implements OpinionService {
     }*/
 
     @Override
-    public DescripcionOpinion nuevadesc(String descripcion) {
-        descOpinion.setId_descripcion(hashCode());
+    public DescripcionOpinion nuevadesc( int id_descripcion,String descripcion) {
+    descOpinion.setId_descripcion(id_descripcion);
         descOpinion.setDescripcion(descripcion);
        
        return  descopinionRepository.save(descOpinion);
     }
 
     @Override
-    public String nuevaOpinion(String usuario, String descripcion) {
+    public String nuevaOpinion(Opinion opinion) {
+        String rta;
 
-opinion.setId_opinion(hashCode());
-opinion.setUsuario(usuario);
-opinion.setId_descripcion(nuevadesc(descripcion));
-opinionRepository.save(opinion);
-return"Guardada";
-      
+        if(existsByUsuario(opinion.getUsuario())){
+rta= "Ya existe una opinion de ese usuario";
+        }else{
+            int id = hashCode();
+            opinion.setId_opinion(id);
+            opinion.setUsuario(opinion.getUsuario());
+            opinion.setId_descripcion(nuevadesc(opinion.getId_opinion(),opinion.getId_descripcion().getDescripcion()));
+            opinionRepository.save(opinion);
+                  
+            rta="Opinion guardada";
+        }
+
+return rta;
     }
 
     /*@Override
@@ -71,14 +78,16 @@ return"Guardada";
 
     @Override
 
-    public boolean modificarOpinion(String usuario) {
-        return false;
+    public String modificarOpinion(String usuario) {
+
+
+opinionRepository.modificarusuario(usuario, findByUsuario(usuario).getId_opinion());
+        return "Opinion modificada";
    
 }
 
     @Override
     public Opinion findByUsuario(String usuario) {
-        // TODO Auto-generated method stub
     
         //Optional <Opinion> opinion = this.opinionRepository.findByUsername(usuario);
      return this.opinionRepository.findByUsuario(usuario);
@@ -98,6 +107,14 @@ return"Guardada";
 @Override
 public boolean existsByUsuario(String usuario) {
     return opinionRepository.existsByUsuario(usuario);
+}
+
+@Override
+public String eliminarOpinion(String usuario) {
+    descopinionRepository.eliminaropinion(findByUsuario(usuario).getId_descripcion().getId_descripcion());
+opinionRepository.eliminaropinion(usuario);
+
+    return "Opinion del usuario "+usuario+" eliminada";
 }
  
 

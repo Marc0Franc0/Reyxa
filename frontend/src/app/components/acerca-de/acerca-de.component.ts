@@ -30,10 +30,13 @@ usuario:string="";
 
 
 
-return this.http.buscarOpinion(this.usuario).subscribe(dato => {
+ this.http.buscarOpinion(this.usuario).subscribe(dato => {
       console.log(dato);
   //this.usuario=JSON.stringify(dato);
-    },error => console.log(error.error.text))
+    },rta => {console.log(rta.error.text);
+      Swal.fire(rta.error.text)
+    });
+
 
 
   }
@@ -42,20 +45,16 @@ return this.http.buscarOpinion(this.usuario).subscribe(dato => {
 
  crearOpinion(){
   console.log(this.opinion);
-  this.http.crearOpinion(this.opinion).subscribe(
+ this.http.crearOpinion(this.opinion).subscribe(
     (data) => {
       console.log(data);
-    },(error) => {
-      console.log(error);
-      ;
+    },(rta) => {
+      console.log(rta.error.text);
+      Swal.fire(rta.error.text)
   })
 
- /*crearOpinion2(form:Opinion){
-
-  this.http.crearOpinion(form).subscribe(dato =>console.log(dato));
-
- }*/
 
 
 }
+
 }

@@ -173,6 +173,15 @@ export class HttpService {
 
 
   }
+  eliminarOpinion(usuario:string){
+    return this.http
+    .get(`${this.path}/eliminaropinion`, {
+      params: {
+        usuario,
+      },
+    })
+
+  }
   /*
 buscarOpinion(){
   return this.http.get<Opinion[]>(`http://localhost:8080/opiniones`);

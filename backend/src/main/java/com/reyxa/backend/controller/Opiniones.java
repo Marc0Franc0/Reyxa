@@ -3,10 +3,12 @@ import java.util.List;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.web.bind.annotation.DeleteMapping;
 //import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 //import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -38,12 +40,25 @@ Opinion opinion = new Opinion();
       
      return repository.findAll();
     }
+    @PutMapping("/modificaropinion")
+    public String modificarOpinion( @RequestBody String usuario ) {
+
+        return opinionService.modificarOpinion(usuario);
+      }
+    @DeleteMapping("/eliminaropinion")
+    public String eliminarOpinion( @RequestParam String usuario ) {
+
+        return opinionService.eliminarOpinion(usuario);
+      }
+
+
     @PostMapping(path = "/nuevaopinion")
-    public String nuevaOpinion( @RequestParam String usuario, @RequestParam String descripcion) {
-  
-   opinionService.nuevaOpinion(usuario, descripcion);
-      return "guardada";
+    public String nuevaOpinion( @RequestBody Opinion opinion ) {
+
+      return opinionService.nuevaOpinion(opinion);
     }
+
+
     @GetMapping(path = "/buscaropinion")
     public String buscaropinion( @RequestParam String usuario) {
    
