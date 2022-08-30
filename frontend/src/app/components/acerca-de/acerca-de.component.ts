@@ -32,8 +32,8 @@ usuario:string="";
 
 return this.http.buscarOpinion(this.usuario).subscribe(dato => {
       console.log(dato);
-  this.usuario=JSON.stringify(dato);
-    },error => console.log(error))
+  //this.usuario=JSON.stringify(dato);
+    },error => console.log(error.error.text))
 
 
   }
