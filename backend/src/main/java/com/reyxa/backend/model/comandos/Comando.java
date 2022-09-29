@@ -33,8 +33,8 @@ import lombok.Setter;
         @Getter
         @Setter
         @OneToOne()
-        @JoinColumn(name = "id_descripcion", nullable = false, foreignKey = @ForeignKey(name = "fkdesc"))
-        private DescripcionComando id_descripcion;
+        @JoinColumn(name = "sintaxis_comando", nullable = false, foreignKey = @ForeignKey(name = "fkdesc"))
+        private DescripcionComando sintaxis_comando;
 
         public Comando() {
 

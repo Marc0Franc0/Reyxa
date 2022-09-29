@@ -30,7 +30,7 @@ public class Opinion {
     private int id_opinion;
     @Getter
     @Setter
-    @Column(name = "nombre",length = 40)
+    @Column(name = "usuario",length = 40)
     private String usuario;
 
    @Getter

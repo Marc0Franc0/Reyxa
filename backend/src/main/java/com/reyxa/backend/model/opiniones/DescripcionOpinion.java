@@ -26,6 +26,6 @@ public class DescripcionOpinion {
 
     @Getter
     @Setter
-    @Column(name = "descripcion", length = 40)
+    @Column(name = "descripcion", length = 150)
     private String descripcion;
 }

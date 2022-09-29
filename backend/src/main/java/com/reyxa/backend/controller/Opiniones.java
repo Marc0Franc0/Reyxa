@@ -23,10 +23,7 @@ import com.reyxa.backend.repository.opiniones.OpinionRepository;
 @RestController
 
 public class Opiniones extends Asistente {
-    @Autowired
-OpinionRepository repository;
-@Autowired
-DescOpinionRepository repository2;
+   
 Opinion opinion = new Opinion();
     /*@GetMapping("/opiniones")
     public void listaOpiniones(){
@@ -38,7 +35,7 @@ Opinion opinion = new Opinion();
    @GetMapping("/opiniones")
     public List<Opinion> listaOpiniones(){
       
-     return repository.findAll();
+     return opinionService.findAll();
     }
     @PutMapping("/modificaropinion")
     public String modificarOpinion( @RequestBody String usuario ) {

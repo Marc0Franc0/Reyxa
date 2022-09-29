@@ -30,8 +30,8 @@ public class DescripcionComando {
 
     @Getter
     @Setter
-    @Column(name = "descripcion", length = 80)
-    private String descripcion;
+    @Column(name = "sintaxis", length = 80)
+    private String sintaxis;
 
     /*@Getter
     @Setter
