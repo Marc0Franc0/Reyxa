@@ -20,23 +20,24 @@ import lombok.Setter;
  * Esta clase representa la tabla de los nombres de los comandos que va a estar representada en la base de datos
  */
 @Entity
-@Table(name = "opiniones",uniqueConstraints = @UniqueConstraint(columnNames={"nombre"}))
-public class Opinion {
+@Table(name = "usuarios",uniqueConstraints = @UniqueConstraint(columnNames={"nombre_de_usuario"}))
+public class Usuario {
     @Getter
     @Setter
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_opinion")
-    private int id_opinion;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_usuario")
+    private int id_usuario;
     @Getter
+    
     @Setter
-    @Column(name = "usuario",length = 40)
-    private String usuario;
+    @Column(name = "nombre_de_usuario",length = 40)
+    private String nombre;
 
    @Getter
    @Setter
    @OneToOne
-   @JoinColumn(name="id_descripcion",foreignKey = @ForeignKey(name = "fkdesc"),nullable=false )
+   @JoinColumn(name="comentario_usuario",foreignKey = @ForeignKey(name = "fkcomentario"),nullable=false )
       
- DescripcionOpinion id_descripcion;
+ Comentario comentario_usuario;
 }

@@ -14,18 +14,18 @@ import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 @Entity
-@Table(name = "descripcion_opiniones")
-public class DescripcionOpinion {
+@Table(name = "comentarios")
+public class Comentario {
     
     @Getter
     @Setter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_descripcion")
-    private int id_descripcion;
+    @Column(name = "id_comentario")
+    private int id_comentario;
 
     @Getter
     @Setter
-    @Column(name = "descripcion", length = 150)
-    private String descripcion;
+    @Column(name = "comentario", length = 200)
+    private String comentario;
 }

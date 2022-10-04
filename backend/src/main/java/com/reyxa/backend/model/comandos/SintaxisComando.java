@@ -18,8 +18,8 @@ import lombok.Setter;
  * Esta clase representa la tabla de los comandos que va a estar representada en la base de datos
  */
 @Entity
-@Table(name = "descripcion_comandos")
-public class DescripcionComando {
+@Table(name = "sintaxis_de_comandos")
+public class SintaxisComando {
 
     @Getter
     @Setter
@@ -32,15 +32,17 @@ public class DescripcionComando {
     @Setter
     @Column(name = "sintaxis", length = 80)
     private String sintaxis;
-
+  
+    @Getter
+    @Setter
+    @Column(name = "descripcion", length = 80)
+    private String descripcion;
     /*@Getter
     @Setter
     @OneToOne
     @JoinColumn(name = "id_comando",nullable = false)
     private Comando comando;
 */
-    public DescripcionComando() {
-
-    }
+  
 
 }

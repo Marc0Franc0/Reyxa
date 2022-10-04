@@ -10,15 +10,15 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.reyxa.backend.model.opiniones.Opinion;
+import com.reyxa.backend.model.opiniones.Usuario;
 
 @Repository
-public interface OpinionRepository  extends JpaRepository <Opinion, Integer>{
+public interface UsuarioRepository  extends JpaRepository <Usuario, Integer>{
 
 
 //Optional<Opinion> findByUsuario(String usuario);
-Opinion findByUsuario(String usuario);
-Boolean existsByUsuario(String usuario);
+Usuario findByNombre(String usuario);
+Boolean existsByNombre (String nombre_de_usuario);
 
 
 @Modifying

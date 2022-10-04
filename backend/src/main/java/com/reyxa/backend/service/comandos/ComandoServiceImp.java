@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import com.reyxa.backend.model.comandos.Comando;
 import com.reyxa.backend.repository.comandos.ComandoWebRepository;
 
-
 @Service
+
 public class ComandoServiceImp implements ComandoService {
 
     @Autowired

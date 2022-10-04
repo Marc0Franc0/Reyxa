@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.reyxa.backend.Asistente;
-import com.reyxa.backend.model.opiniones.Opinion;
-import com.reyxa.backend.repository.opiniones.DescOpinionRepository;
-import com.reyxa.backend.repository.opiniones.OpinionRepository;
+
+import com.reyxa.backend.model.opiniones.Usuario;
+
 
 
 
@@ -24,7 +24,7 @@ import com.reyxa.backend.repository.opiniones.OpinionRepository;
 
 public class Opiniones extends Asistente {
    
-Opinion opinion = new Opinion();
+Usuario usuario = new Usuario();
     /*@GetMapping("/opiniones")
     public void listaOpiniones(){
       String Usuario = opinionService.getopinion(1).getUsuario();
@@ -33,35 +33,35 @@ Opinion opinion = new Opinion();
     }*/
 
    @GetMapping("/opiniones")
-    public List<Opinion> listaOpiniones(){
+    public List<Usuario> listaUsuarios(){
       
-     return opinionService.findAll();
+     return usuarioService.listaUsuarios();
     }
     @PutMapping("/modificaropinion")
-    public String modificarOpinion( @RequestBody String usuario ) {
+    public String modificarUsuario( @RequestBody String usuario ) {
 
-        return opinionService.modificarOpinion(usuario);
+        return usuarioService.modificarUsuario(usuario);
       }
     @DeleteMapping("/eliminaropinion")
-    public String eliminarOpinion( @RequestParam String usuario ) {
+    public String eliminarUsuario( @RequestParam String usuario ) {
 
-        return opinionService.eliminarOpinion(usuario);
+        return usuarioService.eliminarUsuario(usuario);
       }
 
 
     @PostMapping(path = "/nuevaopinion")
-    public String nuevaOpinion( @RequestBody Opinion opinion ) {
+    public String nuevaOpinion( @RequestBody Usuario opinion ) {
 
-      return opinionService.nuevaOpinion(opinion);
+      return usuarioService.nuevoUsuario(opinion);
     }
 
 
     @GetMapping(path = "/buscaropinion")
-    public String buscaropinion( @RequestParam String usuario) {
+    public String buscaropinion( @RequestParam String nombre) {
    
-       if(opinionService.existsByUsuario(usuario)){
-          opinion = this.opinionService.findByUsuario(usuario);
-          return "Opinion encontrada: "+ opinion.getId_descripcion().getDescripcion();
+       if(usuarioService.existsByUsuario(nombre)){
+          usuario = this.usuarioService.findByUsuario(nombre);
+          return "Opinion encontrada: "+ usuario.getComentario_usuario().getComentario();
     //return "Ya hay una opinion de este usuario";
    
        }else{

@@ -8,9 +8,10 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.reyxa.backend.model.opiniones.DescripcionOpinion;
+import com.reyxa.backend.model.opiniones.Comentario;
+
 @Repository
-public interface DescOpinionRepository extends JpaRepository <DescripcionOpinion, Integer>{
+public interface ComentarioRepository extends JpaRepository <Comentario, Integer>{
     
     @Modifying
     @Transactional
