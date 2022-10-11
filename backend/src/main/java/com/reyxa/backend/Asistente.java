@@ -1,16 +1,9 @@
 package com.reyxa.backend;
 
-import java.io.IOException;
-import java.io.InputStream;
-
-import com.reyxa.backend.service.comandos.ComandoService;
-import com.reyxa.backend.service.opiniones.UsuarioService;
-
-import org.springframework.beans.factory.annotation.Autowired;
 
 public class Asistente {
 
-    private static Runtime runtime = Runtime.getRuntime();
+   /*  private static Runtime runtime = Runtime.getRuntime();
     private static InputStream in = null;
 
     //Atributos para las clase AtajosSistema y AtajosWeb
@@ -58,6 +51,6 @@ public class Asistente {
     public String obtenerComando (String nombreComando){
         idComando = comandoService.findBynombre(nombreComando);
         return comandoService.getcomando(idComando).getSintaxis_comando().getSintaxis();
-    }
+    }*/
 }
 

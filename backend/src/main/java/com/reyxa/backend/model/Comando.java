@@ -1,4 +1,4 @@
-package com.reyxa.backend.model.comandos;
+package com.reyxa.backend.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +10,9 @@ import javax.persistence.JoinColumn;
 
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.reyxa.backend.model.SintaxisComando;
+
 import javax.persistence.ForeignKey;
 import lombok.Getter;
 import lombok.Setter;
@@ -23,7 +26,7 @@ import lombok.Setter;
         @Id
         @GeneratedValue(strategy = GenerationType.AUTO)
         @Column(name = "id_comando")
-        public int id_comando;
+        private int id_comando;
 
         @Getter
         @Setter
@@ -36,9 +39,9 @@ import lombok.Setter;
         @JoinColumn(name = "sintaxis_comando", nullable = false, foreignKey = @ForeignKey(name = "fkdesc"))
         private SintaxisComando sintaxis_comando;
 
-        public Comando() {
+        /*public Comando() {
 
-        }
+        }*/
     }
 
 

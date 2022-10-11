@@ -25,7 +25,7 @@ public class UsuarioServiceImp implements UsuarioService {
      @Override
     public List<Usuario> listaUsuarios() {
         // TODO Auto-generated method stub
-        return usuarioRepository.findAll();
+        return (List)usuarioRepository.findAll();
     }
 
     /*@Override
@@ -51,8 +51,8 @@ public class UsuarioServiceImp implements UsuarioService {
          * ya que el mismo no puede hacer mas de un comentario
          * 
          */
-        if(existsByUsuario(usuario.getNombre())){
-rta= "Ya existe una opinion de ese usuario";
+        if(existsByNombre(usuario.getNombre())){
+rta= "Ya existe un comentario de ese usuario";
         }else{
             int id = hashCode();
             usuario.setId_usuario(id);
@@ -87,21 +87,22 @@ return rta;
     }
 */
 
-    @Override
+    
+/*@Override
 
-    public String modificarUsuario(String usuario) {
+    public String modificarComentario(String usuario) {
 
 
 usuarioRepository.modificarusuario(usuario, findByUsuario(usuario).getId_usuario());
         return "Opinion modificada";
    
-}
+}*/
 
     @Override
-    public Usuario findByUsuario(String usuario) {
+    public Usuario findByNombre(String nombre) {
     
         //Optional <Opinion> opinion = this.opinionRepository.findByUsername(usuario);
-     return this.usuarioRepository.findByNombre(usuario);
+     return this.usuarioRepository.findByNombre(nombre);
 
 
     }
@@ -109,25 +110,25 @@ usuarioRepository.modificarusuario(usuario, findByUsuario(usuario).getId_usuario
     
 
 
-  @Override
+  /*@Override
  public void modificarDesc(String usuario) {
   // TODO Auto-generated method stub
   
   }
-
+*/
 @Override
-public boolean existsByUsuario(String usuario) {
-    return usuarioRepository.existsByNombre(usuario);
+public boolean existsByNombre(String nombre) {
+    return usuarioRepository.existsByNombre(nombre);
 }
 
-@Override
+/*@Override
 public String eliminarUsuario(String usuario) {
     comentarioRepository.eliminaropinion(findByUsuario(usuario).getComentario_usuario().getId_comentario());
-usuarioRepository.eliminaropinion(usuario);
+usuarioRepository.eliminarUsuario(usuario);
 
     return "Comentario del usuario "+usuario+" eliminado";
 }
- 
+ */
 
 }
 

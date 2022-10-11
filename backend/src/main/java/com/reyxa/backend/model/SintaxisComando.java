@@ -1,4 +1,4 @@
-package com.reyxa.backend.model.comandos;
+package com.reyxa.backend.model;
 
 //import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -25,8 +25,8 @@ public class SintaxisComando {
     @Setter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_descripcion")
-    private int id_descripcion;
+    @Column(name = "id_sintaxis")
+    private int id_sintaxis;
 
     @Getter
     @Setter
