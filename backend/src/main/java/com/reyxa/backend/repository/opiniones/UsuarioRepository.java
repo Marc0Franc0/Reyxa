@@ -4,6 +4,8 @@ package com.reyxa.backend.repository.opiniones;
 
 
 
+import java.util.Optional;
+
 import org.springframework.data.repository.CrudRepository;
 
 import org.springframework.stereotype.Repository;
@@ -14,7 +16,7 @@ import com.reyxa.backend.model.opiniones.Usuario;
 public interface UsuarioRepository  extends CrudRepository <Usuario, Integer>{
 
 
-//Optional<Opinion> findByUsuario(String usuario);
+//Optional<Usuario> findByUsuario(String usuario);
 Usuario findByNombre(String usuario);
 Boolean existsByNombre (String nombre_de_usuario);
 

@@ -56,7 +56,8 @@
         <h2 class="accordion-header" id="flush-headingThree">
           <button class="accordion-button collapsed botones" type="button" data-bs-toggle="collapse"
             data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-            Envia tu opinion
+            Deja tu comentario
+            Comentarios
           </button>
         </h2>
         <div id="flush-collapseThree" class="accordion-collapse collapse cajatexto border" rel="noopener"
@@ -65,17 +66,11 @@
 
 
 
-            <form (ngSubmit)="buscarOpinion()">
-              <div>
-                <input type="text" required [(ngModel)]="usuario" name="usuario" matInput
-                  placeholder="Nombre de usuario">
-              </div>
 
 
-              <button class="btn btn-primary">Buscar usuario</button>
-            </form>
 
-            <form (ngSubmit)="crearOpinion()">
+<!--
+ <form (ngSubmit)="crearOpinion()">
               <div>
                 <input type="text" required [(ngModel)]="opinion.usuario" name="usuario" matInput
                   placeholder="Nombre de usuario">
@@ -89,9 +84,69 @@
 
               <button class="btn btn-primary">Enviar opinion</button>
             </form>
+            <form (ngSubmit)="buscarUsuario()">
+              <div>
+                <input type="text" required [(ngModel)]="nombre_usuario" name="nombre usuario" matInput
+                  placeholder="Nombre de usuario">
+              </div>
 
 
+              <button class="btn btn-primary">Buscar </button>
+            </form>
+-->
 
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formBuscar" data-bs-whatever="@mdo">Búsqueda de un usuario</button>
+
+<div class="modal fade" id="formBuscar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" style="color:black" id="exampleModalLabel">Buscar usuario </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="buscarUsuario()">
+          <div class="mb-3">
+            <label for="recipient-name" style="color:black"  class="col-form-label">Nombre de usuario:</label>
+            <input type="text" class="form-control" required [(ngModel)]="nombre_usuario" name="usuario" matInput
+            placeholder="Nombre de usuario">
+          </div>
+          <button class="btn btn-primary">Enviar</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formComentario" data-bs-whatever="@mdo">Descripción de experiencia</button>
+
+            <div class="modal fade" id="formComentario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" style="color:black" id="exampleModalLabel">Escribe tu comentario</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form (ngSubmit)="crearUsuario()">
+                      <div class="mb-3">
+                        <label for="recipient-name" style="color:black"  class="col-form-label">Nombre de usuario:</label>
+                        <input type="text" class="form-control" required [(ngModel)]="usuario.nombre" name="usuario" matInput
+                        placeholder="Nombre de usuario">
+                      </div>
+                      <div class="mb-3">
+                        <label for="message-text" style="color:black"class="col-form-label">Comentario:</label>
+
+                        <textarea class="form-control" id="message-text" required [(ngModel)]="usuario.comentario" name="descripcion" matInput placeholder="Comentario"></textarea>
+                      </div>
+                      <button class="btn btn-primary">Enviar</button>
+                    </form>
+                  </div>
+
+                </div>
+              </div>
+            </div>
 
           </div>
 

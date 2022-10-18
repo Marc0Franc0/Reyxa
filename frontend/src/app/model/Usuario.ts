@@ -1,4 +1,5 @@
-export interface Usuario {
-  name: string ;
-  opinion : string ;
+export class Usuario {
+  nombre: string ="";
+comentario:string="";
 }
+

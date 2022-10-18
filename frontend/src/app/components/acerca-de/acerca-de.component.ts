@@ -1,4 +1,4 @@
-import { Opinion } from './../../model/Opinion';
+import { Usuario } from '../../model/Usuario';
 
 import { Observable } from 'rxjs';
 import { HttpService } from 'src/app/services/http-service/http.service';
@@ -17,20 +17,19 @@ import Swal from 'sweetalert2';
 })
 export class AcercaDeComponent implements OnInit {
   constructor(private http:HttpService ) { }
-  opinion:Opinion = new Opinion();
-usuario:string="";
+  usuario:Usuario = new Usuario();
+
+
+nombre_usuario:string="";
   ngOnInit(): void {
-    console.log(this.opinion);
+    console.log(this.usuario);
 
   }
 
 
 
-  buscarOpinion(){
-
-
-
- this.http.buscarOpinion(this.usuario).subscribe(dato => {
+  buscarUsuario(){
+ this.http.buscarUsuario(this.nombre_usuario).subscribe(dato => {
       console.log(dato);
   //this.usuario=JSON.stringify(dato);
     },rta => {console.log(rta.error.text);
@@ -43,9 +42,9 @@ usuario:string="";
 
 
 
- crearOpinion(){
-  console.log(this.opinion);
- this.http.crearOpinion(this.opinion).subscribe(
+  crearUsuario(){
+  console.log(this.usuario);
+ this.http.crearUsuario(this.usuario).subscribe(
     (data) => {
       console.log(data);
     },(rta) => {

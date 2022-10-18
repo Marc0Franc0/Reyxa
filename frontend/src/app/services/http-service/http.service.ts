@@ -1,5 +1,5 @@
 
-import { Opinion } from './../../model/Opinion';
+import { Usuario } from '../../model/Usuario';
 import { Observable } from 'rxjs';
 
 import {
@@ -102,11 +102,11 @@ export class HttpService {
     return this.http.get('http://localhost:8080/wconfig');
   }
 
-  seabrioexplorer() {
+  /*seabrioexplorer() {
     return this.http.get('http://localhost:8080/explorerConsole', {
       responseType: 'text',
     });
-  }
+  }*/
 
   vaciarPapelera() {
     this.http.get('http://localhost:8080/papelera').subscribe(),
@@ -154,20 +154,20 @@ export class HttpService {
         console.log(error);
       };
   }
-  crearOpinion(opinion:Opinion) {
-    return this.http.post(`${this.path}/nuevaopinion`,
-    {"id_opinion":null,"usuario":opinion.usuario,"id_descripcion":{"id_descripcion":null,"descripcion":opinion.descripcion}});
+  crearUsuario(usuario:Usuario) {
+    return this.http.post(`${this.path}/usuarionuevo`,
+    {"id_usuario":null,"nombre":usuario.nombre,"comentario_usuario":{"id_comentario":null,"comentario":usuario.comentario}});
   }
   /*buscarOpinion(usuario:string){
  return this.http.get(`http://localhost:8080/buscaropinion`,{params: { usuario }});
 
 
 }*/
-  buscarOpinion(usuario:string) {
+  buscarUsuario(nombre:string) {
     return this.http
-      .get('http://localhost:8080/buscaropinion', {
+      .get('http://localhost:8080/buscarusuario', {
         params: {
-          usuario,
+          nombre,
         },
       })
 
