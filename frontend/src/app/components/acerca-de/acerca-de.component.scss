@@ -25,14 +25,16 @@
 width:370px;
 max-height: 440px;
  color: white;
- margin-top: 60px;
+ margin-top: 90px;
  background-color:rgb(133, 131, 235);
  -moz-border-radius: 7px;
  -webkit-border-radius: 7px;
 }
 .botones{
- background-color:rgb(133, 131, 235);
- color: white;
+  background-color:rgb(133, 131, 235);
+ color: whitesmoke;
+
+margin-right: 100;
  font-family: Arial;
  font-weight: bolder;
 
@@ -41,8 +43,17 @@ max-height: 440px;
  background-color:rgb(133, 131, 235);
  color: white;
  font-family: Arial;
-max-height: 200px;
--moz-border-radius: 7px;
--webkit-border-radius: 7px;
 
+max-height: 200px;
+
+
+}
+
+.form{
+  background-color:rgb(133, 131, 235);
+color:white
+}
+
+.inputs{
+  background-color: whitesmoke;
 }

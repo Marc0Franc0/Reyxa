@@ -182,12 +182,11 @@ export class HttpService {
     })
 
   }
-  /*
-buscarOpinion(){
-  return this.http.get<Opinion[]>(`http://localhost:8080/opiniones`);
 
+buscarUsuarios(){
+  return this.http.get<Usuario[]>(`http://localhost:8080/usuarios`);
 
  }
 
-*/
+
 }

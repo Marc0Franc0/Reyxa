@@ -1,9 +1,9 @@
-import { Usuario } from '../../model/Usuario';
+
 
 import { Observable } from 'rxjs';
 import { HttpService } from 'src/app/services/http-service/http.service';
 
-
+import { Usuario } from '../../model/Usuario';
 
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,Validators,FormControl } from '@angular/forms';
@@ -19,7 +19,7 @@ export class AcercaDeComponent implements OnInit {
   constructor(private http:HttpService ) { }
   usuario:Usuario = new Usuario();
 
-
+usuarios:Usuario[]=[];
 nombre_usuario:string="";
   ngOnInit(): void {
     console.log(this.usuario);
@@ -28,17 +28,47 @@ nombre_usuario:string="";
 
 
 
+
   buscarUsuario(){
  this.http.buscarUsuario(this.nombre_usuario).subscribe(dato => {
       console.log(dato);
   //this.usuario=JSON.stringify(dato);
     },rta => {console.log(rta.error.text);
-      Swal.fire(rta.error.text)
+      //Swal.fire(rta.error.text)
+      Swal.fire({
+
+
+        position: 'top',
+        icon: 'info',
+        title: rta.error.text,
+        timer: undefined
+
+      })
     });
 
 
 
   }
+  buscarUsuarios(){
+    this.http.buscarUsuarios().subscribe(dato => {
+         console.log(dato);
+     //this.usuario=JSON.stringify(dato);
+       },rta => {console.log(rta.error.text);
+         //Swal.fire(rta.error.text)
+         Swal.fire({
+
+
+           position: 'top',
+           icon: 'info',
+           title: rta.error.text,
+           timer: undefined
+
+         })
+       });
+
+
+
+     }
 
 
 
@@ -49,7 +79,16 @@ nombre_usuario:string="";
       console.log(data);
     },(rta) => {
       console.log(rta.error.text);
-      Swal.fire(rta.error.text)
+      //Swal.fire(rta.error.text)
+      Swal.fire({
+
+
+        position: 'top',
+        icon: 'info',
+        title: rta.error.text,
+        timer: undefined
+
+      })
   })
 
 
