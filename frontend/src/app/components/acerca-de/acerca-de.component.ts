@@ -19,15 +19,22 @@ export class AcercaDeComponent implements OnInit {
   constructor(private http:HttpService ) { }
   usuario:Usuario = new Usuario();
 
-usuarios:Usuario[]=[];
+  usuarios: Usuario[] = [];
 nombre_usuario:string="";
   ngOnInit(): void {
     console.log(this.usuario);
+  //this.buscarUsuarios();
 
   }
 
 
+buscarComentarios():any{
+  this.http.buscarUsuarios().subscribe(data=>{
+    this.usuarios=data;
+  })
 
+
+}
 
   buscarUsuario(){
  this.http.buscarUsuario(this.nombre_usuario).subscribe(dato => {
@@ -52,20 +59,9 @@ nombre_usuario:string="";
   buscarUsuarios(){
     this.http.buscarUsuarios().subscribe(dato => {
          console.log(dato);
-     //this.usuario=JSON.stringify(dato);
-       },rta => {console.log(rta.error.text);
-         //Swal.fire(rta.error.text)
-         Swal.fire({
-
-
-           position: 'top',
-           icon: 'info',
-           title: rta.error.text,
-           timer: undefined
-
-         })
-       });
-
+     this.usuarios=dato;
+       }
+    )
 
 
      }
@@ -92,6 +88,9 @@ nombre_usuario:string="";
   })
 
 
+
+}
+editarUsuario(){
 
 }
 

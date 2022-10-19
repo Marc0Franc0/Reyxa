@@ -156,7 +156,8 @@ export class HttpService {
   }
   crearUsuario(usuario:Usuario) {
     return this.http.post(`${this.path}/usuarionuevo`,
-    {"id_usuario":null,"nombre":usuario.nombre,"comentario_usuario":{"id_comentario":null,"comentario":usuario.comentario}});
+    {"id_usuario":usuario.id_usuario,"nombre":usuario.nombre,"comentario_usuario":
+    {"id_comentario":usuario.comentario_usuario?.id_comentario,"comentario":usuario.comentario_usuario.comentario}});
   }
   /*buscarOpinion(usuario:string){
  return this.http.get(`http://localhost:8080/buscaropinion`,{params: { usuario }});
@@ -173,6 +174,16 @@ export class HttpService {
 
 
   }
+  buscarUsuarioById(id:number) {
+    return this.http
+      .get('http://localhost:8080/buscarusuariobyid', {
+        params: {
+          id,
+        },
+      })
+
+
+  }
   eliminarOpinion(usuario:string){
     return this.http
     .get(`${this.path}/eliminaropinion`, {
@@ -183,7 +194,7 @@ export class HttpService {
 
   }
 
-buscarUsuarios(){
+buscarUsuarios():Observable<Usuario[]>{
   return this.http.get<Usuario[]>(`http://localhost:8080/usuarios`);
 
  }

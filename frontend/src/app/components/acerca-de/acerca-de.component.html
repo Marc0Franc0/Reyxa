@@ -122,7 +122,7 @@
             </div>
 
             <button type="button" class="btn botones " data-bs-toggle="modal" data-bs-target="#formComentario"
-              data-bs-whatever="@mdo">Descripción de experiencia/
+              data-bs-whatever="@mdo">
               Describe tu experiencia
             </button>
 
@@ -145,7 +145,7 @@
                         <label for="message-text" class="col-form-label ">Comentario:</label>
 
                         <textarea class="form-control inputs" id="message-text" required
-                          [(ngModel)]="usuario.comentario" name="descripcion" matInput
+                          [(ngModel)]="usuario.comentario_usuario.comentario" name="descripcion" matInput
                           placeholder="Comentario"></textarea>
                       </div>
                       <button class="btn botones ">Enviar</button>
@@ -156,8 +156,8 @@
               </div>
             </div>
 
-            <button type="button" class="btn botones " data-bs-toggle="modal" data-bs-target="#comentarios"
-              data-bs-whatever="@mdo">Experiencia de otros usuarios</button>
+            <button type="button" class="btn botones " (click)="buscarUsuarios()" data-bs-toggle="modal"
+              data-bs-target="#comentarios" data-bs-whatever="@mdo">Experiencia de otros usuarios</button>
 
             <div class="modal fade " id="comentarios" tabindex="-1" aria-labelledby="exampleModalLabel"
               aria-hidden="true">
@@ -181,9 +181,23 @@
                       <tbody>
                         <tr *ngFor="let user of usuarios">
 
-                          <th scope="row" >{{user.nombre}}</th>
-                          <td>{{user.comentario}}</td>
+                          <th scope="row">{{user.nombre}}</th>
+                          <td>{{user.comentario_usuario.comentario}}</td>
+                          <td>
+                            <div class="row">
+                              <div class="col">
 
+  <button type="button" class="btn botones " data-bs-toggle="modal" data-bs-target="#formEditar"
+  data-bs-whatever="@mdo">Editar
+
+</button>
+
+
+                              </div>
+                              <div class="col"></div>
+                            </div>
+
+                          </td>
                         </tr>
                       </tbody>
 
@@ -206,5 +220,35 @@
 
           </div>
 
+
+          <div class="modal fade " id="formEditar" tabindex="-1" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content form">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edita tu comentario</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form (ngSubmit)="crearUsuario()">
+                  <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Nombre de usuario:</label>
+                    <input type="text" class="form-control" required [(ngModel)]="usuario.nombre" name="usuario"
+                      matInput >
+                  </div>
+                  <div class="mb-3">
+                    <label for="message-text" class="col-form-label ">Comentario:</label>
+
+                    <textarea class="form-control inputs" id="message-text" required
+                      [(ngModel)]="usuario.comentario_usuario.comentario" name="descripcion" matInput
+                      ></textarea>
+                  </div>
+                  <button class="btn botones ">Enviar</button>
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </div>
 
         </div>

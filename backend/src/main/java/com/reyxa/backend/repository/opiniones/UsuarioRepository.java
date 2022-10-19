@@ -20,7 +20,7 @@ public interface UsuarioRepository  extends CrudRepository <Usuario, Integer>{
 Usuario findByNombre(String usuario);
 Boolean existsByNombre (String nombre_de_usuario);
 
-
+Usuario findById(int Id);
 /*@Modifying
 @Transactional
 @Query (value = "DELETE FROM opiniones WHERE nombre =:nombre", nativeQuery = true)

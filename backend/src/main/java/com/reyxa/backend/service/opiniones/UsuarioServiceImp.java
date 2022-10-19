@@ -11,6 +11,8 @@ import com.reyxa.backend.model.opiniones.Usuario;
 import com.reyxa.backend.repository.opiniones.ComentarioRepository;
 import com.reyxa.backend.repository.opiniones.UsuarioRepository;
 
+import net.bytebuddy.dynamic.loading.PackageDefinitionStrategy.Definition.Undefined;
+
 @Service
 public class UsuarioServiceImp implements UsuarioService {
 
@@ -36,7 +38,7 @@ public class UsuarioServiceImp implements UsuarioService {
 
     @Override
     public Comentario nuevoComentario( int id_descripcion,String descripcion) {
-    comentario.setId_comentario(id_descripcion);
+    //comentario.setId_comentario(id_descripcion);
         comentario.setComentario(descripcion);
        
        return  comentarioRepository.save(comentario);
@@ -54,8 +56,8 @@ public class UsuarioServiceImp implements UsuarioService {
         if(existsByNombre(usuario.getNombre())){
 rta= "Ya existe un comentario de ese usuario";
         }else{
-            int id = hashCode();
-            usuario.setId_usuario(id);
+            
+            //usuario.setId_usuario(id);
             usuario.setNombre(usuario.getNombre());
             /*
              * 
