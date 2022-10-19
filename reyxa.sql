@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-10-2022 a las 20:11:46
+-- Tiempo de generación: 19-10-2022 a las 15:26:28
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `reyxa`
 --
-CREATE DATABASE IF NOT EXISTS `reyxa` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
-USE `reyxa`;
 
 -- --------------------------------------------------------
 
@@ -116,7 +114,7 @@ CREATE TABLE `hibernate_sequence` (
 --
 
 INSERT INTO `hibernate_sequence` (`next_val`) VALUES
-(8);
+(11);
 
 -- --------------------------------------------------------
 
@@ -125,7 +123,7 @@ INSERT INTO `hibernate_sequence` (`next_val`) VALUES
 --
 
 CREATE TABLE `sintaxis_de_comandos` (
-  `id_descripcion` int(11) NOT NULL,
+  `id_sintaxis` int(11) NOT NULL,
   `sintaxis` varchar(80) COLLATE utf8_bin DEFAULT NULL,
   `descripcion` varchar(80) COLLATE utf8_bin DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
@@ -134,49 +132,49 @@ CREATE TABLE `sintaxis_de_comandos` (
 -- Volcado de datos para la tabla `sintaxis_de_comandos`
 --
 
-INSERT INTO `sintaxis_de_comandos` (`id_descripcion`, `sintaxis`, `descripcion`) VALUES
-(1, 'start notepad.exe', NULL),
-(2, 'start explorer.exe', NULL),
-(3, 'start mspaint.exe', NULL),
-(4, 'start calc.exe', NULL),
-(5, 'start ms-settings:', NULL),
-(6, 'start https://www.smn.gob.ar/', NULL),
-(7, 'start https://news.google.com/topstories?hl=es-419&gl=US&ceid=US:es-419', NULL),
-(8, 'start https://www.instagram.com/?theme=dark', NULL),
-(9, 'start https://web.whatsapp.com/', NULL),
-(10, 'start https://mail.google.com/mail/u/0/#inbox', NULL),
-(11, 'start https://www.netflix.com/ar/Login', NULL),
-(12, 'start https://open.spotify.com/', NULL),
-(13, 'start https://www.youtube.com/', NULL),
-(14, 'shutdown -s -t ', NULL),
-(15, 'shutdown /a', NULL),
-(16, 'start-MpScan', NULL),
-(17, 'start ms-settings:windowsupdate', NULL),
-(18, 'rd /s /q a:\\\\$Recycle.bin', NULL),
-(19, 'rd /s /q b:\\\\$Recycle.bin', NULL),
-(20, 'rd /s /q c:\\\\$Recycle.bin', NULL),
-(21, 'rd /s /q d:\\\\$Recycle.bin', NULL),
-(22, 'rd /s /q e:\\\\$Recycle.bin', NULL),
-(23, 'rd /s /q f:\\\\$Recycle.bin', NULL),
-(24, 'rd /s /q g:\\\\$Recycle.bin', NULL),
-(25, 'rd /s /q h:\\\\$Recycle.bin', NULL),
-(26, 'rd /s /q i:\\\\$Recycle.bin', NULL),
-(27, 'rd /s /q j:\\\\$Recycle.bin', NULL),
-(28, 'rd /s /q k:\\\\$Recycle.bin', NULL),
-(29, 'rd /s /q l:\\\\$Recycle.bin', NULL),
-(30, 'rd /s /q m:\\\\$Recycle.bin', NULL),
-(31, 'rd /s /q n:\\\\$Recycle.bin', NULL),
-(32, 'rd /s /q o:\\\\$Recycle.bin', NULL),
-(33, 'rd /s /q p:\\\\$Recycle.bin', NULL),
-(34, 'rd /s /q r:\\\\$Recycle.bin', NULL),
-(35, 'rd /s /q s:\\\\$Recycle.bin', NULL),
-(36, 'rd /s /q t:\\\\$Recycle.bin', NULL),
-(37, 'rd /s /q u:\\\\$Recycle.bin', NULL),
-(38, 'rd /s /q v:\\\\$Recycle.bin', NULL),
-(39, 'rd /s /q w:\\\\$Recycle.bin', NULL),
-(40, 'rd /s /q x:\\\\$Recycle.bin', NULL),
-(41, 'rd /s /q y:\\\\$Recycle.bin', NULL),
-(42, 'rd /s /q z:\\\\$Recycle.bin', NULL);
+INSERT INTO `sintaxis_de_comandos` (`id_sintaxis`, `sintaxis`, `descripcion`) VALUES
+(1, 'start notepad.exe', 'Ejecuta el bloc de notas de Windows'),
+(2, 'start explorer.exe', 'Ejecuta el explorador de archivos de Windows'),
+(3, 'start mspaint.exe', 'Ejecuta paint'),
+(4, 'start calc.exe', 'Ejecuta la calculadora de Windows'),
+(5, 'start ms-settings:', 'Ejecuta los ajustes de Windows'),
+(6, 'start https://www.smn.gob.ar/', 'Abre el clima en una nueva ventana del navegador'),
+(7, 'start https://news.google.com/topstories?hl=es-419&gl=US&ceid=US:es-419', 'Abre una página de noticias en una nueva ventana del navegador'),
+(8, 'start https://www.instagram.com/?theme=dark', 'Abre Instagram Web en una nueva ventana del navegador'),
+(9, 'start https://web.whatsapp.com/', 'Abre Whatsapp Web en una nueva ventana del navegador'),
+(10, 'start https://mail.google.com/mail/u/0/#inbox', 'Abre Gmail en una nueva ventana del navegador'),
+(11, 'start https://www.netflix.com/ar/Login', 'Abre Netflix Web en una nueva ventana del ordenador'),
+(12, 'start https://open.spotify.com/', 'Abre Spotify Web en una nueva ventana del navegador'),
+(13, 'start https://www.youtube.com/', 'Abre Youtube en una nueva ventana del navegador'),
+(14, 'shutdown -s -t ', 'Programa el apagado del ordenador con un tiempo especificado en segundos'),
+(15, 'shutdown /a', 'Cancela un posible apagado programado anteriormente'),
+(16, 'start-MpScan', 'Realiza un escaneo con Windows Defender, haciendo uso de WindowsPowerShell'),
+(17, 'start ms-settings:windowsupdate', 'Abre Windows Update '),
+(18, 'rd /s /q a:\\\\$Recycle.bin', 'Vacía la papelera del disco a'),
+(19, 'rd /s /q b:\\\\$Recycle.bin', 'Vacía la papelera del disco b'),
+(20, 'rd /s /q c:\\\\$Recycle.bin', 'Vacía la papelera del disco c'),
+(21, 'rd /s /q d:\\\\$Recycle.bin', 'Vacía la papelera del disco d'),
+(22, 'rd /s /q e:\\\\$Recycle.bin', 'Vacía la papelera del disco e'),
+(23, 'rd /s /q f:\\\\$Recycle.bin', 'Vacía la papelera del disco f'),
+(24, 'rd /s /q g:\\\\$Recycle.bin', 'Vacía la papelera del disco g'),
+(25, 'rd /s /q h:\\\\$Recycle.bin', 'Vacía la papelera del disco h'),
+(26, 'rd /s /q i:\\\\$Recycle.bin', 'Vacía la papelera del disco i'),
+(27, 'rd /s /q j:\\\\$Recycle.bin', 'Vacía la papelera del disco j'),
+(28, 'rd /s /q k:\\\\$Recycle.bin', 'Vacía la papelera del disco k'),
+(29, 'rd /s /q l:\\\\$Recycle.bin', 'Vacía la papelera del disco l'),
+(30, 'rd /s /q m:\\\\$Recycle.bin', 'Vacía la papelera del disco m'),
+(31, 'rd /s /q n:\\\\$Recycle.bin', 'Vacía la papelera del disco n'),
+(32, 'rd /s /q o:\\\\$Recycle.bin', 'Vacía la papelera del disco o'),
+(33, 'rd /s /q p:\\\\$Recycle.bin', 'Vacía la papelera del disco p'),
+(34, 'rd /s /q r:\\\\$Recycle.bin', 'Vacía la papelera del disco r'),
+(35, 'rd /s /q s:\\\\$Recycle.bin', 'Vacía la papelera del disco s'),
+(36, 'rd /s /q t:\\\\$Recycle.bin', 'Vacía la papelera del disco t'),
+(37, 'rd /s /q u:\\\\$Recycle.bin', 'Vacía la papelera del disco u'),
+(38, 'rd /s /q v:\\\\$Recycle.bin', 'Vacía la papelera del disco v'),
+(39, 'rd /s /q w:\\\\$Recycle.bin', 'Vacía la papelera del disco w'),
+(40, 'rd /s /q x:\\\\$Recycle.bin', 'Vacía la papelera del disco x'),
+(41, 'rd /s /q y:\\\\$Recycle.bin', 'Vacía la papelera del disco y'),
+(42, 'rd /s /q z:\\\\$Recycle.bin', 'Vacía la papelera del disco z');
 
 -- --------------------------------------------------------
 
@@ -218,7 +216,7 @@ ALTER TABLE `comentarios`
 -- Indices de la tabla `sintaxis_de_comandos`
 --
 ALTER TABLE `sintaxis_de_comandos`
-  ADD PRIMARY KEY (`id_descripcion`);
+  ADD PRIMARY KEY (`id_sintaxis`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -242,13 +240,13 @@ ALTER TABLE `comandos`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
 
 --
 -- AUTO_INCREMENT de la tabla `sintaxis_de_comandos`
 --
 ALTER TABLE `sintaxis_de_comandos`
-  MODIFY `id_descripcion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3838;
+  MODIFY `id_sintaxis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3838;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
