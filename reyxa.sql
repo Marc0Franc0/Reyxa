@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-10-2022 a las 15:26:28
+-- Tiempo de generación: 19-10-2022 a las 15:36:32
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `reyxa`
 --
+CREATE DATABASE IF NOT EXISTS `reyxa` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
+USE `reyxa`;
 
 -- --------------------------------------------------------
 
@@ -97,7 +99,8 @@ CREATE TABLE `comentarios` (
 --
 
 INSERT INTO `comentarios` (`id_comentario`, `comentario`) VALUES
-(1, 'Nashe');
+(1, 'Nashe'),
+(97, 'Me gusta');
 
 -- --------------------------------------------------------
 
@@ -114,7 +117,7 @@ CREATE TABLE `hibernate_sequence` (
 --
 
 INSERT INTO `hibernate_sequence` (`next_val`) VALUES
-(11);
+(12);
 
 -- --------------------------------------------------------
 
@@ -193,7 +196,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `nombre_de_usuario`, `comentario_usuario`) VALUES
-(1, 'Marco', 1);
+(1, 'Marco', 1),
+(11, 'JuanBM', 97);
 
 --
 -- Índices para tablas volcadas
@@ -240,7 +244,7 @@ ALTER TABLE `comandos`
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
 
 --
 -- AUTO_INCREMENT de la tabla `sintaxis_de_comandos`
