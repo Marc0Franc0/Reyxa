@@ -2,10 +2,9 @@ package com.reyxa.backend.service.opiniones;
 
 import java.util.List;
 
+import com.reyxa.backend.model.Comentario;
+import com.reyxa.backend.model.Usuario;
 
-
-import com.reyxa.backend.model.opiniones.Comentario;
-import com.reyxa.backend.model.opiniones.Usuario;
 
 public interface UsuarioService {
     

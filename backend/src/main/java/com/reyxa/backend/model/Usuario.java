@@ -1,4 +1,4 @@
-package com.reyxa.backend.model.opiniones;
+package com.reyxa.backend.model;
 
 import javax.persistence.Entity;
 
@@ -17,7 +17,9 @@ import javax.persistence.UniqueConstraint;
 import lombok.Getter;
 import lombok.Setter;
 /*
- * Esta clase representa la tabla de los nombres de los comandos que va a estar representada en la base de datos
+ * Esta clase representa la tabla de los usuarios los cuales escribieron un comentario 
+ * y fueron almacenados en la base de datos
+ * 
  */
 @Entity
 @Table(name = "usuarios",uniqueConstraints = @UniqueConstraint(columnNames={"nombre_de_usuario"}))

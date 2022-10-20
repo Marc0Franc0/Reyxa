@@ -17,6 +17,10 @@ import javax.persistence.ForeignKey;
 import lombok.Getter;
 import lombok.Setter;
 
+/*
+ * Esta clase representa la tabla de los comandos que va a estar representada en la base de datos
+ */
+
     @Entity
     @Table(name = "comandos")
     public class Comando {

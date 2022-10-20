@@ -15,7 +15,8 @@ import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 /*
- * Esta clase representa la tabla de los comandos que va a estar representada en la base de datos
+ * Esta clase representa la tabla con la sintaxis de los comandos 
+ * que va a estar representada en la base de datos
  */
 @Entity
 @Table(name = "sintaxis_de_comandos")
