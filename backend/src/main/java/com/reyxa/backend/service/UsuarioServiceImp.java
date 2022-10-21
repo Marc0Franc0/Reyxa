@@ -1,4 +1,4 @@
-package com.reyxa.backend.service.opiniones;
+package com.reyxa.backend.service;
 
 import java.util.List;
 
@@ -31,20 +31,29 @@ public class UsuarioServiceImp implements UsuarioService {
     Usuario usuario = new Usuario();
     Comentario comentario = new Comentario();
 
+
+     //Se sobreescribe el metodo utilizando en su retorno un metodo del repositorio correspondiente
     @Override
     public List<Usuario> listaUsuarios() {
-        // TODO Auto-generated method stub
         return (List) usuarioRepository.findAll();
     }
 
+
+    //Se sobreescribe el metodo utilizando en su retorno un metodo del repositorio correspondiente
     @Override
-    public Comentario nuevoComentario(int id_descripcion, String descripcion) {
-        // comentario.setId_comentario(id_descripcion);
-        comentario.setComentario(descripcion);
+    public Comentario nuevoComentario(String coment) {
+   
+        comentario.setComentario(coment);
 
         return comentarioRepository.save(comentario);
     }
 
+     /*-El metodo siguiente crea un nuevo usuario junto con su comentario.
+     -Establece el nombre y luego el comentario
+     -Para crear el comentario utiliza el metodo "nuevoComentario()".
+     -Retorna un string para saber si se puede crear o no un nuevo usuario
+      * 
+     */
     @Override
     public String nuevoUsuario(Usuario usuario) {
         String rta;
@@ -70,7 +79,8 @@ public class UsuarioServiceImp implements UsuarioService {
              * Ya que si no se hace esto va a haber un error porque ambas entidades estan relacionadas
              */
             usuario.setComentario_usuario(
-                    nuevoComentario(usuario.getId_usuario(), usuario.getComentario_usuario().getComentario()));
+                    nuevoComentario(
+                    usuario.getComentario_usuario().getComentario()));
 
             usuarioRepository.save(usuario);
 
@@ -82,55 +92,19 @@ public class UsuarioServiceImp implements UsuarioService {
 
 
     
-
+//Metodo que busca a un usuario junto con todos sus atributos por medio de su nombre
     @Override
     public Usuario findByNombre(String nombre) {
-
-        // Optional <Opinion> opinion = this.opinionRepository.findByUsername(usuario);
         return this.usuarioRepository.findByNombre(nombre);
-
     }
 
-    /*
-     * @Override
-     * public void modificarDesc(String usuario) {
-     * // TODO Auto-generated method stub
-     * 
-     * }
-     */
+  //Verifica con su repositorio correspondiente si un usuario existe por medio de su nombre
     @Override
     public boolean existsByNombre(String nombre) {
         return usuarioRepository.existsByNombre(nombre);
     }
 
-    /*
-     * @Override
-     * public String eliminarUsuario(String usuario) {
-     * comentarioRepository.eliminaropinion(findByUsuario(usuario).
-     * getComentario_usuario().getId_comentario());
-     * usuarioRepository.eliminarUsuario(usuario);
-     * 
-     * return "Comentario del usuario "+usuario+" eliminado";
-     * }
-     */
+
 
 }
 
-/*
- * @PostMapping(path ="/add") // Map ONLY POST Requests
- * public String addNewUser( @RequestParam String username, String email, String
- * password) {
- * // @ResponseBody means the returned String is the response, not a view name
- * // @RequestParam means it is a parameter from the GET or POST request
- * 
- * Usuarios n = new Usuarios();
- * 
- * 
- * n.setUsername(username);
- * n.setEmail(email);
- * n.setPassword(password);
- * 
- * usuariosRepository.save(n);
- * return "Gurdado";
- * }
- */

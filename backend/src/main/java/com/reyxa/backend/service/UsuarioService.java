@@ -1,4 +1,4 @@
-package com.reyxa.backend.service.opiniones;
+package com.reyxa.backend.service;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ public interface UsuarioService {
 
     //Ambos metodos son para crear una nueva opinion
     public String nuevoUsuario( Usuario usuario);
-    public Comentario nuevoComentario(int id,String descripcion);
+    public Comentario nuevoComentario(String coment);
 
 
 
@@ -22,11 +22,6 @@ public interface UsuarioService {
 boolean existsByNombre(String usuario);
 
 
-
-  // public String modificarComentario(String usuario);
-    //public void modificarDesc(String usuario);
-
-//public String eliminarUsuario(String opinion);
 
 
 }

@@ -26,7 +26,7 @@ public class Comentario {
     @Getter
     @Setter
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_comentario")
     private int id_comentario;
 

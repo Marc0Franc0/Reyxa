@@ -156,8 +156,12 @@ export class HttpService {
   }
   crearUsuario(usuario:Usuario) {
     return this.http.post(`${this.path}/usuarionuevo`,
-    {"id_usuario":usuario.id_usuario,"nombre":usuario.nombre,"comentario_usuario":
-    {"id_comentario":usuario.comentario_usuario?.id_comentario,"comentario":usuario.comentario_usuario.comentario}});
+    {
+      "nombre": usuario.nombre,
+      "comentario_usuario": {
+          "comentario": usuario.comentario_usuario.comentario
+
+  }});
   }
   /*buscarOpinion(usuario:string){
  return this.http.get(`http://localhost:8080/buscaropinion`,{params: { usuario }});

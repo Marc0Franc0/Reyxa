@@ -1,4 +1,4 @@
-package com.reyxa.backend.service.comandos;
+package com.reyxa.backend.service;
 
 import com.reyxa.backend.model.Comando;
 
@@ -6,7 +6,8 @@ import com.reyxa.backend.model.Comando;
  * Interfaz la cual brinda los metodos utilizados dentro del controlador UsuarioController
  */
 public interface ComandoService {
-    int findBynombre(String nombre);
+
+    int obtenerId(String nombre);
 
     public Comando getcomando(int id);
 
