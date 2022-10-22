@@ -10,6 +10,8 @@ import com.reyxa.backend.model.Usuario;
 import com.reyxa.backend.repository.ComentarioRepository;
 import com.reyxa.backend.repository.UsuarioRepository;
 
+import net.bytebuddy.dynamic.loading.PackageDefinitionStrategy.Definition.Undefined;
+
 /*
  * -Clase la cual es utilizada como servicio e implementa la interfaz de UsuaroService.
  */
@@ -41,8 +43,8 @@ public class UsuarioServiceImp implements UsuarioService {
 
     //Se sobreescribe el metodo utilizando en su retorno un metodo del repositorio correspondiente
     @Override
-    public Comentario nuevoComentario(String coment) {
-   
+    public Comentario nuevoComentario(int id, String coment) {
+        comentario.setId_comentario(id);
         comentario.setComentario(coment);
 
         return comentarioRepository.save(comentario);
@@ -54,6 +56,8 @@ public class UsuarioServiceImp implements UsuarioService {
      -Retorna un string para saber si se puede crear o no un nuevo usuario
       * 
      */
+
+
     @Override
     public String nuevoUsuario(Usuario usuario) {
         String rta;
@@ -68,8 +72,8 @@ public class UsuarioServiceImp implements UsuarioService {
         if (existsByNombre(usuario.getNombre())) {
             rta = "Ya existe un comentario de ese usuario";
         } else {
-
-            // usuario.setId_usuario(id);
+            int id = hashCode();
+            usuario.setId_usuario(id);
             usuario.setNombre(usuario.getNombre());
             /*
              * 
@@ -80,7 +84,7 @@ public class UsuarioServiceImp implements UsuarioService {
              */
             usuario.setComentario_usuario(
                     nuevoComentario(
-                    usuario.getComentario_usuario().getComentario()));
+                    id, usuario.getComentario_usuario().getComentario()));
 
             usuarioRepository.save(usuario);
 

@@ -14,7 +14,7 @@ public interface UsuarioService {
 
     //Ambos metodos son para crear una nueva opinion
     public String nuevoUsuario( Usuario usuario);
-    public Comentario nuevoComentario(String coment);
+    public Comentario nuevoComentario(int id, String coment);
 
 
 
