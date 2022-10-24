@@ -9,4 +9,5 @@ Link JDK: https://www.oracle.com/java/technologies/downloads/
 TUTORIAL DE INSTALACIÓN DEL JDK: https://www.youtube.com/watch?v=oAin-q1oTDw
 
 
-3) 
+3) Descargar Node J
+than your local version (13.3.7). 
