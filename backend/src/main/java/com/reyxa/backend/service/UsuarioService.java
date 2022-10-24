@@ -16,7 +16,7 @@ public interface UsuarioService {
     public String nuevoUsuario( Usuario usuario);
     public Comentario nuevoComentario(int id, String coment);
 
-
+public String editarUsuario(int id,Usuario usuario);
 
     Usuario findByNombre(String usuario);
 boolean existsByNombre(String usuario);

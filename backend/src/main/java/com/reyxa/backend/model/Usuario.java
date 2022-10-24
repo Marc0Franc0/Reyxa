@@ -1,7 +1,7 @@
 package com.reyxa.backend.model;
 
 import javax.persistence.Entity;
-
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 
 import javax.persistence.ForeignKey;
@@ -38,8 +38,12 @@ public class Usuario {
 
    @Getter
    @Setter
-   @OneToOne
-   @JoinColumn(name="comentario_usuario",foreignKey = @ForeignKey(name = "fkcomentario"),nullable=false )
+   /*-Atributo relaconado con la entidad Comentario
+    * -La relacion es de uno a uno por lo que un usuario solo puede tener un comentario y un comentario solo puede
+    pertenecer a un usuario.
+   */
+   @OneToOne(cascade=CascadeType.ALL)
+   @JoinColumn(name="comentario_usuario",foreignKey = @ForeignKey(name = "fkcomentario") )
       
  Comentario comentario_usuario;
 }

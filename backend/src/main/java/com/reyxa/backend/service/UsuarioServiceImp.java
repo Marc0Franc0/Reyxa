@@ -1,9 +1,12 @@
 package com.reyxa.backend.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.reyxa.backend.model.Comentario;
 import com.reyxa.backend.model.Usuario;
@@ -32,6 +35,9 @@ public class UsuarioServiceImp implements UsuarioService {
      */
     Usuario usuario = new Usuario();
     Comentario comentario = new Comentario();
+
+
+    List<Usuario >usuarios;
 
 
      //Se sobreescribe el metodo utilizando en su retorno un metodo del repositorio correspondiente
@@ -72,8 +78,8 @@ public class UsuarioServiceImp implements UsuarioService {
         if (existsByNombre(usuario.getNombre())) {
             rta = "Ya existe un comentario de ese usuario";
         } else {
-            int id = hashCode();
-            usuario.setId_usuario(id);
+      
+    
             usuario.setNombre(usuario.getNombre());
             /*
              * 
@@ -84,7 +90,7 @@ public class UsuarioServiceImp implements UsuarioService {
              */
             usuario.setComentario_usuario(
                     nuevoComentario(
-                    id, usuario.getComentario_usuario().getComentario()));
+                    usuario.getId_usuario(), usuario.getComentario_usuario().getComentario()));
 
             usuarioRepository.save(usuario);
 
@@ -106,6 +112,34 @@ public class UsuarioServiceImp implements UsuarioService {
     @Override
     public boolean existsByNombre(String nombre) {
         return usuarioRepository.existsByNombre(nombre);
+    }
+
+
+
+//Este metodo permite editar un usuario
+    @Override
+    public String editarUsuario(int id, Usuario usuarionuevo) {
+        String rta;
+    
+if(usuarioRepository.findById(id).get()!=null){
+
+        usuario = usuarioRepository.findById(id).get();
+
+    usuarionuevo.setId_usuario(usuario.getId_usuario());
+           usuarioRepository.save(usuarionuevo);
+           
+    rta= "Se realizaron los cambios correctamente";
+    
+}else{
+    rta="No existe ese usuario";
+}
+
+
+    
+        
+    
+    return rta;
+        
     }
 
 

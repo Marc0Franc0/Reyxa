@@ -202,6 +202,13 @@ buscarUsuarios():Observable<Usuario[]>{
   return this.http.get<Usuario[]>(`http://localhost:8080/usuarios`);
 
  }
+ editarUsuario(id:number,usuario:Usuario) {
+  return this.http.put(`${this.path}/editarusuario/`+id,
+  {
+    "nombre": usuario.nombre,
+    "comentario_usuario": {
+        "comentario": usuario.comentario_usuario.comentario
 
+}});
 
-}
+}}

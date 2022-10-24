@@ -2,12 +2,15 @@ package com.reyxa.backend.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Configuration;
-
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import org.springframework.web.bind.annotation.RequestParam;
@@ -15,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.reyxa.backend.Main;
 import com.reyxa.backend.model.Usuario;
+import com.reyxa.backend.repository.UsuarioRepository;
 
 @RestController
 @Configuration
@@ -26,6 +30,8 @@ import com.reyxa.backend.model.Usuario;
 public class UsuarioController extends Main {
 
     Usuario usuario = new Usuario();
+    @   Autowired
+    UsuarioRepository repo;
 
     /*
      * Funciona, probado en postman.
@@ -45,20 +51,16 @@ public class UsuarioController extends Main {
      * 
      */
     @GetMapping(path = "/buscarusuario")
-    public String buscaropinion(@RequestParam String nombre) {
+    public Usuario buscaropinion(@RequestParam String nombre) {
 
         /*Se analizan las posibles respuestas de acuerdo a si existe o no existe el usuario solicitado, 
         con una sentencia condicional, retornando un string determinado para cada situación.
          * 
         */
-        if (usuarioService.existsByNombre(nombre)) {
             usuario = this.usuarioService.findByNombre(nombre);
-            return "Comentario encontrado: " + usuario.getComentario_usuario().getComentario();
+            return  usuario;
 
-        } else {
-            return "No se encontro un comentario de ese usuario";
-        }
-
+        
     }
 
     /*-Funciona, probado en postman
@@ -69,19 +71,17 @@ public class UsuarioController extends Main {
      * 
      */
     @PostMapping(path = "/usuarionuevo")
-    public String nuevaOpinion(@RequestBody Usuario usuario) {
+    public String nuevoUsuario(@RequestBody Usuario usuario) {
 
         return usuarioService.nuevoUsuario(usuario);
     }
 
+@PutMapping(path = "/editarusuario/{id}")
+public String editarUsuario(@RequestBody  Usuario usuario,@PathVariable int id){
 
-    //No anda
-    /*
-     * @PutMapping("/editarcomentario")
-     * public String modificarUsuario( @RequestBody String usuario ) {
-     * 
-     * return usuarioService.modificarComentario(usuario);
-     * }
-     */
+return usuarioService.editarUsuario(id,usuario);
+}
+
+
 
 }

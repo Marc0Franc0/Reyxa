@@ -69,32 +69,6 @@
 
 
 
-            <!--
- <form (ngSubmit)="crearOpinion()">
-              <div>
-                <input type="text" required [(ngModel)]="opinion.usuario" name="usuario" matInput
-                  placeholder="Nombre de usuario">
-              </div>
-
-              <div>
-                <input required [(ngModel)]="opinion.descripcion" name="descripcion" matInput placeholder="Opinion">
-
-
-              </div>
-
-              <button class="btn btn-primary">Enviar opinion</button>
-            </form>
-            <form (ngSubmit)="buscarUsuario()">
-              <div>
-                <input type="text" required [(ngModel)]="nombre_usuario" name="nombre usuario" matInput
-                  placeholder="Nombre de usuario">
-              </div>
-
-
-              <button class="btn btn-primary">Buscar </button>
-            </form>
--->
-
             <button type="button" class="btn botones" data-bs-toggle="modal" data-bs-target="#formBuscar"
               data-bs-whatever="@mdo">Búsqueda de un usuario</button>
 
@@ -113,13 +87,18 @@
                         <input type="text" class="form-control inputs" required [(ngModel)]="nombre_usuario"
                           name="usuario" matInput placeholder="Nombre de usuario">
                       </div>
-                      <button class="btn botones">Enviar</button>
+                      <button class="btn botones "  data-bs-toggle="modal" data-bs-target="#editar">Enviar</button>
+
+                      <div class="modal-body">
+
+                      </div>
                     </form>
                   </div>
 
                 </div>
               </div>
             </div>
+
 
             <button type="button" class="btn botones " data-bs-toggle="modal" data-bs-target="#formComentario"
               data-bs-whatever="@mdo">
@@ -169,7 +148,7 @@
                   </div>
                   <div class="modal-body">
 
-                    <table class="table table-striped">
+                    <table class="table table-striped" id="tablaUsuarios">
                       <thead>
                         <tr>
                           <th scope="col">Usuario </th>
@@ -179,19 +158,13 @@
 
                       </thead>
                       <tbody>
-                        <tr *ngFor="let user of usuarios">
+                        <tr *ngFor="let user of usuarios" id={{user.id_usuario}}>
 
-                          <th scope="row">{{user.nombre}}</th>
+                          <td scope="row">{{user.nombre}}</td>
                           <td>{{user.comentario_usuario.comentario}}</td>
                           <td>
                             <div class="row">
                               <div class="col">
-
-  <button type="button" class="btn botones " data-bs-toggle="modal" data-bs-target="#formEditar"
-  data-bs-whatever="@mdo">Editar
-
-</button>
-
 
                               </div>
                               <div class="col"></div>
@@ -221,34 +194,37 @@
           </div>
 
 
-          <div class="modal fade " id="formEditar" tabindex="-1" aria-labelledby="exampleModalLabel"
-          aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content form">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Edita tu comentario</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <form (ngSubmit)="crearUsuario()">
-                  <div class="mb-3">
-                    <label for="recipient-name" class="col-form-label">Nombre de usuario:</label>
-                    <input type="text" class="form-control" required [(ngModel)]="usuario.nombre" name="usuario"
-                      matInput >
-                  </div>
-                  <div class="mb-3">
-                    <label for="message-text" class="col-form-label ">Comentario:</label>
+          <div class="modal fade " id="editar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content form">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Usuario buscado:{{nombre_usuario}} </h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <h2 class="fs-5">{{rta}}</h2>
+<hr>
+                  <h2 class="fs-5">Si deseas editar</h2>
 
-                    <textarea class="form-control inputs" id="message-text" required
-                      [(ngModel)]="usuario.comentario_usuario.comentario" name="descripcion" matInput
-                      ></textarea>
-                  </div>
-                  <button class="btn botones ">Enviar</button>
-                </form>
-              </div>
+                  <form (ngSubmit)="editarUsuario()">
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Nombre de usuario:</label>
+                      <input type="text" class="form-control" required [(ngModel)]="usuario.nombre" name="usuario"
+                        matInput>
+                    </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label ">Comentario:</label>
 
+                      <textarea class="form-control inputs" id="message-text" required
+                        [(ngModel)]="usuario.comentario_usuario.comentario" name="descripcion" matInput></textarea>
+                    </div>
+                    <button class="btn botones ">Enviar</button>
+                  </form>
+                </div>
+
+              </div>
             </div>
           </div>
-        </div>
+
 
         </div>

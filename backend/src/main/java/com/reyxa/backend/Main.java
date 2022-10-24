@@ -64,7 +64,7 @@ public class Main {
         }
     }
     
-    /*Metodos utilizados en el package controller para obtener la descripcion de los comandos dentro
+    /*Metodo utilizado en el package controller para obtener la descripcion de los comandos dentro
     de la clase ComandoController
     */
 
