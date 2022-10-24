@@ -3,7 +3,9 @@ package com.reyxa.backend.service;
 import com.reyxa.backend.model.Comando;
 
 /*
- * Interfaz la cual brinda los metodos utilizados dentro del controlador UsuarioController
+/*
+ * Interfaz la cual es implementada en la clase ComandoServiceImp, la misma solo aplica a 
+ * servicios de la clase Comando y sus clases hijas
  */
 public interface ComandoService {
 

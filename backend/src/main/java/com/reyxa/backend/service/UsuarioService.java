@@ -6,13 +6,16 @@ import com.reyxa.backend.model.Comentario;
 import com.reyxa.backend.model.Usuario;
 
 
+/*
+ * Interfaz la cual es implementada en la clase UsuarioServdeImp, la misma solo aplica a 
+ * servicios de la clase Usuario y sus clases hijas
+ */
 public interface UsuarioService {
     
     //Retorna la lista de opiniones existentes en la base de datos
     public  List <Usuario> listaUsuarios(); 
     
 
-    //Ambos metodos son para crear una nueva opinion
     public String nuevoUsuario( Usuario usuario);
     public Comentario nuevoComentario(int id, String coment);
 

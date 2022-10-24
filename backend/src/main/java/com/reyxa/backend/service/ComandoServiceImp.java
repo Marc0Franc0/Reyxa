@@ -36,7 +36,7 @@ public class ComandoServiceImp implements ComandoService {
     */
     
     @Override
-    public Comando getcomando(@PathVariable int id) {
+    public Comando getcomando( int id) {
 
         return comandoRepository.findById(id).get();
     }

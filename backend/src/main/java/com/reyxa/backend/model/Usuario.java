@@ -1,6 +1,7 @@
 package com.reyxa.backend.model;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 

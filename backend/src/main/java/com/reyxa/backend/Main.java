@@ -12,7 +12,6 @@ import com.reyxa.backend.service.UsuarioService;
 
 /* Anotación que indica a Spring que es una aplicación de SpringBoot */
 @SpringBootApplication
-
 /*
  * Clase principal que brinda el metodo main y demas metodos y objetos utilizados en las demas clases
  * 

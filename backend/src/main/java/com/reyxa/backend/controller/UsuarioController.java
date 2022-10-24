@@ -5,8 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,7 +39,7 @@ public class UsuarioController extends Main {
      * 
      */
     @GetMapping("/usuarios")
-    public List<Usuario> listaUsuarios() {
+    public List<Usuario> obtenerUsuarios() {
         return usuarioService.listaUsuarios();
     }
 
@@ -51,7 +50,7 @@ public class UsuarioController extends Main {
      * 
      */
     @GetMapping(path = "/buscarusuario")
-    public Usuario buscaropinion(@RequestParam String nombre) {
+    public Usuario buscarUsuario(@RequestParam String nombre) {
 
         /*Se analizan las posibles respuestas de acuerdo a si existe o no existe el usuario solicitado, 
         con una sentencia condicional, retornando un string determinado para cada situación.
@@ -76,6 +75,12 @@ public class UsuarioController extends Main {
         return usuarioService.nuevoUsuario(usuario);
     }
 
+
+    /*
+     * Funciona probado en Postman, solo que cuando se le manda por parametros un id el cual no
+     * esta almacenado en la base de datos este lanza un error 500 el cuale s por parametros.
+     * Pero al enviar ese parametro bien con un id que exista funciona correctamente
+     */
 @PutMapping(path = "/editarusuario/{id}")
 public String editarUsuario(@RequestBody  Usuario usuario,@PathVariable int id){
 
