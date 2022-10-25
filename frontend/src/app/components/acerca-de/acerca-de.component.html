@@ -22,7 +22,8 @@
         <div id="flush-collapseOne" class="accordion-collapse collapse cajatexto" aria-labelledby="flush-headingOne"
           data-bs-parent="#accordionFlushExample">
           <div class="accordion-body" style="background-color:rgb(133, 131, 235) ;">
-            Asistente Virtual con Interfaz Gráfica para el Usuario de Windows 10.Con su uso se busca reducir el tiempo
+            Asistente Virtual con Interfaz Gráfica para el Usuario de
+            Windows 10/Windows 11. Con su uso se busca reducir el tiempo
             que el usuario dedica a realizar tareas en el pc.
           </div>
         </div>
@@ -40,8 +41,8 @@
 
 
 
-            Malina, Juan Bautista
-            Franco, Marco Lisandro
+            <strong>Malina,</strong> Juan Bautista
+            <strong>Franco,</strong> Marco Lisandro
 
 
           </div>
@@ -117,14 +118,14 @@
                     <form (ngSubmit)="crearUsuario()">
                       <div class="mb-3">
                         <label for="recipient-name" class="col-form-label">Nombre de usuario:</label>
-                        <input type="text" class="form-control" required [(ngModel)]="usuario.nombre" name="usuario"
+                        <input type="text" class="form-control" required [(ngModel)]="usuariocrear.nombre" name="usuario"
                           matInput placeholder="Nombre de usuario">
                       </div>
                       <div class="mb-3">
                         <label for="message-text" class="col-form-label ">Comentario:</label>
 
                         <textarea class="form-control inputs" id="message-text" required
-                          [(ngModel)]="usuario.comentario_usuario.comentario" name="descripcion" matInput
+                          [(ngModel)]="usuariocrear.comentario_usuario.comentario" name="descripcion" matInput
                           placeholder="Comentario"></textarea>
                       </div>
                       <button class="btn botones ">Enviar</button>
@@ -153,7 +154,7 @@
                         <tr>
                           <th scope="col">Usuario </th>
                           <th scope="col"> Comentario</th>
-                          <th scope="col">Opciones </th>
+
                         </tr>
 
                       </thead>
@@ -163,12 +164,6 @@
                           <td scope="row">{{user.nombre}}</td>
                           <td>{{user.comentario_usuario.comentario}}</td>
                           <td>
-                            <div class="row">
-                              <div class="col">
-
-                              </div>
-                              <div class="col"></div>
-                            </div>
 
                           </td>
                         </tr>

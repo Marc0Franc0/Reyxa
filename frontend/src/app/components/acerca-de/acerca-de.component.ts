@@ -19,7 +19,7 @@ import Swal from 'sweetalert2';
 export class AcercaDeComponent implements OnInit {
   constructor(private http:HttpService ) { }
   usuario:Usuario = new Usuario();
-usuarioeditar:Usuario=new Usuario();
+usuariocrear:Usuario=new Usuario();
   usuarios: Usuario[] = [];
 nombre_usuario:string="";
  comentarioencontrado:string="";
@@ -126,6 +126,16 @@ let id:Number
 this.http.editarUsuario(this.usuario.id_usuario,this.usuario).subscribe(dato=>{
 
   console.log(dato);
+  Swal.fire({
+
+
+    position: 'top',
+    icon: 'success',
+    title: dato,
+    timer: undefined
+
+
+  })
 }
   );
 
