@@ -209,6 +209,6 @@ buscarUsuarios():Observable<Usuario[]>{
     "comentario_usuario": {
         "comentario": usuario.comentario_usuario.comentario
 
-}});
+}},{responseType: 'text'});
 
 }}

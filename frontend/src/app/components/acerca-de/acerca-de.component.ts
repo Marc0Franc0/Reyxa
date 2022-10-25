@@ -123,7 +123,7 @@ this.rta = "No se encontro un comentario del usuario"+this.usuario.nombre;
 editarUsuario(){
 
 let id:Number
-this.http.editarUsuario(1,this.usuarioeditar).subscribe(dato=>{
+this.http.editarUsuario(this.usuario.id_usuario,this.usuario).subscribe(dato=>{
 
   console.log(dato);
 }
