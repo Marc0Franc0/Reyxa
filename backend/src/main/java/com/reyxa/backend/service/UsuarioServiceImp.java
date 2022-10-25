@@ -1,19 +1,16 @@
 package com.reyxa.backend.service;
 
 import java.util.List;
-import java.util.Optional;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
+
 
 import com.reyxa.backend.model.Comentario;
 import com.reyxa.backend.model.Usuario;
 import com.reyxa.backend.repository.ComentarioRepository;
 import com.reyxa.backend.repository.UsuarioRepository;
-
-import net.bytebuddy.dynamic.loading.PackageDefinitionStrategy.Definition.Undefined;
 
 /*
  * -Clase la cual es utilizada como servicio e implementa la interfaz de UsuaroService.

@@ -6,10 +6,11 @@ import { HttpService } from 'src/app/services/http-service/http.service';
 
 import { Usuario } from '../../model/Usuario';
 
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup,Validators,FormControl } from '@angular/forms';
 import { identifierName, R3TargetBinder, ThisReceiver } from '@angular/compiler';
 import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-acerca-de',
@@ -98,8 +99,8 @@ this.rta = "No se encontro un comentario del usuario"+this.usuario.nombre;
 
 
   crearUsuario(){
-  console.log(this.usuario);
- this.http.crearUsuario(this.usuario).subscribe(
+  console.log(this.usuariocrear);
+ this.http.crearUsuario(this.usuariocrear).subscribe(
     (data) => {
       console.log(data);
     },(rta) => {
@@ -123,9 +124,11 @@ this.rta = "No se encontro un comentario del usuario"+this.usuario.nombre;
 editarUsuario(){
 
 let id:Number
+let inputusuarionombre = document.getElementById('nombreeditar')
 this.http.editarUsuario(this.usuario.id_usuario,this.usuario).subscribe(dato=>{
 
   console.log(dato);
+  console.log(inputusuarionombre);
   Swal.fire({
 
 

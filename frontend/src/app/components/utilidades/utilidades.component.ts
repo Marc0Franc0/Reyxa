@@ -35,7 +35,7 @@ export class UtilidadesComponent implements OnInit {
           timer: 2200
 
         }),
-          this.httpService.vaciarPapelera();
+          this.httpService.vaciarPapelera().subscribe();
       } else if (result.isDenied) {
         Swal.fire({
 
@@ -73,11 +73,11 @@ export class UtilidadesComponent implements OnInit {
           timer: 9000,
           timerProgressBar: true,
           didOpen: () => {
-            this.httpService.realizarAnalisis();
+
             Swal.showLoading()
             timerInterval = setInterval(() => {
 
-            }, 100)
+            }, 100),   this.httpService.realizarAnalisis().subscribe();
           },
           willClose: () => {
 
@@ -115,7 +115,7 @@ export class UtilidadesComponent implements OnInit {
 
   abrirWupdate(){
 
-    this.httpService.abrirWupdate();
+    this.httpService.abrirWupdate().subscribe();
   }
 
 
@@ -124,7 +124,7 @@ export class UtilidadesComponent implements OnInit {
 
 
 
-    this.httpService.programarApagado(tiempo);
+    this.httpService.programarApagado(tiempo).subscribe();
 
 
     let tiempohs= new Number(tiempo/3600);
@@ -144,7 +144,7 @@ export class UtilidadesComponent implements OnInit {
 
   cancelarApagado(){
 
-this.httpService.cancelarApagado();
+this.httpService.cancelarApagado().subscribe();
 Swal.fire({
 
 

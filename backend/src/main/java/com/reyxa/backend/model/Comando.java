@@ -1,9 +1,7 @@
 package com.reyxa.backend.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -39,7 +37,7 @@ import lombok.Setter;
 
         @Getter
         @Setter
-        @OneToOne(cascade=CascadeType.ALL,fetch =FetchType.LAZY )
+        @OneToOne
         @JoinColumn(name = "sintaxis_comando", nullable = false, foreignKey = @ForeignKey(name = "fkdesc"))
         private SintaxisComando sintaxis_comando;
 
