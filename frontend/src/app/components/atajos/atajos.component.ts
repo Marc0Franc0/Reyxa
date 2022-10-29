@@ -19,19 +19,18 @@ export class AtajosComponent implements OnInit {
   abrirExplorador() {
     this.httpservice.abrirExplorador().subscribe();
 
-    /*Se utilizo este metodo de prueba para retornar un string por consola
-,ya que al abrir un atajo o realizar una determinada tarea de Windows no estamos haciendolo y solo es a modo de prueba
-*/
+
+  }
+  abrirCalculadora(){
+    this.httpservice.abrirCalculadora().subscribe();
   }
 
-  abrirNotas() {
-    this.httpservice.abrirNotas().subscribe();
-  }
-  abrirPaint() {
+  abrirPaint(){
     this.httpservice.abrirPaint().subscribe();
   }
-  abrirCalculadora() {
-    this.httpservice.abrirCalculadora().subscribe();
+
+  abrirNotas(){
+    this.httpservice.abrirNotas().subscribe();
   }
   abrirWsp() {
     this.httpservice.abrirWsp().subscribe();
@@ -63,3 +62,4 @@ export class AtajosComponent implements OnInit {
     this.httpservice.abrirConfig().subscribe();
   }
 }
+

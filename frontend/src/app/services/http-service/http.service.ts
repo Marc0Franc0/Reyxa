@@ -1,3 +1,4 @@
+
 import { Usuario } from '../../model/Usuario';
 import { Observable } from 'rxjs';
 
@@ -14,135 +15,130 @@ import { Injectable } from '@angular/core';
 })
 export class HttpService {
   private path = 'http://localhost:8080';
-  respuesta = '';
+
 
   constructor(private http: HttpClient) {}
 
-  //opinion:Opinion=new Opinion();
 
   abrirExplorador() {
-    return this.http.get('http://localhost:8080/explorer');
+    return this.http.get(`${this.path}/explorer`);
   }
+
   abrirNotas() {
-   return this.http.get('http://localhost:8080/notepad')};
+    return this.http.get(`${this.path}/notepad`)
+  }
+
 
   abrirPaint() {
-  return  this.http.get('http://localhost:8080/paint');
+    return this.http.get(`${this.path}/paint`)
   }
-
   abrirCalculadora() {
-    return  this.http.get('http://localhost:8080/calculadora');
+    return this.http.get(`${this.path}/calculadora`)
   }
   abrirWsp() {
-    return  this.http.get('http://localhost:8080/whatsapp')
-      ;
+    return this.http.get(`${this.path}/whatsapp`);
   }
 
 
   abrirSpotify() {
-    return  this.http.get('http://localhost:8080/spotify');
+    return this.http.get(`${this.path}/spotify`)
   }
+
   abrirIg() {
-    return this.http.get('http://localhost:8080/instagram');
+    return this.http.get(`${this.path}/instagram`);
   }
   abrirYoutube() {
-    return   this.http.get('http://localhost:8080/youtube');
+    return this.http.get(`${this.path}/youtube`)
   }
-abrirGmail() {
-  return this.http.get('http://localhost:8080/gmail')
-     ;
+  abrirGmail() {
+    return this.http.get(`${this.path}/gmail`)
   }
   abrirNoticias() {
-    return   this.http.get('http://localhost:8080/noticias')
-      ;
+    return this.http.get(`${this.path}/noticias`)
   }
-  abrirClima() {
-    return   this.http.get('http://localhost:8080/clima')
-      ;
-  }
-  abrirNetflix() {
-    return  this.http.get('http://localhost:8080/netflix')
 
-      ;
+
+  abrirClima() {
+    return this.http.get(`${this.path}/clima`)
   }
+
+
+  abrirNetflix() {
+    return this.http.get(`${this.path}/netflix`)
+  }
+
+
   abrirConfig() {
-    return this.http.get('http://localhost:8080/wconfig');
+    return this.http.get(`${this.path}/wconfig`);
   }
+
 
   vaciarPapelera() {
-    return  this.http.get('http://localhost:8080/papelera')
+    return this.http.get(`${this.path}/papelera`)
   }
 
   realizarAnalisis() {
-    return  this.http.get('http://localhost:8080/antivirus')
-      ;
+    return this.http.get(`${this.path}/antivirus`)
   }
 
   programarApagado(tiempo: number) {
-    //this.http.post('http://localhost:8080/apagado',{ResponseType:Number}).subscribe();
-    return  this.http
-      .get('http://localhost:8080/progapagado', {
+    return this.http
+      .get(`${this.path}/progapagado`, {
         params: {
           tiempo,
         },
-      });
+      })
+
   }
   cancelarApagado() {
-    return this.http.get('http://localhost:8080/cancapagado', {})
+    return this.http.get(`${this.path}/cancapagado`, {});
   }
 
   abrirWupdate() {
-    return this.http.get('http://localhost:8080/wupdate')
-      ;
+    return this.http.get(`${this.path}/wupdate`)
   }
-  crearUsuario(usuario: Usuario) {
-    return this.http.post(`${this.path}/usuarionuevo`, {
-      nombre: usuario.nombre,
-      comentario_usuario: {
-        comentario: usuario.comentario_usuario.comentario,
-      },
-    });
+  crearUsuario(usuario:Usuario) {
+    return this.http.post(`${this.path}/usuarionuevo`,
+    {
+      "nombre": usuario.nombre,
+      "comentario_usuario": {
+          "comentario": usuario.comentario_usuario.comentario
+
+  }});
   }
-  /*buscarOpinion(usuario:string){
- return this.http.get(`http://localhost:8080/buscaropinion`,{params: { usuario }});
+
+  buscarUsuario(nombre:string) {
+    return this.http
+      .get(`${this.path}/buscarusuario`, {
+        params: {
+          nombre,
+        },
+      })
 
 
-}*/
-  buscarUsuario(nombre: string) {
-    return this.http.get('http://localhost:8080/buscarusuario', {
-      params: {
-        nombre,
-      },
-    });
   }
-  buscarUsuarioById(id: number) {
-    return this.http.get('http://localhost:8080/buscarusuariobyid', {
-      params: {
-        id,
-      },
-    });
-  }
-  eliminarOpinion(usuario: string) {
-    return this.http.get(`${this.path}/eliminaropinion`, {
+
+  eliminarOpinion(usuario:string){
+    return this.http
+    .get(`${this.path}/eliminaropinion`, {
       params: {
         usuario,
       },
-    });
+    })
+
   }
 
-  buscarUsuarios(): Observable<Usuario[]> {
-    return this.http.get<Usuario[]>(`http://localhost:8080/usuarios`);
-  }
-  editarUsuario(id: number, usuario: Usuario) {
-    return this.http.put(
-      `${this.path}/editarusuario/` + id,
-      {
-        nombre: usuario.nombre,
-        comentario_usuario: {
-          comentario: usuario.comentario_usuario.comentario,
-        },
-      },
-      { responseType: 'text' }
-    );
-  }
-}
+buscarUsuarios():Observable<Usuario[]>{
+  return this.http.get<Usuario[]>(`${this.path}/usuarios`);
+
+ }
+ editarUsuario(id:number,usuario:Usuario) {
+  return this.http.put(`${this.path}/editarusuario/`+id,
+  {
+    "nombre": usuario.nombre,
+    "comentario_usuario": {
+        "comentario": usuario.comentario_usuario.comentario
+
+}},{responseType: 'text'});
+
+}}

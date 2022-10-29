@@ -14,12 +14,17 @@ import com.reyxa.backend.Main;
 
 /* Marca la clase como un controlador donde cada método devuelve 
 un objeto de dominio en lugar de una vista. */
-
 @RestController
-/*
- * Explicacion de las anotaciones de configuración :
- */
+
+//Explicacion de las anotaciones de configuración : 
 @Configuration
+
+
+/* Se encarga de forma inteligente de intentar configurar Spring 
+ * de forma automática . Es la anotación encargada de buscar en el 
+ * Classpath todas las clases con @Entity y registrarlas con el 
+ * proveedor de persistencia que tengamos.
+ */
 @EnableAutoConfiguration
 // @RequestMapping("/comandos")
 

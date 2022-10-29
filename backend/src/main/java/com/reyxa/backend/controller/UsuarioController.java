@@ -45,7 +45,7 @@ public class UsuarioController extends Main {
 
     /*
      * Funciona, probado en postman
-     * Este mapping retorna un usuario, buscandolo por medio del atributo nombre.El
+     * Este mapping retorna un usuario, buscandolo por medio del atributo nombre. El
      * cual se pide a la base de datos por medio de parametros con la anotacion @RequestParam.
      * 
      */

@@ -11,9 +11,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'Header 1, título de la página';
-  unParrafo = 'Este es un párrafo de muestra.';
-  respuesta = "";
   constructor(private httpservice:HttpService)
   {}
 
