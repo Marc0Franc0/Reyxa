@@ -7,8 +7,15 @@ import Swal from 'sweetalert2';
   templateUrl: './utilidades.component.html',
   styleUrls: ['./utilidades.component.scss'],
 })
+
+  /*
+  -Cada uno de estos metodos son llamados en el template del componente,
+   junto con el boton correspondiente y el evento (en este caso el evento es el click del mouse)
+  - Los mismos utilizan un objeto creado de tipo HttpService el cual es el servicio creado en services
+  -Se utilizo la libreria externa SweetAlert para mostrar al usuario diferentes alertas
+   */
 export class UtilidadesComponent implements OnInit {
-  respuesta = "";
+
 
   constructor(private httpService: HttpService) {}
 
@@ -23,7 +30,7 @@ export class UtilidadesComponent implements OnInit {
       confirmButtonText: 'Vaciar papalera',
       denyButtonText: `No vaciar papelera`,
     }).then((result) => {
-      /* Read more about isConfirmed, isDenied below */
+
       if (result.isConfirmed) {
         Swal.fire({
 
@@ -35,6 +42,7 @@ export class UtilidadesComponent implements OnInit {
           timer: 2200
 
         }),
+        //Llamado al metodo correspondiente del servicio
           this.httpService.vaciarPapelera().subscribe();
       } else if (result.isDenied) {
         Swal.fire({
@@ -61,14 +69,14 @@ export class UtilidadesComponent implements OnInit {
       confirmButtonText: 'Realizar análisis',
       denyButtonText: `No realizar análisis`,
     }).then((result) => {
-      /* Read more about isConfirmed, isDenied below */
+
       if (result.isConfirmed) {
 
         let timerInterval
         Swal.fire({
 
           title: 'Realizando análisis con Windows Defender',
-          //html: 'I will close in <b></b> milliseconds.',
+
           position: 'top',
           timer: 9000,
           timerProgressBar: true,
@@ -77,13 +85,15 @@ export class UtilidadesComponent implements OnInit {
             Swal.showLoading()
             timerInterval = setInterval(() => {
 
-            }, 100),   this.httpService.realizarAnalisis().subscribe();
+            }, 100),
+            //Llamado al metodo correspondiente del servicio
+            this.httpService.realizarAnalisis().subscribe();
           },
           willClose: () => {
 
           }
         }).then((result) => {
-          /* Read more about handling dismissals below */
+
           if (result.dismiss === Swal.DismissReason.timer) {
             Swal.fire({
 

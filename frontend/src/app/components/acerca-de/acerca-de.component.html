@@ -22,9 +22,9 @@
         <div id="flush-collapseOne" class="accordion-collapse collapse cajatexto" aria-labelledby="flush-headingOne"
           data-bs-parent="#accordionFlushExample">
           <div class="accordion-body" style="background-color:rgb(133, 131, 235) ;">
-            Asistente Virtual con Interfaz Gráfica para el Usuario de
-            Windows 10/Windows 11. Con su uso se busca reducir el tiempo
-            que el usuario dedica a realizar tareas en el pc.
+            <label>Asistente Virtual para Usuario de
+              Windows 10 y Windows 11. El cual brinda atajos y utilidades para reducir el tiempo que el usuario dedica
+              al realizar tareas en el pc.</label>
           </div>
         </div>
       </div>
@@ -42,9 +42,9 @@
 
 
             <strong>Malina,</strong> Juan Bautista
+            <p>@gmail.com</p>
             <strong>Franco,</strong> Marco Lisandro
-
-
+            <p>marcofranco340@gmail.com</p>
           </div>
 
           <div class="col">
@@ -58,47 +58,17 @@
           <button class="accordion-button collapsed botones" type="button" data-bs-toggle="collapse"
             data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
             Deja tu comentario
-            Comentarios
+
           </button>
         </h2>
         <div id="flush-collapseThree" class="accordion-collapse collapse cajatexto " rel="noopener" target="_blank"
           aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
           <div class="row accordion-body " style="background-color:rgb(133, 131, 235) ;">
 
-
-
-
-
+<!--Este div contiene los botones que luego utilizan los componentes modal que estan posteriormente -->
 
             <button type="button" class="btn botones" data-bs-toggle="modal" data-bs-target="#formBuscar"
-              data-bs-whatever="@mdo">Búsqueda de un usuario</button>
-
-            <div class="modal fade" id="formBuscar" tabindex="-1" aria-labelledby="exampleModalLabel"
-              aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content form">
-                  <div class="modal-header ">
-                    <h5 class="modal-title " id="exampleModalLabel">Buscar usuario </h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <form (ngSubmit)="buscarUsuario()">
-                      <div class="mb-3">
-                        <label for="recipient-name" class="col-form-label">Nombre de usuario:</label>
-                        <input type="text" class="form-control inputs" required [(ngModel)]="nombre_usuario"
-                          name="usuario" matInput placeholder="Nombre de usuario">
-                      </div>
-                      <button class="btn botones "  data-bs-toggle="modal" data-bs-target="#editar">Enviar</button>
-
-                      <div class="modal-body">
-
-                      </div>
-                    </form>
-                  </div>
-
-                </div>
-              </div>
-            </div>
+              data-bs-whatever="@mdo">Edita tu comentario</button>
 
 
             <button type="button" class="btn botones " data-bs-toggle="modal" data-bs-target="#formComentario"
@@ -106,107 +76,37 @@
               Describe tu experiencia
             </button>
 
-            <div class="modal fade " id="formComentario" tabindex="-1" aria-labelledby="exampleModalLabel"
-              aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content form">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Escribe tu comentario</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <form (ngSubmit)="crearUsuario()">
-                      <div class="mb-3">
-                        <label for="recipient-name" class="col-form-label">Nombre de usuario:</label>
-                        <input type="text" class="form-control" required [(ngModel)]="usuariocrear.nombre" name="usuario"
-                          matInput placeholder="Nombre de usuario">
-                      </div>
-                      <div class="mb-3">
-                        <label for="message-text" class="col-form-label ">Comentario:</label>
-
-                        <textarea class="form-control inputs" id="message-text" required
-                          [(ngModel)]="usuariocrear.comentario_usuario.comentario" name="descripcion" matInput
-                          placeholder="Comentario"></textarea>
-                      </div>
-                      <button class="btn botones ">Enviar</button>
-                    </form>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-
             <button type="button" class="btn botones " (click)="buscarUsuarios()" data-bs-toggle="modal"
-              data-bs-target="#comentarios" data-bs-whatever="@mdo">Experiencia de otros usuarios</button>
-
-            <div class="modal fade " id="comentarios" tabindex="-1" aria-labelledby="exampleModalLabel"
-              aria-hidden="true">
-              <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content form">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Comentarios de usuarios</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-
-                    <table class="table table-striped" id="tablaUsuarios">
-                      <thead>
-                        <tr>
-                          <th >Usuario </th>
-                          <th > Comentario</th>
-
-                        </tr>
-
-                      </thead>
-                      <tbody>
-                        <tr *ngFor="let user of usuarios" id={{user.id_usuario}}>
-
-                          <td scope="row">{{user.nombre}}</td>
-                          <td>{{user.comentario_usuario.comentario}}</td>
-
-                        </tr>
-                      </tbody>
-
-                    </table>
-
-                  </div>
+              data-bs-target="#comentarios" data-bs-whatever="@mdo">Conoce comentarios de otros usuarios</button>
 
 
-                </div>
-
-
-
-
-
-
-              </div>
-
-
-            </div>
 
           </div>
+
+
+
+
+
+
 
 
           <div class="modal fade " id="editar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content form">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">Usuario buscado:{{nombre_usuario}} </h5>
+                  <h5 class="modal-title" id="exampleModalLabel">Usuario buscado:{{nombre_usuario}} / {{rta}} </h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <h2 class="fs-5">{{rta}}</h2>
-<hr>
-                  <h2 class="fs-5">Si deseas editar</h2>
 
                   <form (ngSubmit)="editarUsuario()">
                     <div class="mb-3">
-                      <label for="recipient-name" class="col-form-label">Nombre de usuario:</label>
+
                       <input type="text" class="form-control" required [(ngModel)]="usuario.nombre" name="usuario"
                         matInput>
                     </div>
                     <div class="mb-3">
-                      <label for="message-text" class="col-form-label ">Comentario:</label>
+
 
                       <textarea class="form-control inputs" id="message-text" required
                         [(ngModel)]="usuario.comentario_usuario.comentario" name="descripcion" matInput></textarea>
@@ -220,4 +120,102 @@
           </div>
 
 
+
+
+
+          <div class="modal fade " id="formComentario" tabindex="-1" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content form">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Escribe tu comentario</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form (ngSubmit)="crearUsuario()">
+                  <div class="mb-3">
+                    <input type="text" class="form-control" required [(ngModel)]="usuariocrear.nombre"
+                      name="usuario" matInput placeholder="Nombre de usuario">
+                  </div>
+                  <div class="mb-3">
+
+
+                    <textarea class="form-control inputs" id="message-text" required
+                      [(ngModel)]="usuariocrear.comentario_usuario.comentario" name="descripcion" matInput
+                      placeholder="Comentario"></textarea>
+                  </div>
+                  <button class="btn botones ">Enviar</button>
+                </form>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+
+          <div class="modal fade" id="formBuscar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content form">
+                <div class="modal-header ">
+                  <h5 class="modal-title " id="exampleModalLabel">Buscar tu usuario </h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form (ngSubmit)="buscarUsuario()">
+                    <div class="mb-3">
+
+                      <input type="text" class="form-control inputs" required [(ngModel)]="nombre_usuario"
+                        name="usuario" matInput placeholder="Nombre de usuario">
+                    </div>
+                    <button class="btn botones " data-bs-toggle="modal" data-bs-target="#editar">Enviar</button>
+
+
+                  </form>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="modal fade " id="comentarios" tabindex="-1" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered ">
+              <div class="modal-content form">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Comentarios</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body  ">
+
+                  <table class="table " id="tablaUsuarios">
+
+                    <thead>
+                      <tr>
+                        <th>Usuario </th>
+                        <th> Comentario</th>
+                      </tr>
+
+                    </thead>
+
+                    <tbody>
+                      <tr *ngFor="let user of usuarios" id={{user.id_usuario}}>
+
+                        <td scope="row">{{user.nombre}}</td>
+                        <td>
+                          <p class="text-break"> {{user.comentario_usuario.comentario}} </p>
+                        </td>
+
+                      </tr>
+                    </tbody>
+
+                  </table>
+
+                </div>
+
+
+              </div>
+
+            </div>
+
+          </div>
         </div>

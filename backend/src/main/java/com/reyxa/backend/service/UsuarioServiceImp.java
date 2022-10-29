@@ -2,10 +2,8 @@ package com.reyxa.backend.service;
 
 import java.util.List;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 
 import com.reyxa.backend.model.Comentario;
 import com.reyxa.backend.model.Usuario;
@@ -33,18 +31,17 @@ public class UsuarioServiceImp implements UsuarioService {
     Usuario usuario = new Usuario();
     Comentario comentario = new Comentario();
 
+    List<Usuario> usuarios;
 
-    List<Usuario >usuarios;
-
-
-     //Se sobreescribe el metodo utilizando en su retorno un metodo del repositorio correspondiente
+    // Se sobreescribe el metodo utilizando en su retorno un metodo del repositorio
+    // correspondiente
     @Override
     public List<Usuario> listaUsuarios() {
         return (List) usuarioRepository.findAll();
     }
 
-
-    //Se sobreescribe el metodo utilizando en su retorno un metodo del repositorio correspondiente
+    // Se sobreescribe el metodo utilizando en su retorno un metodo del repositorio
+    // correspondiente
     @Override
     public Comentario nuevoComentario(int id, String coment) {
         comentario.setId_comentario(id);
@@ -53,13 +50,12 @@ public class UsuarioServiceImp implements UsuarioService {
         return comentarioRepository.save(comentario);
     }
 
-     /*-El metodo siguiente crea un nuevo usuario junto con su comentario.
-     -Establece el nombre y luego el comentario
-     -Para crear el comentario utiliza el metodo "nuevoComentario()".
-     -Retorna un string para saber si se puede crear o no un nuevo usuario
-      * 
-     */
-
+    /*-El metodo siguiente crea un nuevo usuario junto con su comentario.
+    -Establece el nombre y luego el comentario
+    -Para crear el comentario utiliza el metodo "nuevoComentario()".
+    -Retorna un string para saber si se puede crear o no un nuevo usuario
+     * 
+    */
 
     @Override
     public String nuevoUsuario(Usuario usuario) {
@@ -75,19 +71,19 @@ public class UsuarioServiceImp implements UsuarioService {
         if (existsByNombre(usuario.getNombre())) {
             rta = "Ya existe un comentario de ese usuario";
         } else {
-      
-    
+
             usuario.setNombre(usuario.getNombre());
             /*
              * 
              * En la siguiente linea se setea el valor del comentario ,
              * accediendo a la otra entidad que es Comentario la cual
              * esta relacionada con la entidad Usuario para luego poder guardar el usuario.
-             * Ya que si no se hace esto va a haber un error porque ambas entidades estan relacionadas
+             * Ya que si no se hace esto va a haber un error porque ambas entidades estan
+             * relacionadas
              */
             usuario.setComentario_usuario(
                     nuevoComentario(
-                    usuario.getId_usuario(), usuario.getComentario_usuario().getComentario()));
+                            usuario.getId_usuario(), usuario.getComentario_usuario().getComentario()));
 
             usuarioRepository.save(usuario);
 
@@ -97,49 +93,39 @@ public class UsuarioServiceImp implements UsuarioService {
         return rta;
     }
 
-
-    
-//Metodo que busca a un usuario junto con todos sus atributos por medio de su nombre
+    // Metodo que busca a un usuario junto con todos sus atributos por medio de su
+    // nombre
     @Override
     public Usuario findByNombre(String nombre) {
         return this.usuarioRepository.findByNombre(nombre);
     }
 
-  //Verifica con su repositorio correspondiente si un usuario existe por medio de su nombre
+    // Verifica con su repositorio correspondiente si un usuario existe por medio de
+    // su nombre
     @Override
     public boolean existsByNombre(String nombre) {
         return usuarioRepository.existsByNombre(nombre);
     }
 
-
-
-//Este metodo permite editar un usuario
+    // Este metodo permite editar un usuario
     @Override
     public String editarUsuario(int id, Usuario usuarionuevo) {
         String rta;
-    
-if(usuarioRepository.findById(id).get()!=null){
 
-        usuario = usuarioRepository.findById(id).get();
+        if (usuarioRepository.existsById(id)) {
+            Usuario usuarioalmacenado = usuarioRepository.findById(id).get();
 
-    usuarionuevo.setId_usuario(usuario.getId_usuario());
-           usuarioRepository.save(usuarionuevo);
-           
-    rta= "Se realizaron los cambios correctamente";
-    
-}else{
-    rta="No existe ese usuario";
-}
+            usuarionuevo.setId_usuario(usuarioalmacenado.getId_usuario());
+            usuarioRepository.save(usuarionuevo);
 
+            rta = "Se realizaron los cambios correctamente";
 
-    
-        
-    
-    return rta;
-        
+        } else {
+            rta = "No se encontro un usuario anteriormente por lo que no se puede editar";
+        }
+
+        return rta;
+
     }
 
-
-
 }
-

@@ -19,13 +19,25 @@ import Swal from 'sweetalert2';
 })
 export class AcercaDeComponent implements OnInit {
   constructor(private http:HttpService ) { }
+
+//Objeto de tipo Usuario utilizado cuando el usuario busca uno para editar y si se encuenbtra un usuario lo almacena dentro de este mismo
   usuario:Usuario = new Usuario();
+
+//Objeto utilizado para guardar el usuario que se ingresa al completar el formulario que permite crear un usuario
 usuariocrear:Usuario=new Usuario();
+
+//Array de tipo Usuario utilizado para mostrar en la tabla de todos los comentarios de los usuarios
   usuarios: Usuario[] = [];
+
+//Nombre que el usuario ingresa para editar un comentario pero que previamente debe ser buscado
 nombre_usuario:string="";
- comentarioencontrado:string="";
+
+//Respuesta desde el servidor de tipo string que muestra si encontro o no un comentario de el usuario buscadp
  rta:string|undefined;
+
+
   ngOnInit(): void {
+    /*Se buscam todos los usuarios al cargar el componente  */
     this.http.buscarUsuarios().subscribe(data=>{
       this.usuarios=data;
       console.log(this.usuarios)
@@ -124,11 +136,10 @@ this.rta = "No se encontro un comentario del usuario"+this.usuario.nombre;
 editarUsuario(){
 
 let id:Number
-let inputusuarionombre = document.getElementById('nombreeditar')
 this.http.editarUsuario(this.usuario.id_usuario,this.usuario).subscribe(dato=>{
 
   console.log(dato);
-  console.log(inputusuarionombre);
+
   Swal.fire({
 
 

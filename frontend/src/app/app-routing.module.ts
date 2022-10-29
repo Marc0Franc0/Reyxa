@@ -13,6 +13,8 @@ import { AtajosComponent } from './components/atajos/atajos.component';
 import { UtilidadesComponent } from './components/utilidades/utilidades.component';
 
 /*
+Explicar
+
  */
 const routes: Routes =
 [

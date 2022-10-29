@@ -10,6 +10,10 @@ import {
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
+/*
+Servicio el cual es utilizado en los componentes.
+El mismo permite la conexion del cliente con el servidor a traves de la clase HttpClient
+*/
 @Injectable({
   providedIn: 'root',
 })

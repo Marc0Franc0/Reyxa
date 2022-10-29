@@ -14,8 +14,11 @@ export class AtajosComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  /*Cada uno de estos metodos son llamados en el template del componente,
-   junto con el boton correspondiente y el evento (en este caso el evento es el click del mouse)*/
+  /*
+  -Cada uno de estos metodos son llamados en el template del componente,
+   junto con el boton correspondiente y el evento (en este caso el evento es el click del mouse)
+  - Los mismos utilizan en objeto creado de tipo HttpService el cual es el servicio creado en services
+   */
   abrirExplorador() {
     this.httpservice.abrirExplorador().subscribe();
 
