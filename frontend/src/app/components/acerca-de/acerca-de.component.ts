@@ -9,7 +9,7 @@ import { Usuario } from '../../model/Usuario';
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup,Validators,FormControl } from '@angular/forms';
 import { identifierName, R3TargetBinder, ThisReceiver } from '@angular/compiler';
-import Swal from 'sweetalert2';
+import Swal, { SweetAlertIcon } from 'sweetalert2';
 
 
 @Component({
@@ -111,23 +111,37 @@ this.rta = "No se encontro un comentario del usuario"+this.usuario.nombre;
 
 
   crearUsuario(){
-  console.log(this.usuariocrear);
- this.http.crearUsuario(this.usuariocrear).subscribe(
-    (data) => {
-      console.log(data);
-    },(rta) => {
-      console.log(rta.error.text);
-      //Swal.fire(rta.error.text)
+    if(this.usuariocrear.nombre==""||this.usuariocrear.comentario_usuario.comentario==""){
       Swal.fire({
 
 
         position: 'top',
         icon: 'info',
-        title: rta.error.text,
+        title: 'El usuario o comentario estan vacios',
         timer: undefined
 
       })
-  })
+    }else{
+      this.http.crearUsuario(this.usuariocrear).subscribe(
+        (data) => {
+          console.log(data);
+        },(rta) => {
+          console.log(rta.error.text);
+          //Swal.fire(rta.error.text)
+          Swal.fire({
+
+
+            position: 'top',
+            icon: 'success',
+            title: rta.error.text,
+            timer: undefined
+
+          })
+      })
+
+    }
+  //console.log(this.usuariocrear);
+
 
 
 
@@ -137,14 +151,23 @@ editarUsuario(){
 
 let id:Number
 this.http.editarUsuario(this.usuario.id_usuario,this.usuario).subscribe(dato=>{
+  let icono:SweetAlertIcon|undefined;
 
-  console.log(dato);
+if(dato=='Se realizaron los cambios correctamente'){
+icono="success";
+}else if(dato=='No se encontro un usuario anteriormente por lo que no se puede editar'){
+icono="error";
+}else{
+
+  icono="info";
+}
+
 
   Swal.fire({
 
 
     position: 'top',
-    icon: 'success',
+    icon: icono,
     title: dato,
     timer: undefined
 
