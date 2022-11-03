@@ -10,6 +10,8 @@ import com.reyxa.backend.model.Usuario;
 import com.reyxa.backend.repository.ComentarioRepository;
 import com.reyxa.backend.repository.UsuarioRepository;
 
+import net.bytebuddy.dynamic.loading.PackageDefinitionStrategy.Definition.Undefined;
+
 /*
  * -Clase la cual es utilizada como servicio e implementa la interfaz de UsuaroService.
  */
@@ -111,18 +113,39 @@ public class UsuarioServiceImp implements UsuarioService {
     @Override
     public String editarUsuario(int id, Usuario usuarionuevo) {
         String rta;
+        Usuario usuarioalmacenado;
 
-        if (usuarioRepository.existsById(id)) {
-            Usuario usuarioalmacenado = usuarioRepository.findById(id).get();
+        if (usuarioRepository.existsById(id).equals(true)) {
+//Si el usuario existe se crea un objeto de tipo Usuario con los datos del mismo
+             usuarioalmacenado = usuarioRepository.findById(id).get();
+            
 
-            usuarionuevo.setId_usuario(usuarioalmacenado.getId_usuario());
-            usuarioRepository.save(usuarionuevo);
+            /* 
+         * Condicional para evaluar que no sean los mismos datos los que se van a cambiar para no 
+         * realizar un update innecesario
+         */
+              
+             if(usuarioalmacenado.getNombre().equals(usuarionuevo.getNombre())&&
+             usuarioalmacenado.getComentario_usuario().getComentario().equals( usuarionuevo.getComentario_usuario().getComentario())){
+                 rta = "No se realizaron cambios";
+ 
+             }else {
+ 
+                             usuarionuevo.setId_usuario(usuarioalmacenado.getId_usuario());
+             usuarioRepository.save(usuarionuevo);
+ 
+             rta = "Se realizaron los cambios correctamente";
+             }
+            } 
+            else {
+             rta = "No se encontro un usuario anteriormente por lo que no se puede editar";
+               
+            }
 
-            rta = "Se realizaron los cambios correctamente";
+       
+          
 
-        } else {
-            rta = "No se encontro un usuario anteriormente por lo que no se puede editar";
-        }
+       
 
         return rta;
 
