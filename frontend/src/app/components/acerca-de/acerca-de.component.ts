@@ -99,6 +99,7 @@ this.rta = "No se encontro un comentario del usuario"+this.usuario.nombre;
 
   }
   buscarUsuarios(){
+    this.usuario.id_usuario=0;
     this.http.buscarUsuarios().subscribe(dato => {
          console.log(dato);
      this.usuarios=dato;
@@ -150,6 +151,7 @@ this.rta = "No se encontro un comentario del usuario"+this.usuario.nombre;
 editarUsuario(){
 
 let id:Number
+
 this.http.editarUsuario(this.usuario.id_usuario,this.usuario).subscribe(dato=>{
   let icono:SweetAlertIcon|undefined;
 
