@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Configuration;
-
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -87,6 +87,9 @@ public String editarUsuario(@RequestBody  Usuario usuario,@PathVariable int id){
 return usuarioService.editarUsuario(id,usuario);
 }
 
-
-
+    /* Mapping que elimina un usuario junto con su respectivo comentario a través del id. */
+    @DeleteMapping(path = "/borrarusuario")
+    public String borrarUsuario (@RequestParam int id){
+        return usuarioService.borrarUsuario(id);
+    }
 }

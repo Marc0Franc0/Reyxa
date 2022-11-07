@@ -43,7 +43,12 @@ public class Usuario {
     pertenecer a un usuario.
    */
    @OneToOne(cascade=CascadeType.ALL)
-   @JoinColumn(name="comentario_usuario",foreignKey = @ForeignKey(name = "fkcomentario") )
+   @JoinColumn(name="comentario_usuario", foreignKey = @ForeignKey(name = "fkcomentario"))
       
- Comentario comentario_usuario;
+    Comentario comentario_usuario;
+
+    @Getter
+    @Setter
+    @Column(name = "activo")
+    private boolean activo;
 }

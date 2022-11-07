@@ -1,5 +1,6 @@
 package com.reyxa.backend.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +40,20 @@ public class UsuarioServiceImp implements UsuarioService {
     // correspondiente
     @Override
     public List<Usuario> listaUsuarios() {
-        return (List) usuarioRepository.findAll();
+        
+        List<Usuario> listausuarios = new ArrayList<>();
+        List<Usuario> listausuariosactivos = new ArrayList<>(); 
+        listausuarios = (List<Usuario>) usuarioRepository.findAll();
+
+        for(int i = 0; i<listausuarios.size();i++ ){
+          
+            if(listausuarios.get(i).isActivo()==true){
+                listausuariosactivos.add(listausuarios.get(i));
+
+            }
+        }
+        return listausuariosactivos;
+
     }
 
     // Se sobreescribe el metodo utilizando en su retorno un metodo del repositorio
@@ -99,7 +113,12 @@ public class UsuarioServiceImp implements UsuarioService {
     // nombre
     @Override
     public Usuario findByNombre(String nombre) {
-        return this.usuarioRepository.findByNombre(nombre);
+        Usuario usuario = this.usuarioRepository.findByNombre(nombre);
+        if(usuario.isActivo()){
+return usuario;
+
+        }else{return null;}
+         
     }
 
     // Verifica con su repositorio correspondiente si un usuario existe por medio de
@@ -132,6 +151,7 @@ public class UsuarioServiceImp implements UsuarioService {
              }else {
  
                              usuarionuevo.setId_usuario(usuarioalmacenado.getId_usuario());
+                             
              usuarioRepository.save(usuarionuevo);
  
              rta = "Se realizaron los cambios correctamente";
@@ -150,5 +170,11 @@ public class UsuarioServiceImp implements UsuarioService {
         return rta;
 
     }
+
+
+public String borrarUsuario(int id){
+    usuarioRepository.deleteById(id);
+    return "Usuario borrado";
+}
 
 }
