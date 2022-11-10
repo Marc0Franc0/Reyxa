@@ -56,6 +56,7 @@ buscarComentarios():any{
 }
 
   buscarUsuario(){
+
  this.http.buscarUsuario(this.nombre_usuario).subscribe(dato => {
       //console.log(dato);
 
@@ -74,25 +75,15 @@ if(dato==null){
 if(this.usuario.comentario_usuario.comentario!=''){
 
   this.rta= "Comentario encontrado";
+  this.nombre_usuario="";
 }else{
 this.rta = "No se encontro un comentario del usuario"+this.usuario.nombre;
-
+this.usuario.nombre="";
+  this.usuario.comentario_usuario.comentario="";
 }
 
 
   //this.usuario=JSON.stringify(dato);
-    },rta => {console.log(rta.error.text);
-      //Swal.fire(rta.error.text)
-      Swal.fire({
-
-
-        position: 'top',
-        icon: 'info',
-        title: rta.error.text,
-        timer: undefined
-
-
-      })
     });
 
 
@@ -123,17 +114,22 @@ this.rta = "No se encontro un comentario del usuario"+this.usuario.nombre;
 
       })
     }else{
+    let  icono:SweetAlertIcon;
       this.http.crearUsuario(this.usuariocrear).subscribe(
         (data) => {
           console.log(data);
         },(rta) => {
-          console.log(rta.error.text);
-          //Swal.fire(rta.error.text)
+          let dato:string=rta.error.text;
+          if(dato=="Ya existe un comentario de ese usuario"){
+            icono='error';
+          }else{
+            icono='success';
+          }
           Swal.fire({
 
 
             position: 'top',
-            icon: 'success',
+            icon: icono,
             title: rta.error.text,
             timer: undefined
 
@@ -141,7 +137,7 @@ this.rta = "No se encontro un comentario del usuario"+this.usuario.nombre;
       })
 
     }
-  //console.log(this.usuariocrear);
+
 
 
 
