@@ -11,15 +11,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  constructor(private httpservice:HttpService)
-  {}
-
-  ngOnInit(){
-
-  }
-
-
-
 
 
 }

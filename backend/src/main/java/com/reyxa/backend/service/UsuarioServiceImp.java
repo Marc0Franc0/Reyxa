@@ -40,14 +40,14 @@ public class UsuarioServiceImp implements UsuarioService {
     // correspondiente
     @Override
     public List<Usuario> listaUsuarios() {
-        
+
         List<Usuario> listausuarios = new ArrayList<>();
-        List<Usuario> listausuariosactivos = new ArrayList<>(); 
+        List<Usuario> listausuariosactivos = new ArrayList<>();
         listausuarios = (List<Usuario>) usuarioRepository.findAll();
 
-        for(int i = 0; i<listausuarios.size();i++ ){
-          
-            if(listausuarios.get(i).isActivo()==true){
+        for (int i = 0; i < listausuarios.size(); i++) {
+
+            if (listausuarios.get(i).isActivo() == true) {
                 listausuariosactivos.add(listausuarios.get(i));
 
             }
@@ -87,7 +87,7 @@ public class UsuarioServiceImp implements UsuarioService {
         if (existsByNombre(usuario.getNombre())) {
             rta = "Ya existe un comentario de ese usuario";
         } else {
-
+            usuario.setActivo(true);
             usuario.setNombre(usuario.getNombre());
             /*
              * 
@@ -112,13 +112,15 @@ public class UsuarioServiceImp implements UsuarioService {
     // Metodo que busca a un usuario junto con todos sus atributos por medio de su
     // nombre
     @Override
-    public Usuario findByNombre(String nombre) {
+    public Usuario buscarUsuario(String nombre) {
         Usuario usuario = this.usuarioRepository.findByNombre(nombre);
-        if(usuario.isActivo()){
-return usuario;
+        if (usuario != null && usuario.isActivo()) {
+            return usuario;
 
-        }else{return null;}
-         
+        } else {
+            return null;
+        }
+
     }
 
     // Verifica con su repositorio correspondiente si un usuario existe por medio de
@@ -135,46 +137,41 @@ return usuario;
         Usuario usuarioalmacenado;
 
         if (usuarioRepository.existsById(id).equals(true)) {
-//Si el usuario existe se crea un objeto de tipo Usuario con los datos del mismo
-             usuarioalmacenado = usuarioRepository.findById(id).get();
-            
+            // Si el usuario existe se crea un objeto de tipo Usuario con los datos del
+            // mismo
+            usuarioalmacenado = usuarioRepository.findById(id).get();
 
-            /* 
-         * Condicional para evaluar que no sean los mismos datos los que se van a cambiar para no 
-         * realizar un update innecesario
-         */
-              
-             if(usuarioalmacenado.getNombre().equals(usuarionuevo.getNombre())&&
-             usuarioalmacenado.getComentario_usuario().getComentario().equals( usuarionuevo.getComentario_usuario().getComentario())){
-                 rta = "No se realizaron cambios";
- 
-             }else {
- 
-                             usuarionuevo.setId_usuario(usuarioalmacenado.getId_usuario());
-                             
-             usuarioRepository.save(usuarionuevo);
- 
-             rta = "Se realizaron los cambios correctamente";
-             }
-            } 
-            else {
-             rta = "No se encontro un usuario anteriormente por lo que no se puede editar";
-               
+            /*
+             * Condicional para evaluar que no sean los mismos datos los que se van a
+             * cambiar para no
+             * realizar un update innecesario
+             */
+
+            if (usuarioalmacenado.getNombre().equals(usuarionuevo.getNombre()) &&
+                    usuarioalmacenado.getComentario_usuario().getComentario()
+                            .equals(usuarionuevo.getComentario_usuario().getComentario())) {
+                rta = "No se realizaron cambios";
+
+            } else {
+                usuarionuevo.setActivo(true);
+                usuarionuevo.setId_usuario(usuarioalmacenado.getId_usuario());
+
+                usuarioRepository.save(usuarionuevo);
+
+                rta = "Se realizaron los cambios correctamente";
             }
+        } else {
+            rta = "No se encontro un usuario anteriormente por lo que no se puede editar";
 
-       
-          
-
-       
+        }
 
         return rta;
 
     }
 
-
-public String borrarUsuario(int id){
-    usuarioRepository.deleteById(id);
-    return "Usuario borrado";
-}
+    public String borrarUsuario(int id) {
+        usuarioRepository.deleteById(id);
+        return "Usuario borrado";
+    }
 
 }

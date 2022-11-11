@@ -21,7 +21,7 @@ import com.reyxa.backend.model.Usuario;
 
     public String editarUsuario(int id,Usuario usuario);
 
-    Usuario findByNombre(String usuario);
+    Usuario buscarUsuario(String usuario);
     boolean existsByNombre(String usuario);
 
 

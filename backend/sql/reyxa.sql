@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-10-2022 a las 15:36:32
+-- Tiempo de generación: 11-11-2022 a las 15:53:21
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -91,16 +91,8 @@ INSERT INTO `comandos` (`id_comando`, `nombre`, `sintaxis_comando`) VALUES
 
 CREATE TABLE `comentarios` (
   `id_comentario` int(11) NOT NULL,
-  `comentario` varchar(200) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `comentarios`
---
-
-INSERT INTO `comentarios` (`id_comentario`, `comentario`) VALUES
-(1, 'Nashe'),
-(97, 'Me gusta');
+  `comentario` varchar(200) COLLATE utf8_bin DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
 
@@ -117,7 +109,7 @@ CREATE TABLE `hibernate_sequence` (
 --
 
 INSERT INTO `hibernate_sequence` (`next_val`) VALUES
-(12);
+(1);
 
 -- --------------------------------------------------------
 
@@ -187,17 +179,10 @@ INSERT INTO `sintaxis_de_comandos` (`id_sintaxis`, `sintaxis`, `descripcion`) VA
 
 CREATE TABLE `usuarios` (
   `id_usuario` int(11) NOT NULL,
-  `nombre_de_usuario` varchar(40) DEFAULT NULL,
-  `comentario_usuario` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `usuarios`
---
-
-INSERT INTO `usuarios` (`id_usuario`, `nombre_de_usuario`, `comentario_usuario`) VALUES
-(1, 'Marco', 1),
-(11, 'JuanBM', 97);
+  `activo` bit(1) DEFAULT NULL,
+  `nombre_de_usuario` varchar(40) COLLATE utf8_bin DEFAULT NULL,
+  `comentario_usuario` int(11) DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Índices para tablas volcadas
@@ -241,22 +226,10 @@ ALTER TABLE `comandos`
   MODIFY `id_comando` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
--- AUTO_INCREMENT de la tabla `comentarios`
---
-ALTER TABLE `comentarios`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
-
---
 -- AUTO_INCREMENT de la tabla `sintaxis_de_comandos`
 --
 ALTER TABLE `sintaxis_de_comandos`
   MODIFY `id_sintaxis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3838;
-
---
--- AUTO_INCREMENT de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

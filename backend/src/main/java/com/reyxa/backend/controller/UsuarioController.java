@@ -56,7 +56,7 @@ public class UsuarioController extends Main {
         con una sentencia condicional, retornando un string determinado para cada situación.
          * 
         */
-            usuario = this.usuarioService.findByNombre(nombre);
+            usuario = this.usuarioService.buscarUsuario(nombre);
             return  usuario;
 
         
