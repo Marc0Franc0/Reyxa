@@ -38,12 +38,7 @@ public class SintaxisComando {
     @Setter
     @Column(name = "descripcion", length = 80)
     private String descripcion;
-    /*@Getter
-    @Setter
-    @OneToOne
-    @JoinColumn(name = "id_comando",nullable = false)
-    private Comando comando;
-*/
+
   
 
 }

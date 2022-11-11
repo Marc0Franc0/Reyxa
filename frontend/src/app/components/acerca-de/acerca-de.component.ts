@@ -149,7 +149,7 @@ editarUsuario(){
 let id:Number
 
 this.http.editarUsuario(this.usuario.id_usuario,this.usuario).subscribe(dato=>{
-  let icono:SweetAlertIcon|undefined;
+  let icono:SweetAlertIcon;
 
 if(dato=='Se realizaron los cambios correctamente'){
 icono="success";

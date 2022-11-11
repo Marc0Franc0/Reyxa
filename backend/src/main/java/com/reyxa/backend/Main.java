@@ -32,7 +32,7 @@ public class Main {
 
 //Se utiliza dentro de esta clase
     @Autowired
-    public ComandoService comandoService;
+    private ComandoService comandoService;
 
   
     //Métodos utlizados en la clase ComandoController
@@ -41,9 +41,11 @@ public class Main {
       
         try {
             Process exec = runtime.exec("cmd.exe /c " + object); // Ejecutar el comando
-
+/*Para la ejecución del comando se guarda de en un objeto de la clase Process la ejecución del comando, la cual
+        es en segundo plano. Luego con un objeto de la clase InputStream se muestra en pantalla el resultado de la ejecución del comando.
+         */
             in = exec.getInputStream(); // Obtener el resultado de la ejecución
-          exec.getOutputStream().close(); // Cerrar la consola de segundo plano
+      
         } catch (IOException e) {
             e.printStackTrace();
 
@@ -53,18 +55,21 @@ public class Main {
     /*Metodo que ejecuta comandos por medio de WindowsPowerShell en segundo plano*/
     public static void ejecutarPowerShell(Object object) {
 
+        /*Para la ejecución del comando se guarda de en un objeto de la clase Process la ejecución del comando, la cual
+        es en segundo plano. Luego con un objeto de la clase InputStream se muestra en pantalla el resultado de la ejecución del comando.
+         */
         try {
-            Process exec = runtime.exec("powershell.exe " + object); // Ejecutar el comando
+            Process exec = runtime.exec("powershell.exe " + object); 
             in = exec.getInputStream(); // Obtener el resultado de la ejecución
-            exec.getOutputStream().close();// Cerrar la consola de segundo plano
+
         } catch (IOException e) {
             e.printStackTrace();
     
         }
     }
     
-    /*Metodo utilizado en el package controller para obtener la descripcion de los comandos dentro
-    de la clase ComandoController
+    /*Metodo que utilizado el nombre de un comando busca su id y lo guarda para luego buscar por medio
+    de su id su sintaxis
     */
 
     public String obtenerComando (String nombreComando){

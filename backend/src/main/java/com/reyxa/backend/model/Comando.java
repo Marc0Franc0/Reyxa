@@ -41,9 +41,6 @@ import lombok.Setter;
         @JoinColumn(name = "sintaxis_comando", nullable = false, foreignKey = @ForeignKey(name = "fkdesc"))
         private SintaxisComando sintaxis_comando;
 
-        /*public Comando() {
-
-        }*/
     }
 
 

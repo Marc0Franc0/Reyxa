@@ -2,10 +2,7 @@ package com.reyxa.backend.controller;
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Configuration;
-//import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-
-//import org.springframework.web.bind.annotation.PostMapping;
 
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,7 +23,7 @@ un objeto de dominio en lugar de una vista. */
  * proveedor de persistencia que tengamos.
  */
 @EnableAutoConfiguration
-// @RequestMapping("/comandos")
+
 
 public class ComandoController extends Main {
     /*

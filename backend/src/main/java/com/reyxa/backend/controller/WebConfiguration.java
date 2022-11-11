@@ -12,8 +12,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 // Importa las configuraciones de MVC
 @EnableWebMvc
 
-
-
 /*
  * Esta clase es necesaria para las restricciones del CORS 
  * (intercambio de recursos de origen cruzado). En palabras simples 

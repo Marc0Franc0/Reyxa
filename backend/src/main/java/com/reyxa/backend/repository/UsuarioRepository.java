@@ -16,6 +16,5 @@ Usuario findByNombre(String usuario);
 Boolean existsByNombre (String nombre_de_usuario);
 Boolean existsById(int id);
 
-//Usuario findById(int Id);
 
 }
