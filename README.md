@@ -1,5 +1,11 @@
 # Backend
 
+This project was generated with [Spring Initializr](https://start.spring.io) version 2.7.0.
+Java Version 11.
+
+## Development server
+Run `mvnw spring-boot:run` for a dev server. Navigate to  `http://localhost:8080/`. The application will not automatically reload if you change any of the source files.
+
 # Frontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.6.
